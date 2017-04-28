@@ -7,7 +7,9 @@
 
 #ifndef FANTASSIN_HPP_
 #define FANTASSIN_HPP_
+class Fantassin : Unite{
 
+};
 
 
 
