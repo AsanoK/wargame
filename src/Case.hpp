@@ -9,9 +9,17 @@
 #define CASE_HPP_
 
 class Case {
+private:
+	int positionX;
+	int positionY;
+	Unite* unite;
 public:
-	Case();
+	Case(int posX, int posY);
 	virtual ~Case();
+	int getPosX();
+	int getPosY();
+	Unite* getUnite();
+	void setUnite(Unite* unite);
 };
 
 #endif /* CASE_HPP_ */

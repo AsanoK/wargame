@@ -7,12 +7,33 @@
 
 #include "Case.hpp"
 
-Case::Case() {
-	// TODO Auto-generated constructor stub
-
+Case::Case(int posX,int posY)
+{
+	positionX=posX;
+	positionY=posY;
+	unite=nullptr;
 }
 
 Case::~Case() {
 	// TODO Auto-generated destructor stub
 }
 
+int Case::getPosX()
+{
+	return positionX;
+}
+
+int Case::getPosY()
+{
+	return positionY;
+}
+
+Unite* Case::getUnite()
+{
+	return unite;
+}
+
+void Case::setUnite(Unite* unite)
+{
+	this->unite=unite;
+}
