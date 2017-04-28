@@ -28,6 +28,7 @@ bool Unite::isCaseAttaquable(Case cible) {
 	if(((cible.getPosX()==position.getPosX())and(cible.getPosY()==position.getPosY()+1))or((cible.getPosX()==position.getPosX())and(cible.getPosY()==position.getPosY-1))or((cible.getPosX()==position.getPosX()+1)and(cible.getPosY()==position.getPosY()))or((cible.getPosX()==position.getPosX()-1)and(cible.getPosY()==position.getPosY()))){
 			ret=true;
 		}
+
 	return ret;
 }
 
