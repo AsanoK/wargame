@@ -33,7 +33,7 @@ Unite* Case::getUnite()
 	return unite;
 }
 
-void Case::setUnite(Unite* unite)
+void Case::setUnite(Unite* u)
 {
-	this->unite=unite;
+	this->unite=u;
 }

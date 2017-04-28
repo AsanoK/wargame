@@ -19,7 +19,7 @@ public:
 	int getPosX();
 	int getPosY();
 	Unite* getUnite();
-	void setUnite(Unite* unite);
+	void setUnite(Unite* u);
 };
 
 #endif /* CASE_HPP_ */
