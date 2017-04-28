@@ -11,9 +11,11 @@ bool Unite::deplacer(Case cible){
 	bool ret = false;
  if((isCaseAtteignable(cible))and(DeplacementExecute==false)){
 	 //modifier contenu de la case d'origine
+	 position.setUnite(nullptr);
 	 //modifier position
 	 position = cible;
 	 //modifier contenu de la case d'arrivée
+	 position.setUnite(this);
  }
  ret = true;
  return ret;
