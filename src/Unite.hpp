@@ -31,6 +31,7 @@ class Unite{
 	bool deplacer(Case);
 	bool attaquer(const Case);
 	void regenerer() = 0;
+
 };
 
 #endif /* UNITE_HPP_ */

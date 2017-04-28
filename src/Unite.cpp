@@ -6,6 +6,7 @@
  */
 #include "Unite.hpp"
 using namespace Unite;
+
 bool Unite::deplacer(Case cible){
 	bool ret = false;
  if((isCaseAtteignable(cible))and(DeplacementExecute==false)){
