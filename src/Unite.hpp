@@ -11,7 +11,7 @@ class Unite{
 	private :
 	int attaque, defense, vie;
 	Joueur joueur;
-	Case pos;
+	Case position;
 	bool isAttaqueExecutee,isDeplacementExecute;
 	public:
 bool isCaseAtteignable(Case ) = 0;

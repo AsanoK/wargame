@@ -1,0 +1,21 @@
+/*
+ * Unite.cpp
+ *
+ *  Created on: 28 avr. 2017
+ *      Author: Hugin
+ */
+#include "Unite.hpp"
+using namespace Unite;
+bool isCaseAtteignable(Case cible ) ;
+bool isCaseAttaquable(Case cible) ;
+bool deplacer(Case cible){
+ if(isCaseAtteignable(cible)){
+	 //modifier position
+ }
+}
+bool attaquer(Case cible);{
+
+}
+
+
+
