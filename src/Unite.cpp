@@ -54,6 +54,7 @@ int Unite::getAttaque(){
 	void Unite::setPosition(Case& c){
 		position.setUnite(nullptr);
 		position = c;
+		c.setUnite(this);
 
 	}
 	void Unite::setVie( const int v){

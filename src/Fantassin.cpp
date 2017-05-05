@@ -26,7 +26,7 @@ bool Unite::isCaseAtteignable(Case cible ) {
 }
 bool Unite::isCaseAttaquable(Case cible) {
 	bool ret = false;
-	if(((cible.getPosX()==position.getPosX())and(cible.getPosY()==position.getPosY()+1))or((cible.getPosX()==position.getPosX())and(cible.getPosY()==position.getPosY-1))or((cible.getPosX()==position.getPosX()+1)and(cible.getPosY()==position.getPosY()))or((cible.getPosX()==position.getPosX()-1)and(cible.getPosY()==position.getPosY()))){
+	if(((cible.getPosX()==position.getPosX())and(cible.getPosY()==position.getPosY()+1))or((cible.getPosX()==position.getPosX())and(cible.getPosY()==position.getPosY()-1))or((cible.getPosX()==position.getPosX()+1)and(cible.getPosY()==position.getPosY()))or((cible.getPosX()==position.getPosX()-1)and(cible.getPosY()==position.getPosY()))){
 			ret=true;
 		}
 
