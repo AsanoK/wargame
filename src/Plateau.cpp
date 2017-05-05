@@ -7,10 +7,12 @@
 
 #include "Plateau.hpp"
 #include "ConstantesUnites.hpp"
+#include "Joueur.hpp"
 
-Plateau::Plateau() {
+Plateau::Plateau(Partie p) {
+	this->partie=p;
 	Plateau::genererGrilleAleatoire();
-
+	Plateau::deployerUnitesInitiales();
 }
 
 void Plateau::genererGrilleAleatoire()
@@ -20,10 +22,16 @@ void Plateau::genererGrilleAleatoire()
 			this->cases[i][j]=Case(i,j);
 }
 
-void Plateau::deployerUnitesInitiales(Joueur j)
+void Plateau::deployerUnitesInitiales()
 {
-	for (int i=0;i<NB_TROUPES_DEPART;i++)
-		this->cases[i][i].setUnite(j->getUnite(i));
+	Joueur p1=this->partie->getJoueur1();
+	Joueur p2=this->partie->getJoueur2();
+
+	for (int i=NBCASES/2-NB_TROUPES_DEPART/2;i<NB_TROUPES_DEPART;i++)
+		this->cases[0][i].setUnite(p1->getUnite(i));
+
+	for (int i=NBCASES/2-NB_TROUPES_DEPART/2;i<NB_TROUPES_DEPART;i++)
+		this->cases[NBCASES-1][i].setUnite(p2->getUnite(i));
 }
 
 Plateau::~Plateau() {
