@@ -7,23 +7,23 @@
 
 #include "Joueur.hpp"
 
-/**
- * Constructeur
- */
+
+
+//=====================================================================
+// Fonctions
+//=====================================================================
+
 Joueur::Joueur(std::string unPseudo, char uneCouleur[3]): pseudo(unPseudo), couleur(uneCouleur){
 
 }
 
-/**
- * Destructeur
- */
-Joueur::~Joueur(){
+<<<<<<< HEAD
 
-}
-
+=======
 /**
  * Fonctions
  */
+>>>>>>> d5b7ae922acbe2ef2f0aa0a8239eb0f08d22a5c0
 void Joueur::regenererTroupe(){
 	for (int i=0; i<unites.size(); ++i){
 		unites.at(i).setVie( unites.at(i).getVie()*1.3 );
@@ -32,33 +32,45 @@ void Joueur::regenererTroupe(){
 }
 
 void Joueur::executerTour(){
-
-}
-
-void Joueur::demanderCommande(){
-
+	std::string action = fenetre.demanderAction();
+	while ( action != "arret"){
+		if (action == "attaque"){
+			attaquer();
+		}
+		else if(action == "deplacer"){
+			deplacer();
+		}
+	}
+	terminerTour();
 }
 
 void Joueur::terminerTour(){
 
 }
 
+void Joueur::attaquer(){
+	Case caseAttaquant = fenetre.demanderCaseAttaquant();
+	Case caseAttaquee = fenetre.demanderCaseAttaquee();
+	caseAttaquant.getUnite()->attaquer(caseAttaquee);
+	fenetre.afficherGrille();
 
 
+}
+
+void Joueur::deplacer(){
+	Case caseDepart = fenetre.demanderCaseDepart();
+	Case caseArrivee = fenetre.demanderCaseArrivee();
+	caseDepart.getUnite()->deplacer(caseArrivee);
+	fenetre.afficherGrille();
+
+}
 
 
+//=====================================================================
+// Accesseurs
+//=====================================================================
 
-
-
-
-
-
-
-/**
- * Accesseurs
- */
-
-std::string Joueur::getPseudo(){
+std::string Joueur::getPseudo() const{
 	return pseudo;
 }
 
@@ -66,7 +78,7 @@ void Joueur::setPseudo(std::string unPseudo){
 	pseudo = unPseudo;
 }
 
-char* Joueur::getCouleur(){
+char *Joueur::getCouleur() const{
 	return &couleur;
 }
 
@@ -74,8 +86,8 @@ void Joueur::setCouleur(char uneCouleur[3]){
 	couleur = uneCouleur;
 }
 
-Unite Joueur::getUnite(int unePosition){
-	return unites.at(unePosition);
+Unite *Joueur::getUnite(int unePosition) const{
+	return &unites.at(unePosition);
 }
 
 void Joueur::supprimerUnite(int unePosition){
@@ -86,7 +98,7 @@ void Joueur::ajouterUnite(Unite uneUnite){
 	unites.push_back(uneUnite);
 }
 
-int Joueur::getNbrUnite(){
+int Joueur::getNbrUnite() const{
 	return unites.size();
 }
 
