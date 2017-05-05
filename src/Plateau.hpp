@@ -22,3 +22,4 @@ public:
 };
 
 #endif /* PLATEAU_HPP_ */
+
