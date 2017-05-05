@@ -13,17 +13,11 @@
 // Fonctions
 //=====================================================================
 
-Joueur::Joueur(std::string unPseudo, char uneCouleur[3]): pseudo(unPseudo), couleur(uneCouleur){
+Joueur::Joueur(std::string &unPseudo, char &uneCouleur[3]): pseudo(unPseudo), couleur(uneCouleur){
 
 }
 
-<<<<<<< HEAD
 
-=======
-/**
- * Fonctions
- */
->>>>>>> d5b7ae922acbe2ef2f0aa0a8239eb0f08d22a5c0
 void Joueur::regenererTroupe(){
 	for (int i=0; i<unites.size(); ++i){
 		unites.at(i).setVie( unites.at(i).getVie()*1.3 );
@@ -74,7 +68,7 @@ std::string Joueur::getPseudo() const{
 	return pseudo;
 }
 
-void Joueur::setPseudo(std::string unPseudo){
+void Joueur::setPseudo(std::string &unPseudo){
 	pseudo = unPseudo;
 }
 
@@ -82,7 +76,7 @@ char *Joueur::getCouleur() const{
 	return &couleur;
 }
 
-void Joueur::setCouleur(char uneCouleur[3]){
+void Joueur::setCouleur(char &uneCouleur[3]){
 	couleur = uneCouleur;
 }
 
@@ -94,7 +88,7 @@ void Joueur::supprimerUnite(int unePosition){
 	unites.erase(unites.begin()+unePosition);
 }
 
-void Joueur::ajouterUnite(Unite uneUnite){
+void Joueur::ajouterUnite(Unite &uneUnite){
 	unites.push_back(uneUnite);
 }
 
