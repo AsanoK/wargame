@@ -17,6 +17,7 @@ Fantassin::Fantassin(Case c, Joueur prop){
 }
 bool Unite::isCaseAtteignable(Case cible ) {
 	//pour le fantassin, on d�place uniquement sur les places adjacente : 4 possibilit�s
+
 	bool ret = false;
 	if(((cible.getPosX()==position.getPosX())and(cible.getPosY()==position.getPosY()+1))or((cible.getPosX()==position.getPosX())and(cible.getPosY()==position.getPosY()-1))or((cible.getPosX()==position.getPosX()+1)and(cible.getPosY()==position.getPosY()))or((cible.getPosX()==position.getPosX()-1)and(cible.getPosY()==position.getPosY()))){
 		ret=true;
