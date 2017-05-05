@@ -24,7 +24,7 @@ Joueur::~Joueur(){
 /**
  * Fonctions
  */
-void Joueur::regenererTroupe(){$
+void Joueur::regenererTroupe(){
 	for (int i=0; i<unites.size(); ++i){
 		unites.at(i).setVie( unites.at(i).getVie()*1.3 );
 	}

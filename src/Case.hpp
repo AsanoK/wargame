@@ -7,6 +7,7 @@
 
 #ifndef CASE_HPP_
 #define CASE_HPP_
+#include "Unite.hpp"
 
 class Case {
 private:

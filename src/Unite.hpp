@@ -7,7 +7,9 @@
 
 #ifndef UNITE_HPP_
 #define UNITE_HPP_
-#include "Constantesunites.hpp"
+#include "ConstantesUnites.hpp"
+#include "Case.hpp"
+#include "Joueur.hpp"
 class Unite{
 	private :
 	int attaque, defense, vie;

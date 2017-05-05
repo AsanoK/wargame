@@ -9,6 +9,8 @@
 #ifndef PLATEAU_HPP_
 #define PLATEAU_HPP_
 #define NBCASES 50
+#include "Case.hpp"
+#include "Joueur.hpp"
 class Plateau {
 private:
 	Case cases[NBCASES][NBCASES];

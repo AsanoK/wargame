@@ -8,7 +8,7 @@
 #include "Plateau.hpp"
 
 Plateau::Plateau() {
-	// TODO Auto-generated constructor stub
+	Plateau::genererGrilleAleatoire();
 
 }
 
