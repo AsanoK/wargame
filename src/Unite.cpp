@@ -7,7 +7,7 @@
 #include "Unite.hpp"
 using namespace Unite;
 
-bool Unite::deplacer(Case cible){
+bool Unite::deplacer(Case& cible){
 	bool ret = false;
  if((isCaseAtteignable(cible))and(DeplacementExecute==false)){
 	 //modifier contenu de la case d'origine
@@ -20,7 +20,7 @@ bool Unite::deplacer(Case cible){
  ret = true;
  return ret;
 }
-bool Unite::attaquer(const Case cible){
+bool Unite::attaquer(Case& cible){
 	bool ret = false;
 	if((isCaseAttaquable(cible))and(AttaqueExecutee==false)){
 		//résoudre attaque;
@@ -51,8 +51,10 @@ int Unite::getAttaque(){
 	bool Unite::isdeplacementExecute(){
 		return DeplacementExecute;
 	}
-	void Unite::setPosition(const Case c){
+	void Unite::setPosition(Case& c){
+		position.setUnite(nullptr);
 		position = c;
+
 	}
 	void Unite::setVie( const int v){
 		vie = v;

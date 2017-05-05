@@ -7,6 +7,8 @@
 
 #ifndef CONSTANTESUNITES_HPP_
 #define CONSTANTESUNITES_HPP_
+//globales
+#define NB_TROUPES_DEPART 10
 //fantassins
 #define VIEFANT 10
 #define ATTFANT 10

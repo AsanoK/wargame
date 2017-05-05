@@ -17,7 +17,7 @@ class Unite{
 	Case position;
 	bool AttaqueExecutee,DeplacementExecute;
 	public:
-	Unite(Case, Joueur);
+	Unite(Case&, Joueur&);
 	int getAttaque();
 	int getdefense();
 	int getVie();
@@ -25,14 +25,14 @@ class Unite{
 	Joueur getJoueur();
 	bool isAttaqueExecutee();
 	bool isdeplacementExecute();
-	void setPosition(const Case);
+	void setPosition(Case&);
 	void setVie(const int);
 	void setDeplacementExecute(const bool);
 	void setAttaqueExecutee(const bool);
 	bool isCaseAtteignable(const Case ) = 0;
 	bool isCaseAttaquable(const Case) = 0;
-	bool deplacer(Case);
-	bool attaquer(const Case);
+	bool deplacer(Case&);
+	bool attaquer(Case&);
 	void regenerer() = 0;
 
 };
