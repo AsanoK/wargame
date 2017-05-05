@@ -13,39 +13,45 @@
 
 #include "Unite.hpp"
 
+
 class Joueur{
-/**
- * attributs
- */
+
+	//=====================================================================
+	// Attributs
+	//=====================================================================
+
 private:
 	std::string pseudo;
 	char couleur[3];
 	std::vector<Unite> unites;
+	Fenetre fenetre;
 
-/**
- * fonctions
- */
+	//=====================================================================
+	// Fonctions
+	//=====================================================================
+
 public:
 	Joueur(std::string unPseudo, char uneCouleur[3]);
-	~Joueur();
 	void regenererTroupe();
 	void executerTour();
-	void demanderCommande();
 private:
 	void terminerTour();
+	void attaquer();
+	void deplacer();
 
-/**
- * accesseurs
- */
+	//=====================================================================
+	// Accesseurs
+	//=====================================================================
+
 public:
-	std::string getPseudo();
+	std::string getPseudo() const;
 	void setPseudo(std::string unPseudo);
-	char* getCouleur();
+	char *getCouleur() const;
 	void setCouleur(char uneCouleur[3]);
-	Unite getUnite(int unePosition);
+	Unite *getUnite(int unePosition) const;
 	void supprimerUnite(int unePosition);
 	void ajouterUnite(Unite uneUnite);
-	int getNbrUnite();
+	int getNbrUnite() const;
 
 
 };
