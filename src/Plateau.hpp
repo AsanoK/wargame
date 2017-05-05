@@ -15,7 +15,7 @@ class Plateau {
 private:
 	Case cases[NBCASES][NBCASES];
 	void genererGrilleAleatoire();
-	void deployerUnitesInitiales(Joueur)
+	void deployerUnitesInitiales(Joueur);
 public:
 	Plateau();
 	virtual ~Plateau();
