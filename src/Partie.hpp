@@ -28,9 +28,9 @@ private:
 	void lancerPartie();
 
 public:
-	Plateau *getPlateau() const;
-	Joueur *getJoueur1() const;
-	Joueur *getJoueur2() const;
+	Plateau &getPlateau() const;
+	Joueur &getJoueur1() const;
+	Joueur &getJoueur2() const;
 	int getTourDeJeu() const;
 };
 

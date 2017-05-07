@@ -49,9 +49,9 @@ private:
 public:
 	std::string getPseudo() const;
 	void setPseudo(const std::string &unPseudo);
-	char *getCouleur() const;
+	char &getCouleur() const;
 	void setCouleur(const char &uneCouleur[3]);
-	Unite *getUnite(int unePosition) const;
+	Unite &getUnite(int unePosition) const;
 	void supprimerUnite(int unePosition);
 	void ajouterUnite(const Unite &uneUnite);
 	int getNbrUnite() const;

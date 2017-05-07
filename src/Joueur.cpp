@@ -72,16 +72,16 @@ void Joueur::setPseudo(std::string &unPseudo){
 	m_pseudo = unPseudo;
 }
 
-char *Joueur::getCouleur() const{
-	return &m_couleur;
+char &Joueur::getCouleur() const{
+	return m_couleur;
 }
 
 void Joueur::setCouleur(char &uneCouleur[3]){
 	m_couleur = uneCouleur;
 }
 
-Unite *Joueur::getUnite(int unePosition) const{
-	return &unites.at(unePosition);
+Unite &Joueur::getUnite(int unePosition) const{
+	return unites.at(unePosition);
 }
 
 void Joueur::supprimerUnite(int unePosition){

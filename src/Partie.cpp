@@ -54,13 +54,13 @@ void Partie::lancerPartie(){
 }
 
 
-Plateau *Partie::getPlateau() const{
+Plateau &Partie::getPlateau() const{
 	return *m_plateau;
 }
-Joueur *Partie::getJoueur1() const{
+Joueur &Partie::getJoueur1() const{
 	return m_joueurs.at(0);
 }
-Joueur *Partie::getJoueur2() const{
+Joueur &Partie::getJoueur2() const{
 	return m_joueurs.at(1);
 }
 int Partie::getTourDeJeu() const{
