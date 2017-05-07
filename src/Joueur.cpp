@@ -13,7 +13,7 @@
 // Fonctions
 //=====================================================================
 
-Joueur::Joueur(std::string &unPseudo, char &uneCouleur[3]): pseudo(unPseudo), couleur(uneCouleur){
+Joueur::Joueur(const Partie &unePartie, const std::string &unPseudo, const char &uneCouleur[3]): m_pseudo(unPseudo), m_couleur(uneCouleur), p_partie(&unePartie), p_fenetre(p_partie->getFenetre()){
 
 }
 
@@ -26,7 +26,7 @@ void Joueur::regenererTroupe(){
 }
 
 void Joueur::executerTour(){
-	std::string action = fenetre.demanderAction();
+	std::string action = p_fenetre.demanderAction();
 	while ( action != "arret"){
 		if (action == "attaque"){
 			attaquer();
@@ -43,19 +43,19 @@ void Joueur::terminerTour(){
 }
 
 void Joueur::attaquer(){
-	Case caseAttaquant = fenetre.demanderCaseAttaquant();
-	Case caseAttaquee = fenetre.demanderCaseAttaquee();
+	Case caseAttaquant = p_fenetre.demanderCaseAttaquant();
+	Case caseAttaquee = p_fenetre.demanderCaseAttaquee();
 	caseAttaquant.getUnite()->attaquer(caseAttaquee);
-	fenetre.afficherGrille();
+	p_fenetre.afficherGrille();
 
 
 }
 
 void Joueur::deplacer(){
-	Case caseDepart = fenetre.demanderCaseDepart();
-	Case caseArrivee = fenetre.demanderCaseArrivee();
+	Case caseDepart = p_fenetre.demanderCaseDepart();
+	Case caseArrivee = p_fenetre.demanderCaseArrivee();
 	caseDepart.getUnite()->deplacer(caseArrivee);
-	fenetre.afficherGrille();
+	p_fenetre.afficherGrille();
 
 }
 
@@ -65,19 +65,19 @@ void Joueur::deplacer(){
 //=====================================================================
 
 std::string Joueur::getPseudo() const{
-	return pseudo;
+	return m_pseudo;
 }
 
 void Joueur::setPseudo(std::string &unPseudo){
-	pseudo = unPseudo;
+	m_pseudo = unPseudo;
 }
 
 char *Joueur::getCouleur() const{
-	return &couleur;
+	return &m_couleur;
 }
 
 void Joueur::setCouleur(char &uneCouleur[3]){
-	couleur = uneCouleur;
+	m_couleur = uneCouleur;
 }
 
 Unite *Joueur::getUnite(int unePosition) const{

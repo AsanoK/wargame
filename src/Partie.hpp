@@ -16,10 +16,10 @@
 class Partie {
 
 private:
-	std::vector<Joueur> joueurs;
-	Fenetre fenetre;
-	Plateau plateau;
-	int tourDeJeu;
+	std::vector<Joueur> m_joueurs;
+	Fenetre m_fenetre;
+	Plateau m_plateau;
+	int m_tourDeJeu;
 
 public:
 	Partie();
