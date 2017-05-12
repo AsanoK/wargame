@@ -41,6 +41,10 @@ BOOST_AUTO_TEST_CASE(test_CaseJ)
 	BOOST_CHECK(pos1.getUnite() == &fant1);
 	pos1.setUnite(NULL);
 
+	BOOST_CHECK(pos1.getUnite() == NULL);
+}
+
+BOOST_AUTO_TEST_CASE(test_Joueur){
 
 }
 
