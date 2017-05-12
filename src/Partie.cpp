@@ -14,12 +14,12 @@ Partie::Partie():m_tourDeJeu(0), m_fenetre(){
 	// cration du premier joueur
 	std::string pseudo1 m_plateau.getFenetre().demanderPseudo();
 	char couleur1[3] = {255,255,0};
-	Joueur joueur1(pseudo1, couleur1);
+	Joueur joueur1(*this, pseudo1, couleur1);
 
 	// creation du deuxieme joueur
 	std::string pseudo2 m_plateau.getFenetre().demanderPseudo();
 	char couleur2[3] = {0,255,255};
-	Joueur joueur2(pseudo2, couleur2);
+	Joueur joueur2(*this, pseudo2, couleur2);
 
 	m_plateau(this);
 }
