@@ -6,8 +6,7 @@
  */
 
 #include "Plateau.hpp"
-#include "ConstantesUnites.hpp"
-#include "Joueur.hpp"
+
 
 Plateau::Plateau(Partie p) {
 	this->partie=p;

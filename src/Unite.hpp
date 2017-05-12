@@ -7,9 +7,10 @@
 
 #ifndef UNITE_HPP_
 #define UNITE_HPP_
-#include "CaseJ.hpp"
+
 #include "ConstantesUnites.hpp"
-#include "Joueur.hpp"
+class CaseJ;
+class Joueur;
 
 class Unite{
 	private :

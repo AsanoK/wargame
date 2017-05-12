@@ -8,12 +8,9 @@
 #ifndef JOUEUR_HPP_
 #define JOUEUR_HPP_
 
-#include <string>
-#include <vector>
-
 #include "Unite.hpp"
-#include "Partie.hpp"
-#include "Fenetre.hpp"
+class Partie;
+class Fenetre;
 
 
 class Joueur{

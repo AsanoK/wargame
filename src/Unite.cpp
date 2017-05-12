@@ -5,7 +5,7 @@
  *      Author: Hugin
  */
 #include "Unite.hpp"
-using namespace Unite;
+
 
 bool Unite::deplacer(Case& cible){
 	bool ret = false;
@@ -14,7 +14,7 @@ bool Unite::deplacer(Case& cible){
 	 position.setUnite(nullptr);
 	 //modifier position
 	 position = cible;
-	 //modifier contenu de la case d'arrivée
+	 //modifier contenu de la case d'arrivï¿½e
 	 position.setUnite(this);
  }
  ret = true;
@@ -23,7 +23,7 @@ bool Unite::deplacer(Case& cible){
 bool Unite::attaquer(Case& cible){
 	bool ret = false;
 	if((isCaseAttaquable(cible))and(AttaqueExecutee==false)){
-		//résoudre attaque;
+		//rï¿½soudre attaque;
 		position = cible;
 	}
 	ret = true;

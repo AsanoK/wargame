@@ -4,7 +4,7 @@
  *  Created on: 5 mai 2017
  *      Author: gdamay
  */
-
+/*
 #define BOOST_TEST_MODULE MyTest
 #include <boost/test/unit_test.hpp>
 #include "Joueur.cpp"
@@ -49,3 +49,4 @@ BOOST_AUTO_TEST_CASE(test_fantassin)
 	Fantassin fant1 = new Fantassin();
 
 }
+*/

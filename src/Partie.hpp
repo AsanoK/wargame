@@ -9,6 +9,8 @@
 #define PARTIE_HPP_
 
 #include <vector>
+#include <iostream>
+
 #include "Plateau.hpp"
 #include "Joueur.hpp"
 #include "Fenetre.hpp"
