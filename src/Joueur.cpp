@@ -13,17 +13,11 @@
 // Fonctions
 //=====================================================================
 
-Joueur::Joueur(std::string unPseudo, char uneCouleur[3]): pseudo(unPseudo), couleur(uneCouleur){
+Joueur::Joueur(const Partie &unePartie, const std::string &unPseudo, const char &uneCouleur[3]): m_pseudo(unPseudo), m_couleur(uneCouleur), p_partie(&unePartie), p_fenetre(p_partie->getFenetre()){
 
 }
 
-<<<<<<< HEAD
 
-=======
-/**
- * Fonctions
- */
->>>>>>> d5b7ae922acbe2ef2f0aa0a8239eb0f08d22a5c0
 void Joueur::regenererTroupe(){
 	for (int i=0; i<unites.size(); ++i){
 		unites.at(i).setVie( unites.at(i).getVie()*1.3 );
@@ -32,7 +26,7 @@ void Joueur::regenererTroupe(){
 }
 
 void Joueur::executerTour(){
-	std::string action = fenetre.demanderAction();
+	std::string action = p_fenetre.demanderAction();
 	while ( action != "arret"){
 		if (action == "attaque"){
 			attaquer();
@@ -49,19 +43,19 @@ void Joueur::terminerTour(){
 }
 
 void Joueur::attaquer(){
-	Case caseAttaquant = fenetre.demanderCaseAttaquant();
-	Case caseAttaquee = fenetre.demanderCaseAttaquee();
+	CaseJ caseAttaquant = p_fenetre.demanderCaseAttaquant();
+	CaseJ caseAttaquee = p_fenetre.demanderCaseAttaquee();
 	caseAttaquant.getUnite()->attaquer(caseAttaquee);
-	fenetre.afficherGrille();
+	p_fenetre.afficherGrille();
 
 
 }
 
 void Joueur::deplacer(){
-	Case caseDepart = fenetre.demanderCaseDepart();
-	Case caseArrivee = fenetre.demanderCaseArrivee();
+	CaseJ caseDepart = p_fenetre.demanderCaseDepart();
+	CaseJ caseArrivee = p_fenetre.demanderCaseArrivee();
 	caseDepart.getUnite()->deplacer(caseArrivee);
-	fenetre.afficherGrille();
+	p_fenetre.afficherGrille();
 
 }
 
@@ -71,30 +65,30 @@ void Joueur::deplacer(){
 //=====================================================================
 
 std::string Joueur::getPseudo() const{
-	return pseudo;
+	return m_pseudo;
 }
 
-void Joueur::setPseudo(std::string unPseudo){
-	pseudo = unPseudo;
+void Joueur::setPseudo(std::string &unPseudo){
+	m_pseudo = unPseudo;
 }
 
-char *Joueur::getCouleur() const{
-	return &couleur;
+char &Joueur::getCouleur() const{
+	return m_couleur;
 }
 
-void Joueur::setCouleur(char uneCouleur[3]){
-	couleur = uneCouleur;
+void Joueur::setCouleur(char &uneCouleur[3]){
+	m_couleur = uneCouleur;
 }
 
-Unite *Joueur::getUnite(int unePosition) const{
-	return &unites.at(unePosition);
+Unite &Joueur::getUnite(int unePosition) const{
+	return unites.at(unePosition);
 }
 
 void Joueur::supprimerUnite(int unePosition){
 	unites.erase(unites.begin()+unePosition);
 }
 
-void Joueur::ajouterUnite(Unite uneUnite){
+void Joueur::ajouterUnite(Unite &uneUnite){
 	unites.push_back(uneUnite);
 }
 

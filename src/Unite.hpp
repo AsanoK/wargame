@@ -7,9 +7,14 @@
 
 #ifndef UNITE_HPP_
 #define UNITE_HPP_
-#include "ConstantesUnites.hpp"
 #include "CaseJ.hpp"
+#include "ConstantesUnites.hpp"
+<<<<<<< HEAD
+#include "CaseJ.hpp"
+=======
+>>>>>>> branch 'master' of https://github.com/AsanoK/wargame
 #include "Joueur.hpp"
+
 class Unite{
 	private :
 	int attaque, defense, vie;
@@ -29,10 +34,17 @@ class Unite{
 	void setVie(const int);
 	void setDeplacementExecute(const bool);
 	void setAttaqueExecutee(const bool);
+<<<<<<< HEAD
 	bool  virtual isCaseAtteignable(const CaseJ ) = 0;
 	bool virtual isCaseAttaquable(const CaseJ) = 0;
 	bool deplacer(CaseJ&);
 	bool attaquer(Case&);
+=======
+	bool virtual isCaseAtteignable(const CaseJ ) = 0;
+	bool virtual isCaseAttaquable(const CaseJ) = 0;
+	bool deplacer(CaseJ&);
+	bool attaquer(CaseJ&);
+>>>>>>> branch 'master' of https://github.com/AsanoK/wargame
 	void virtual regenerer() = 0;
 
 };

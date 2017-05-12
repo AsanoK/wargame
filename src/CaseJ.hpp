@@ -9,16 +9,16 @@
 #define CASE_HPP_
 #include "Unite.hpp"
 
-class Case {
+class CaseJ {
 private:
 	int positionX;
 	int positionY;
 	Unite* unite;
 public:
-	Case(int posX, int posY);
-	virtual ~Case();
-	int getPosX();
-	int getPosY();
+	CaseJ(int posX, int posY);
+	virtual ~CaseJ();
+	int getPositionX();
+	int getPositionY();
 	Unite* getUnite();
 	void setUnite(Unite* u);
 };

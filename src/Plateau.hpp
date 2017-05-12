@@ -8,16 +8,19 @@
 
 #ifndef PLATEAU_HPP_
 #define PLATEAU_HPP_
+
 #define NBCASES 50
-#include "Case.hpp"
+#include "CaseJ.hpp"
+#include "Partie.hpp"
 #include "Joueur.hpp"
 class Plateau {
 private:
-	Case cases[NBCASES][NBCASES];
+	CaseJ cases[NBCASES][NBCASES];
+	Partie* partie;
 	void genererGrilleAleatoire();
-	void deployerUnitesInitiales(Joueur);
+	void deployerUnitesInitiales();
 public:
-	Plateau();
+	Plateau(Partie* p);
 	virtual ~Plateau();
 };
 
