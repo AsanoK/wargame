@@ -52,7 +52,7 @@ int Unite::getAttaque(){
 		return DeplacementExecute;
 	}
 	void Unite::setPosition(Case& c){
-		position.setUnite(nullptr);
+		position.setUnite(NULL);
 		position = c;
 		c.setUnite(this);
 
