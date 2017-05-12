@@ -10,6 +10,7 @@
 #include "CaseJ.hpp"
 #include "ConstantesUnites.hpp"
 #include "Joueur.hpp"
+
 class Unite{
 	private :
 	int attaque, defense, vie;
