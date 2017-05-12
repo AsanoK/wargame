@@ -29,11 +29,11 @@ class Unite{
 	void setVie(const int);
 	void setDeplacementExecute(const bool);
 	void setAttaqueExecutee(const bool);
-	bool isCaseAtteignable(const Case ) = 0;
-	bool isCaseAttaquable(const Case) = 0;
+	bool virtual isCaseAtteignable(const Case ) = 0;
+	bool virtual isCaseAttaquable(const Case) = 0;
 	bool deplacer(Case&);
 	bool attaquer(Case&);
-	void regenerer() = 0;
+	void virtual regenerer() = 0;
 
 };
 
