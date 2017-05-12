@@ -7,20 +7,21 @@
 #include "Unite.hpp"
 
 
-bool Unite::deplacer(Case& cible){
+bool Unite::deplacer(CaseJ& cible){
 	bool ret = false;
  if((isCaseAtteignable(cible))and(DeplacementExecute==false)){
 	 //modifier contenu de la case d'origine
-	 position.setUnite(nullptr);
+	 position->setUnite(NULL);
 	 //modifier position
-	 position = cible;
+
+	 position = &cible;
 	 //modifier contenu de la case d'arriv�e
-	 position.setUnite(this);
+	 position->setUnite(this);
  }
  ret = true;
  return ret;
 }
-bool Unite::attaquer(Case& cible){
+bool Unite::attaquer(CaseJ& cible){
 	bool ret = false;
 	if((isCaseAttaquable(cible))and(AttaqueExecutee==false)){
 		//r�soudre attaque;
@@ -39,8 +40,8 @@ int Unite::getAttaque(){
 	int Unite::getVie(){
 		return vie;
 	}
-	Case Unite::getposition(){
-		return vie;
+	CaseJ Unite::getposition(){
+		return position;
 	}
 	Joueur Unite::getJoueur(){
 		return joueur;
@@ -51,10 +52,10 @@ int Unite::getAttaque(){
 	bool Unite::isdeplacementExecute(){
 		return DeplacementExecute;
 	}
-	void Unite::setPosition(Case& c){
-		position.setUnite(NULL);
+	void Unite::setPosition(CaseJ& c){
+		position->setUnite(NULL);
 		position = c;
-		c.setUnite(this);
+		c->setUnite(this);
 
 	}
 	void Unite::setVie( const int v){

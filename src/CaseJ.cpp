@@ -7,7 +7,6 @@
 
 
 #include "CaseJ.hpp"
-
 CaseJ::CaseJ(int posX,int posY)
 {
 	if ((posX<0) || (posY<0))

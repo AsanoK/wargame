@@ -12,7 +12,7 @@ class Unite;
 class Case;
 
 class Fantassin : Unite{
-Fantassin(Case, Joueur);
+Fantassin(CaseJ, Joueur);
 };
 
 

@@ -14,7 +14,6 @@
 #include "ConstantesUnites.hpp"
 #include "CaseJ.hpp"
 
-class Case;
 class Partie;
 class Joueur;
 
