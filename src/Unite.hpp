@@ -9,10 +9,8 @@
 #define UNITE_HPP_
 #include "CaseJ.hpp"
 #include "ConstantesUnites.hpp"
-<<<<<<< HEAD
 #include "CaseJ.hpp"
-=======
->>>>>>> branch 'master' of https://github.com/AsanoK/wargame
+
 #include "Joueur.hpp"
 
 class Unite{
