@@ -22,12 +22,12 @@ CaseJ::~CaseJ() {
 	// TODO Auto-generated destructor stub
 }
 
-int CaseJ::getPosX()
+int CaseJ::getPositionX()
 {
 	return positionX;
 }
 
-int CaseJ::getPosY()
+int CaseJ::getPositionY()
 {
 	return positionY;
 }
