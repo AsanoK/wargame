@@ -28,3 +28,6 @@
 *.out
 *.app
 /Debug/
+
+.cproject
+.setting/language.settings.xml
