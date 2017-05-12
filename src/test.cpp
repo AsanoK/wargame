@@ -10,16 +10,36 @@
 #include "Joueur.cpp"
 #include "Fantassin.hpp"
 
-BOOST_AUTO_TEST_CASE(test_Case)
+BOOST_AUTO_TEST_CASE(test_CaseJ)
 {
-	Case pos1 = new Case(3, 2);
+	CaseJ pos1 = new CaseJ(3, 2);
 	BOOST_CHECK(pos1.getPositionX() == 3);
 	BOOST_CHECK(pos1.getPositionY() == 2);
 	try{
-
+		CaseJ pos2 = new CaseJ(-3, 2);
+		BOOST_CHECK(false);
 	}catch(std::exception & e){
-
+		BOOST_CHECK(true);
 	}
+	try{
+		CaseJ pos2 = new CaseJ(3, -2);
+		BOOST_CHECK(false);
+	}catch(std::exception & e){
+		BOOST_CHECK(true);
+	}
+	try{
+		CaseJ pos2 = new CaseJ(-3, -2);
+		BOOST_CHECK(false);
+	}catch(std::exception & e){
+		BOOST_CHECK(true);
+	}
+	BOOST_CHECK(pos1.getUnite() == NULL);
+
+	Joueur joueur = new Joueur;
+	Fantassin fant1 = new Fantassin(pos1, joueur);
+	pos1.setUnite(&fant1);
+	BOOST_CHECK(pos1.getUnite() == &fant1);
+	pos1.setUnite(NULL);
 
 
 }
