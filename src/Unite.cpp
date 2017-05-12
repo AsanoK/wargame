@@ -11,11 +11,11 @@ bool Unite::deplacer(CaseJ& cible){
 	bool ret = false;
  if((isCaseAtteignable(cible))and(DeplacementExecute==false)){
 	 //modifier contenu de la case d'origine
-	 position.setUnite(NULL);
+	 position->setUnite(NULL);
 	 //modifier position
-	 position = cible;
+	 position = &cible;
 	 //modifier contenu de la case d'arrivée
-	 position.setUnite(this);
+	 position->setUnite(this);
  }
  ret = true;
  return ret;
@@ -40,7 +40,7 @@ int Unite::getAttaque(){
 		return vie;
 	}
 	CaseJ Unite::getposition(){
-		return vie;
+		return position;
 	}
 	Joueur Unite::getJoueur(){
 		return joueur;
@@ -52,9 +52,9 @@ int Unite::getAttaque(){
 		return DeplacementExecute;
 	}
 	void Unite::setPosition(CaseJ& c){
-		position.setUnite(NULL);
+		position->setUnite(NULL);
 		position = c;
-		c.setUnite(this);
+		c->setUnite(this);
 
 	}
 	void Unite::setVie( const int v){
