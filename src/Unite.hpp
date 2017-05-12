@@ -7,8 +7,8 @@
 
 #ifndef UNITE_HPP_
 #define UNITE_HPP_
+#include "CaseJ.hpp"
 #include "ConstantesUnites.hpp"
-#include "Case.hpp"
 #include "Joueur.hpp"
 class Unite{
 	private :
