@@ -4,11 +4,14 @@
  *  Created on: 28 avr. 2017
  *      Author: cdecultot
  */
-
+#include <iostream>
+#include <string>
 #include "Case.hpp"
 
 Case::Case(int posX,int posY)
 {
+	if ((posX<0) || (posY<0))
+			throw string("Position non valable.");
 	positionX=posX;
 	positionY=posY;
 	unite=nullptr;
