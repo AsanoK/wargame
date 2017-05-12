@@ -8,32 +8,32 @@
 #ifndef UNITE_HPP_
 #define UNITE_HPP_
 #include "ConstantesUnites.hpp"
-#include "Case.hpp"
+#include "CaseJ.hpp"
 #include "Joueur.hpp"
 class Unite{
 	private :
 	int attaque, defense, vie;
 	Joueur joueur;
-	Case position;
+	CaseJ position;
 	bool AttaqueExecutee,DeplacementExecute;
 	public:
-	Unite(Case&, Joueur&);
+	Unite(CaseJ&, Joueur&);
 	int getAttaque();
 	int getdefense();
 	int getVie();
-	Case getposition();
+	CaseJ getposition();
 	Joueur getJoueur();
 	bool isAttaqueExecutee();
 	bool isdeplacementExecute();
-	void setPosition(Case&);
+	void setPosition(CaseJ&);
 	void setVie(const int);
 	void setDeplacementExecute(const bool);
 	void setAttaqueExecutee(const bool);
-	bool isCaseAtteignable(const Case ) = 0;
-	bool isCaseAttaquable(const Case) = 0;
-	bool deplacer(Case&);
+	bool  virtual isCaseAtteignable(const CaseJ ) = 0;
+	bool virtual isCaseAttaquable(const CaseJ) = 0;
+	bool deplacer(CaseJ&);
 	bool attaquer(Case&);
-	void regenerer() = 0;
+	void virtual regenerer() = 0;
 
 };
 
