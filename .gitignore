@@ -32,3 +32,4 @@
 .cproject
 .setting/language.settings.xml
 *.xml
+.project
