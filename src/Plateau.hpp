@@ -15,7 +15,7 @@
 #include "Joueur.hpp"
 class Plateau {
 private:
-	Case cases[NBCASES][NBCASES];
+	CaseJ cases[NBCASES][NBCASES];
 	Partie* partie;
 	void genererGrilleAleatoire();
 	void deployerUnitesInitiales();
