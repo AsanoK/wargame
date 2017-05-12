@@ -15,7 +15,7 @@
 // Fonctions
 //=====================================================================
 
-Joueur::Joueur(const Partie &unePartie, const std::string &unPseudo, const char &uneCouleur[3]): m_pseudo(unPseudo), m_couleur(uneCouleur), p_partie(&unePartie), p_fenetre(p_partie->getFenetre()){
+Joueur::Joueur(const Partie &unePartie, const std::string &unPseudo, const char (&uneCouleur)[3]): m_pseudo(unPseudo), m_couleur(uneCouleur), p_partie(&unePartie), p_fenetre(p_partie->getFenetre()){
 
 }
 
@@ -66,7 +66,7 @@ void Joueur::deplacer(){
 // Accesseurs
 //=====================================================================
 
-std::string Joueur::getPseudo() const{
+std::string &Joueur::getPseudo() const{
 	return m_pseudo;
 }
 
@@ -74,11 +74,11 @@ void Joueur::setPseudo(const std::string &unPseudo){
 	m_pseudo = unPseudo;
 }
 
-char &Joueur::getCouleur() const{
-	return m_couleur;
+char *Joueur::getCouleur() const{
+	return &m_couleur;
 }
 
-void Joueur::setCouleur(const char &uneCouleur[3]){
+void Joueur::setCouleur(const char (&uneCouleur)[3]){
 	m_couleur = uneCouleur;
 }
 

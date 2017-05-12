@@ -8,6 +8,7 @@
 #ifndef JOUEUR_HPP_
 #define JOUEUR_HPP_
 
+#include <string>
 #include <vector>
 
 #include "Unite.hpp"
@@ -33,7 +34,7 @@ private:
 	//=====================================================================
 
 public:
-	Joueur(const Partie &unePartie, const std::string &unPseudo, const char &uneCouleur[3]);
+	Joueur(const Partie &unePartie, const std::string &unPseudo, const char (&uneCouleur)[3]);
 	void regenererTroupe();
 	void executerTour();
 private:
@@ -46,10 +47,10 @@ private:
 	//=====================================================================
 
 public:
-	std::string getPseudo() const;
+	std::string &getPseudo() const;
 	void setPseudo(const std::string &unPseudo);
-	char &getCouleur() const;
-	void setCouleur(const char &uneCouleur[3]);
+	char *getCouleur() const;
+	void setCouleur(const char (&uneCouleur)[3]);
 	Unite &getUnite(int unePosition) const;
 	void supprimerUnite(int unePosition);
 	void ajouterUnite(const Unite &uneUnite);

@@ -37,10 +37,7 @@ class Unite{
 	bool virtual isCaseAttaquable(const CaseJ) = 0;
 	bool deplacer(CaseJ&);
 	bool attaquer(CaseJ&);
-	bool virtual isCaseAtteignable(const CaseJ ) = 0;
-	bool virtual isCaseAttaquable(const CaseJ) = 0;
-	bool deplacer(CaseJ&);
-	bool attaquer(CaseJ&);
+
 	void virtual regenerer() = 0;
 
 };
