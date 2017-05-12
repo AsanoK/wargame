@@ -9,7 +9,6 @@
 #define UNITE_HPP_
 #include "CaseJ.hpp"
 #include "ConstantesUnites.hpp"
-#include "CaseJ.hpp"
 
 #include "Joueur.hpp"
 
@@ -17,7 +16,7 @@ class Unite{
 	private :
 	int attaque, defense, vie;
 	Joueur joueur;
-	CaseJ position;
+	CaseJ* position;
 	bool AttaqueExecutee,DeplacementExecute;
 	public:
 	Unite(CaseJ&, Joueur&);
@@ -32,17 +31,15 @@ class Unite{
 	void setVie(const int);
 	void setDeplacementExecute(const bool);
 	void setAttaqueExecutee(const bool);
-<<<<<<< HEAD
+
 	bool  virtual isCaseAtteignable(const CaseJ ) = 0;
 	bool virtual isCaseAttaquable(const CaseJ) = 0;
 	bool deplacer(CaseJ&);
-	bool attaquer(Case&);
-=======
+	bool attaquer(CaseJ&);
 	bool virtual isCaseAtteignable(const CaseJ ) = 0;
 	bool virtual isCaseAttaquable(const CaseJ) = 0;
 	bool deplacer(CaseJ&);
 	bool attaquer(CaseJ&);
->>>>>>> branch 'master' of https://github.com/AsanoK/wargame
 	void virtual regenerer() = 0;
 
 };

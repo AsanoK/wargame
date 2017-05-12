@@ -9,7 +9,7 @@
 #define FANTASSIN_HPP_
 #include "Unite.hpp"
 class Fantassin : Unite{
-Fantassin(Case, Joueur);
+Fantassin(CaseJ, Joueur);
 };
 
 
