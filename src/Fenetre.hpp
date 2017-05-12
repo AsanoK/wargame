@@ -9,17 +9,22 @@
 #define SRC_FENETRE_HPP_
 
 #include <string>
-
+class Case;
+class Joueur;
 
 class Fenetre {
 public:
 	Fenetre();
 	virtual ~Fenetre();
+
+	void afficherGrille();
+	void afficherVainqueur(int vainqueur);
 	std::string demanderAction();
-	std::string demanderCaseAttaquant();
-	std::string demanderCaseAttaquee();
-	std::string demanderCaseDepart();
-	std::string demanderCaseArrivee();
+	std::string demanderPseudo(int Joueur);
+	Case demanderCaseAttaquant();
+	Case demanderCaseAttaquee();
+	Case demanderCaseDepart();
+	Case demanderCaseArrivee();
 };
 
 #endif /* SRC_FENETRE_HPP_ */

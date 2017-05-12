@@ -31,6 +31,7 @@ private:
 
 public:
 	Plateau &getPlateau() const;
+	Fenetre &getFenetre() const;
 	Joueur &getJoueur1() const;
 	Joueur &getJoueur2() const;
 	int getTourDeJeu() const;

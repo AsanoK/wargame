@@ -48,7 +48,7 @@ void Joueur::attaquer(){
 	CaseJ caseAttaquant = p_fenetre->demanderCaseAttaquant();
 	CaseJ caseAttaquee = p_fenetre->demanderCaseAttaquee();
 	caseAttaquant.getUnite()->attaquer(caseAttaquee);
-	p_fenetre.afficherGrille();
+	p_fenetre->afficherGrille();
 
 
 }
@@ -57,7 +57,7 @@ void Joueur::deplacer(){
 	CaseJ caseDepart = p_fenetre->demanderCaseDepart();
 	CaseJ caseArrivee = p_fenetre->demanderCaseArrivee();
 	caseDepart.getUnite()->deplacer(caseArrivee);
-	p_fenetre.afficherGrille();
+	p_fenetre->afficherGrille();
 
 }
 
@@ -74,8 +74,8 @@ void Joueur::setPseudo(const std::string &unPseudo){
 	m_pseudo = unPseudo;
 }
 
-char *Joueur::getCouleur() const{
-	return &m_couleur;
+char &Joueur::getCouleur() const{
+	return m_couleur;
 }
 
 void Joueur::setCouleur(const char (&uneCouleur)[3]){
