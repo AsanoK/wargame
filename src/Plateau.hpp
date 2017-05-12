@@ -11,8 +11,10 @@
 
 #define NBCASES 50
 #include "CaseJ.hpp"
-#include "Partie.hpp"
+//#include "Partie.hpp"
 #include "Joueur.hpp"
+
+
 class Plateau {
 private:
 	CaseJ cases[NBCASES][NBCASES];

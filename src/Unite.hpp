@@ -15,7 +15,7 @@ class Unite{
 	private :
 	int attaque, defense, vie;
 	Joueur joueur;
-	Case position;
+	CaseJ position;
 	bool AttaqueExecutee,DeplacementExecute;
 	public:
 	Unite(Case&, Joueur&);
