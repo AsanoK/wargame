@@ -11,7 +11,7 @@
 Case::Case(int posX,int posY)
 {
 	if ((posX<0) || (posY<0))
-			throw string("Position non valable.");
+			throw std::string("Position non valable.");
 	positionX=posX;
 	positionY=posY;
 	unite=nullptr;

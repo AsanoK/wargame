@@ -15,11 +15,11 @@
 class Plateau {
 private:
 	Case cases[NBCASES][NBCASES];
-	Partie partie;
+	Partie* partie;
 	void genererGrilleAleatoire();
 	void deployerUnitesInitiales();
 public:
-	Plateau(Partie p);
+	Plateau(Partie* p);
 	virtual ~Plateau();
 };
 
