@@ -4,11 +4,9 @@
  *  Created on: 28 avr. 2017
  *      Author: cdecultot
  */
-#include <iostream>
-#include <string>
+
 
 #include "CaseJ.hpp"
-
 CaseJ::CaseJ(int posX,int posY)
 {
 	if ((posX<0) || (posY<0))

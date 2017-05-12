@@ -7,9 +7,12 @@
 
 #ifndef FANTASSIN_HPP_
 #define FANTASSIN_HPP_
-#include "Unite.hpp"
+
+class Unite;
+class Case;
+
 class Fantassin : Unite{
-Fantassin(Case, Joueur);
+Fantassin(CaseJ, Joueur);
 };
 
 

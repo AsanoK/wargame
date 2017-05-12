@@ -7,8 +7,7 @@
 
 #include "Partie.hpp"
 
-#include "Fenetre.hpp"
-#include <string>
+
 
 Partie::Partie():m_tourDeJeu(0), m_fenetre(){
 	// cration du premier joueur
@@ -29,20 +28,20 @@ void Partie::lancerPartie(){
 	int fin = 0;
 	while(fin == 0){
 		getJoueur1().executerTour();
-		if (getJoueur1().getNbrUnites == 0){
+		if (getJoueur1().getNbrUnites() == 0){
 			fin = 1;
 			break;
 		}
-		if (getJoueur2().getNbrUnites == 0){
+		if (getJoueur2().getNbrUnites() == 0){
 			fin = 2;
 			break;
 		}
 		getJoueur2().executerTour();
-		if (getJoueur1().getNbrUnites == 0){
+		if (getJoueur1().getNbrUnites() == 0){
 			fin = 1;
 			break;
 		}
-		if (getJoueur2().getNbrUnites == 0){
+		if (getJoueur2().getNbrUnites() == 0){
 			fin = 2;
 			break;
 		}

@@ -10,9 +10,13 @@
 #define PLATEAU_HPP_
 
 #define NBCASES 50
+
+#include "ConstantesUnites.hpp"
 #include "CaseJ.hpp"
-#include "Partie.hpp"
-#include "Joueur.hpp"
+
+class Partie;
+class Joueur;
+
 class Plateau {
 private:
 	CaseJ cases[NBCASES][NBCASES];
