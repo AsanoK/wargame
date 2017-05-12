@@ -6,37 +6,38 @@
  */
 #include <iostream>
 #include <string>
-#include "Case.hpp"
 
-Case::Case(int posX,int posY)
+#include "CaseJ.hpp"
+
+CaseJ::CaseJ(int posX,int posY)
 {
 	if ((posX<0) || (posY<0))
-			throw string("Position non valable.");
+			throw std::string("Position non valable.");
 	positionX=posX;
 	positionY=posY;
-	unite=nullptr;
+	unite=NULL;
 }
 
-Case::~Case() {
+CaseJ::~CaseJ() {
 	// TODO Auto-generated destructor stub
 }
 
-int Case::getPosX()
+int CaseJ::getPositionX()
 {
 	return positionX;
 }
 
-int Case::getPosY()
+int CaseJ::getPositionY()
 {
 	return positionY;
 }
 
-Unite* Case::getUnite()
+Unite* CaseJ::getUnite()
 {
 	return unite;
 }
 
-void Case::setUnite(Unite* u)
+void CaseJ::setUnite(Unite* u)
 {
 	this->unite=u;
 }

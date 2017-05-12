@@ -43,8 +43,8 @@ void Joueur::terminerTour(){
 }
 
 void Joueur::attaquer(){
-	Case caseAttaquant = p_fenetre.demanderCaseAttaquant();
-	Case caseAttaquee = p_fenetre.demanderCaseAttaquee();
+	CaseJ caseAttaquant = p_fenetre.demanderCaseAttaquant();
+	CaseJ caseAttaquee = p_fenetre.demanderCaseAttaquee();
 	caseAttaquant.getUnite()->attaquer(caseAttaquee);
 	p_fenetre.afficherGrille();
 
@@ -52,8 +52,8 @@ void Joueur::attaquer(){
 }
 
 void Joueur::deplacer(){
-	Case caseDepart = p_fenetre.demanderCaseDepart();
-	Case caseArrivee = p_fenetre.demanderCaseArrivee();
+	CaseJ caseDepart = p_fenetre.demanderCaseDepart();
+	CaseJ caseArrivee = p_fenetre.demanderCaseArrivee();
 	caseDepart.getUnite()->deplacer(caseArrivee);
 	p_fenetre.afficherGrille();
 
