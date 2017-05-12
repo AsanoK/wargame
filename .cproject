@@ -69,10 +69,17 @@
 								<option id="gnu.c.compiler.option.debugging.level.1995581796" superClass="gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.202175515" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
+<<<<<<< HEAD
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.873732469" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
 								<option id="gnu.cpp.compiler.option.optimization.level.2024099518" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.debugging.level.1818377860" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.465809266" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+=======
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1176206334" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.optimization.level.1487706753" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.296538058" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1510083561" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+>>>>>>> branch 'master' of https://github.com/AsanoK/wargame.git
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1702410543" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.612310171" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
@@ -110,4 +117,12 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/wargame"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/wargame"/>
+		</configuration>
+	</storageModule>
 </cproject>
