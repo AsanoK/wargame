@@ -15,6 +15,7 @@ class CaseJ;
 class Fantassin : Unite{
 public:
 Fantassin(CaseJ, Joueur);
+virtual ~Fantassin();
 };
 
 

@@ -15,10 +15,12 @@
 #define DEFFANT 10
 //cavaliers
 #define VIECAV 15
-#define ATTCAV 20
+#define ATTCAV 15
 #define DEFCAV 5
-
-
+//artilerie
+#define VIEART 5
+#define ATTART 25
+#define DEFART 5
 
 
 #endif /* CONSTANTESUNITES_HPP_ */

@@ -32,7 +32,7 @@ bool Unite::isCaseAtteignable(CaseJ cible){
 	//le cavalier peut se déplacer de deux cases en vertical, ou d'une horizontale, ou les deux.
 	//xxx
 	//xxx
-	//xox
+	//xox <----le 'o' est la position d'origine du cavalier
 	//xxx
 	//xxx
 	//représentation graphique de sa zone de déplacement
@@ -50,8 +50,10 @@ bool Unite::isCaseAtteignable(CaseJ cible){
 	return res;
 }
 void Unite::regenerer(){
+	//on reset les booléen de déplacement et d'attaque
 	DeplacementExecute = false;
 	AttaqueExecutee = false;
+	//régen de vie? 1/4 du total ou de quoi revenir au maximum
 	int bvie = 0;
 	if(vie<VIECAV){
 		bvie = (int)VIECAV/4;

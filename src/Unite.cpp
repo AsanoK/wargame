@@ -26,7 +26,7 @@ bool Unite::attaquer(CaseJ& cible){
 	bool ret = false;
 	if((isCaseAttaquable(cible))and(AttaqueExecutee==false)){
 		//r�soudre attaque;
-		position = &cible;
+		//comment?
 	}
 	ret = true;
 	AttaqueExecutee = true;
