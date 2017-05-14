@@ -7,11 +7,13 @@
 
 #ifndef FANTASSIN_HPP_
 #define FANTASSIN_HPP_
-
+#include "ConstantesUnites.hpp"
+#include "Unite.hpp"
 class Unite;
-class Case;
+class CaseJ;
 
 class Fantassin : Unite{
+public:
 Fantassin(CaseJ, Joueur);
 };
 

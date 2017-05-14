@@ -11,23 +11,25 @@ bool Unite::deplacer(CaseJ& cible){
 	bool ret = false;
  if((isCaseAtteignable(cible))and(DeplacementExecute==false)){
 	 //modifier contenu de la case d'origine
-	 position->setUnite(NULL);
+	 position->setUnite(nullptr);
 	 //modifier position
 
 	 position = &cible;
 	 //modifier contenu de la case d'arriv�e
-	 position->setUnite(this);
+	 position->setUnite(nullptr);
  }
  ret = true;
+ DeplacementExecute = true;
  return ret;
 }
 bool Unite::attaquer(CaseJ& cible){
 	bool ret = false;
 	if((isCaseAttaquable(cible))and(AttaqueExecutee==false)){
 		//r�soudre attaque;
-		position = cible;
+		position = &cible;
 	}
 	ret = true;
+	AttaqueExecutee = true;
 	return ret;
 }
 
@@ -53,9 +55,9 @@ int Unite::getAttaque(){
 		return DeplacementExecute;
 	}
 	void Unite::setPosition(CaseJ& c){
-		position->setUnite(NULL);
+		position->setUnite(nullptr);
 		position = c;
-		c->setUnite(this);
+		c.setUnite(this);
 
 	}
 	void Unite::setVie( const int v){
