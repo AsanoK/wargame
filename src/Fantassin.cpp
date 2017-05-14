@@ -19,7 +19,7 @@ bool Unite::isCaseAtteignable(CaseJ cible ) {
 	//pour le fantassin, on d�place uniquement sur les places adjacente : 4 Positionsibilit�s
 
 	bool ret = false;
-	if(((cible.getPositionX()==position.getPositionX())and(cible.getPositionY()==position.getPositionY()+1))or((cible.getPositionX()==position.getPositionX())and(cible.getPositionY()==Position.getPositionY()-1))or((cible.getPositionX()==position.getPositionX()+1)and(cible.getPositionY()==position.getPositionY()))or((cible.getPositionX()==position.getPositionX()-1)and(cible.getPositionY()==position.getPositionY()))){
+	if(((cible.getPositionX()==position->getPositionX())and(cible->getPositionY()==position.getPositionY()+1))or((cible.getPositionX()==position.getPositionX())and(cible.getPositionY()==Position.getPositionY()-1))or((cible.getPositionX()==position.getPositionX()+1)and(cible.getPositionY()==position.getPositionY()))or((cible.getPositionX()==position.getPositionX()-1)and(cible.getPositionY()==position.getPositionY()))){
 		ret=true;
 	}
 	return ret;
