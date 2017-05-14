@@ -4,7 +4,7 @@
  *  Created on: 28 avr. 2017
  *      Author: cdecultot
  */
-#include <iostream>
+
 #include <string>
 
 #include "CaseJ.hpp"

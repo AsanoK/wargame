@@ -7,10 +7,11 @@
 
 #ifndef UNITE_HPP_
 #define UNITE_HPP_
-#include "CaseJ.hpp"
+
 #include "ConstantesUnites.hpp"
 
-#include "Joueur.hpp"
+class CaseJ;
+class Joueur;
 
 class Unite{
 	private :
@@ -36,10 +37,7 @@ class Unite{
 	bool virtual isCaseAttaquable(const CaseJ) = 0;
 	bool deplacer(CaseJ&);
 	bool attaquer(CaseJ&);
-	bool virtual isCaseAtteignable(const CaseJ ) = 0;
-	bool virtual isCaseAttaquable(const CaseJ) = 0;
-	bool deplacer(CaseJ&);
-	bool attaquer(CaseJ&);
+
 	void virtual regenerer() = 0;
 
 };

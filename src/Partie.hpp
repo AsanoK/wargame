@@ -9,6 +9,8 @@
 #define PARTIE_HPP_
 
 #include <vector>
+#include <iostream>
+
 #include "Plateau.hpp"
 #include "Joueur.hpp"
 #include "Fenetre.hpp"
@@ -29,6 +31,7 @@ private:
 
 public:
 	Plateau &getPlateau() const;
+	Fenetre &getFenetre() const;
 	Joueur &getJoueur1() const;
 	Joueur &getJoueur2() const;
 	int getTourDeJeu() const;
