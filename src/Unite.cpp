@@ -9,7 +9,7 @@
 
 bool Unite::deplacer(CaseJ& cible){
 	bool ret = false;
- if((isCaseAtteignable(cible))and(DeplacementExecute==false)){
+ if((isCaseAtteignable(cible))and(DeplacementExecute==false)and(cible.getUnite()==nullptr)){
 	 //modifier contenu de la case d'origine
 	 position->setUnite(nullptr);
 	 //modifier position
@@ -24,7 +24,7 @@ bool Unite::deplacer(CaseJ& cible){
 }
 bool Unite::attaquer(CaseJ& cible){
 	bool ret = false;
-	if((isCaseAttaquable(cible))and(AttaqueExecutee==false)){
+	if((isCaseAttaquable(cible))and(AttaqueExecutee==false)and(cible.getUnite()!=nullptr)and(cible.getUnite()->getJoueur()!=joueur)){
 		//r�soudre attaque;
 		//comment?
 	}

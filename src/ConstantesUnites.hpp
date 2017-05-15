@@ -10,12 +10,12 @@
 //globales
 #define NB_TROUPES_DEPART 10
 //fantassins
-#define VIEFANT 10
+#define VIEFANT 20
 #define ATTFANT 10
-#define DEFFANT 10
+#define DEFFANT 15
 //cavaliers
 #define VIECAV 15
-#define ATTCAV 15
+#define ATTCAV 20
 #define DEFCAV 5
 //artilerie
 #define VIEART 5
