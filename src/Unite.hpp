@@ -39,6 +39,7 @@ class Unite{
 	bool attaquer(CaseJ&);
 	virtual ~Unite();
 	void virtual regenerer() = 0;
+	char virtual toChar() = 0;
 
 };
 

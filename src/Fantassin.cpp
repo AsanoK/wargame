@@ -44,4 +44,6 @@ void Unite::regenerer(){
 	}
 	vie=vie+bvie;
 }
-
+char Unite::toChar(){
+	return 'CHARFANT';
+}

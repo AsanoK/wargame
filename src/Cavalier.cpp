@@ -66,4 +66,6 @@ void Unite::regenerer(){
 Cavalier::~Cavalier() {
 	// TODO Auto-generated destructor stub
 }
-
+char Unite::toChar(){
+	return 'CHARCAV';
+}
