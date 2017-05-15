@@ -24,7 +24,7 @@ bool Unite::deplacer(CaseJ& cible){
 }
 bool Unite::attaquer(CaseJ& cible){
 	bool ret = false;
-	if((isCaseAttaquable(cible))and(AttaqueExecutee==false)and(cible.getUnite()!=nullptr)and(cible.getUnite()->getJoueur()!=joueur)){
+	if((isCaseAttaquable(cible))and(isAttaqueExecutee()==false)and(cible.getUnite()!=nullptr)and(cible.getUnite()->getJoueur()!=getJoueur())){
 		//r�soudre attaque;
 		//comment?
 	}
