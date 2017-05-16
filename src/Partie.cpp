@@ -21,6 +21,7 @@ Partie::Partie():m_tourDeJeu(0), m_fenetre(){
 	Joueur joueur2(*this, pseudo2, couleur2);
 
 	m_plateau(this);
+	m_fenetre.setPlateau(m_plateau);
 }
 
 
@@ -47,9 +48,12 @@ void Partie::lancerPartie(){
 		}
 
 	}
-
-	m_fenetre.afficherVainqueur(fin);
-
+	if (fin==1){
+		m_fenetre.afficherVainqueur(getJoueur1().getPseudo());
+	}
+	else{
+		m_fenetre.afficherVainqueur(getJoueur2().getPseudo());
+	}
 }
 
 

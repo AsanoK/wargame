@@ -29,11 +29,11 @@ void Joueur::regenererTroupe(){
 
 void Joueur::executerTour(){
 	std::string action = p_fenetre->demanderAction();
-	while ( action != "arret"){
-		if (action == "attaque"){
+	while ( action != "q"){
+		if (action == "a"){
 			attaquer();
 		}
-		else if(action == "deplacer"){
+		else if(action == "d"){
 			deplacer();
 		}
 	}
@@ -47,7 +47,7 @@ void Joueur::terminerTour(){
 void Joueur::attaquer(){
 	CaseJ caseAttaquant = p_fenetre->demanderCaseAttaquant();
 	CaseJ caseAttaquee = p_fenetre->demanderCaseAttaquee();
-	caseAttaquant.getUnite()->attaquer(caseAttaquee);
+	caseAttaquant.getUnite().attaquer(caseAttaquee);
 	p_fenetre->afficherGrille();
 
 
@@ -56,7 +56,7 @@ void Joueur::attaquer(){
 void Joueur::deplacer(){
 	CaseJ caseDepart = p_fenetre->demanderCaseDepart();
 	CaseJ caseArrivee = p_fenetre->demanderCaseArrivee();
-	caseDepart.getUnite()->deplacer(caseArrivee);
+	caseDepart.getUnite().deplacer(caseArrivee);
 	p_fenetre->afficherGrille();
 
 }

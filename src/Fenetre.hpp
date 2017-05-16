@@ -13,18 +13,24 @@ class Case;
 class Joueur;
 
 class Fenetre {
+
+private:
+	Plateau *p_plateau;
+
 public:
 	Fenetre();
 	virtual ~Fenetre();
 
 	void afficherGrille();
-	void afficherVainqueur(int vainqueur);
+	void afficherVainqueur(std::string &vainqueur);
 	std::string demanderAction();
-	std::string demanderPseudo(int Joueur);
+	std::string demanderPseudo(int joueur);
 	Case demanderCaseAttaquant();
 	Case demanderCaseAttaquee();
 	Case demanderCaseDepart();
 	Case demanderCaseArrivee();
+
+	void setPlateau(const Plateau &unPlateau);
 };
 
 #endif /* SRC_FENETRE_HPP_ */

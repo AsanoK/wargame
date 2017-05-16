@@ -33,6 +33,12 @@ void Plateau::deployerUnitesInitiales()
 		cases[NBCASES-1][i].setUnite(p2.getUnite(i));
 }
 
+CaseJ &Plateau::getCase(int i, int j) const{
+	return CaseJ[i][j];
+}
+
+
+
 Plateau::~Plateau() {
 	// TODO Auto-generated destructor stub
 }
