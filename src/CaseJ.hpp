@@ -20,8 +20,8 @@ public:
 	virtual ~CaseJ();
 	int getPositionX();
 	int getPositionY();
-	Unite* getUnite();
-	void setUnite(Unite* u);
+	Unite &getUnite();
+	void setUnite(Unite &u);
 };
 
 #endif /* CASE_HPP_ */

@@ -32,14 +32,14 @@ int CaseJ::getPositionY()
 	return positionY;
 }
 
-Unite* CaseJ::getUnite()
+Unite &CaseJ::getUnite()
 {
 	return unite;
 }
 
-void CaseJ::setUnite(Unite* u)
+void CaseJ::setUnite(Unite &u)
 {
-	this->unite=u;
+	unite=&u;
 }
 
 
