@@ -18,10 +18,10 @@ private:
 public:
 	CaseJ(int posX, int posY);
 	virtual ~CaseJ();
-	int getPositionX();
-	int getPositionY();
-	Unite &getUnite();
-	void setUnite(Unite &u);
+	int getPositionX()const;
+	int getPositionY()const;
+	Unite* getUnite();
+	void setUnite(Unite* u);
 };
 
 #endif /* CASE_HPP_ */
