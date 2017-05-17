@@ -14,7 +14,7 @@ class CaseJ;
 class Joueur;
 
 class Unite{
-	private :
+	protected :
 	int attaque, defense, vie;
 	Joueur* joueur;
 	CaseJ* position;
