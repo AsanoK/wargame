@@ -10,6 +10,7 @@
 
 #include <string>
 class Case;
+class Plateau;
 class Joueur;
 
 class Fenetre {

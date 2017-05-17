@@ -9,7 +9,7 @@
 #ifndef PLATEAU_HPP_
 #define PLATEAU_HPP_
 
-#define NBCASES 50
+
 
 #include "ConstantesUnites.hpp"
 #include "CaseJ.hpp"
@@ -18,6 +18,8 @@ class Partie;
 class Joueur;
 
 class Plateau {
+public:
+	static const int NBCASES = 20;
 private:
 	CaseJ cases[NBCASES][NBCASES];
 	Partie* partie;
