@@ -29,7 +29,7 @@ public:
 	Plateau(Partie* p);
 	virtual ~Plateau();
 
-	CaseJ &getCase(int i, int j) const;
+	CaseJ getCase(int i, int j) const;
 };
 
 #endif /* PLATEAU_HPP_ */

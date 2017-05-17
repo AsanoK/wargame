@@ -22,24 +22,24 @@ CaseJ::~CaseJ() {
 	// TODO Auto-generated destructor stub
 }
 
-int CaseJ::getPositionX()
+int CaseJ::getPositionX()const
 {
 	return positionX;
 }
 
-int CaseJ::getPositionY()
+int CaseJ::getPositionY()const
 {
 	return positionY;
 }
 
-Unite &CaseJ::getUnite()
+Unite* CaseJ::getUnite()
 {
 	return unite;
 }
 
-void CaseJ::setUnite(Unite &u)
+void CaseJ::setUnite(Unite* u)
 {
-	unite=&u;
+	unite=u;
 }
 
 
