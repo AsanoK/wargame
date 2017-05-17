@@ -4,7 +4,7 @@
  *  Created on: 5 mai 2017
  *      Author: gdamay
  */
-/*
+
 #define BOOST_TEST_MODULE MyTest
 #include <boost/test/unit_test.hpp>
 #include "Joueur.cpp"
@@ -12,34 +12,36 @@
 
 BOOST_AUTO_TEST_CASE(test_CaseJ)
 {
-	CaseJ pos1 = new CaseJ(3, 2);
+	CaseJ pos1(3, 2);
 	BOOST_CHECK(pos1.getPositionX() == 3);
 	BOOST_CHECK(pos1.getPositionY() == 2);
 	try{
-		CaseJ pos2 = new CaseJ(-3, 2);
-		BOOST_CHECK(false);
+		CaseJ pos2(-3, 2);
+		BOOST_CHECK_MESSAGE(false, "La création d'une case de position négative doit lever une exception");
 	}catch(std::exception & e){
 		BOOST_CHECK(true);
 	}
 	try{
-		CaseJ pos2 = new CaseJ(3, -2);
-		BOOST_CHECK(false);
+		CaseJ pos2(3, -2);
+		BOOST_CHECK_MESSAGE(false, "La création d'une case de position négative doit lever une exception");
 	}catch(std::exception & e){
 		BOOST_CHECK(true);
 	}
 	try{
-		CaseJ pos2 = new CaseJ(-3, -2);
-		BOOST_CHECK(false);
+		CaseJ pos2(-3, -2);
+		BOOST_CHECK_MESSAGE(false, "La création d'une case de position négative doit lever une exception");
 	}catch(std::exception & e){
 		BOOST_CHECK(true);
 	}
 	BOOST_CHECK(pos1.getUnite() == NULL);
 
-	Joueur joueur = new Joueur;
-	Fantassin fant1 = new Fantassin(pos1, joueur);
-	pos1.setUnite(&fant1);
+	Joueur joueur();
+	Fantassin fant1(pos1, joueur);
+	pos1.setUnite(fant1);
 	BOOST_CHECK(pos1.getUnite() == &fant1);
-	pos1.setUnite(NULL);
+
+	Unite* unitNull = NULL;
+	pos1.setUnite(*unitNull);
 
 	BOOST_CHECK(pos1.getUnite() == NULL);
 }
@@ -50,7 +52,7 @@ BOOST_AUTO_TEST_CASE(test_Joueur){
 
 BOOST_AUTO_TEST_CASE(test_fantassin)
 {
-	Fantassin fant1 = new Fantassin();
+	//Fantassin fant1 = new Fantassin();
 
 }
-*/
+
