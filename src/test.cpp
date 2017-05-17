@@ -10,6 +10,7 @@
 #include "Joueur.cpp"
 #include "Fantassin.hpp"
 
+BOOST_AUTO_TEST_SUITE(Tous_les_tests)
 BOOST_AUTO_TEST_CASE(test_CaseJ)
 {
 	CaseJ pos1(3, 2);
@@ -37,11 +38,10 @@ BOOST_AUTO_TEST_CASE(test_CaseJ)
 
 	Joueur joueur();
 	Fantassin fant1(pos1, joueur);
-	pos1.setUnite(fant1);
+	pos1.setUnite(&fant1);
 	BOOST_CHECK(pos1.getUnite() == &fant1);
 
-	Unite* unitNull = NULL;
-	pos1.setUnite(*unitNull);
+	pos1.setUnite(NULL);
 
 	BOOST_CHECK(pos1.getUnite() == NULL);
 }
@@ -52,7 +52,9 @@ BOOST_AUTO_TEST_CASE(test_Joueur){
 
 BOOST_AUTO_TEST_CASE(test_fantassin)
 {
-	//Fantassin fant1 = new Fantassin();
+	Fantassin fant1();
 
 }
+
+BOOST_AUTO_TEST_SUITE_END();
 
