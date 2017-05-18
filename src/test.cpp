@@ -39,7 +39,7 @@ BOOST_AUTO_TEST_CASE(test_CaseJ)
 	BOOST_CHECK(pos1.getUnite() == NULL);
 
 	Joueur joueur();
-	Fantassin fant1(pos1, joueur);
+	Fantassin fant1(pos1, *joueur);
 	pos1.setUnite(&fant1);
 	BOOST_CHECK(pos1.getUnite() == &fant1);
 
