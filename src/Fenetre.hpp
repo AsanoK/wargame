@@ -11,6 +11,7 @@
 #include <string>
 #include <iostream>
 #include "CaseJ.hpp"
+#include "Plateau.hpp"
 
 class CaseJ;
 class Plateau;
@@ -34,7 +35,7 @@ public:
 	CaseJ &demanderCaseDepart();
 	CaseJ &demanderCaseArrivee();
 
-	void setPlateau(const Plateau &unPlateau);
+	void setPlateau(Plateau &unPlateau);
 };
 
 #endif /* SRC_FENETRE_HPP_ */

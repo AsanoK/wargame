@@ -106,7 +106,7 @@ CaseJ &Fenetre::demanderCaseArrivee(){
     return p_plateau->getCase((int)s[0] - 48, (int)s[1]);
 }
 
-void Fenetre::setPlateau(const Plateau &unPlateau){
+void Fenetre::setPlateau(Plateau &unPlateau){
 	p_plateau = &unPlateau;
 }
 
