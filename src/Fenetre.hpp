@@ -14,6 +14,8 @@
 #include "Unite.hpp"
 #include "Plateau.hpp"
 
+class Plateau;
+
 class Fenetre {
 
 private:
