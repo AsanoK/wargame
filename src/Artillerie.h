@@ -11,7 +11,7 @@
 /**
  * classe artillerie, représentant une unité d'attaque à distance, hérite d'artillerie
  */
-class Artillerie : Unite {
+class Artillerie : public Unite {
 public:
 	Artillerie(CaseJ&, Joueur&);
 	virtual ~Artillerie();
