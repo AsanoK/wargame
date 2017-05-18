@@ -9,7 +9,7 @@
 #define SRC_FENETRE_HPP_
 
 #include <string>
-class Case;
+class CaseJ;
 class Plateau;
 class Joueur;
 
@@ -26,10 +26,10 @@ public:
 	void afficherVainqueur(std::string &vainqueur);
 	std::string demanderAction();
 	std::string demanderPseudo(int joueur);
-	Case demanderCaseAttaquant();
-	Case demanderCaseAttaquee();
-	Case demanderCaseDepart();
-	Case demanderCaseArrivee();
+	CaseJ &demanderCaseAttaquant();
+	CaseJ &demanderCaseAttaquee();
+	CaseJ &demanderCaseDepart();
+	CaseJ &demanderCaseArrivee();
 
 	void setPlateau(const Plateau &unPlateau);
 };
