@@ -11,8 +11,8 @@
 #include <string>
 #include <iostream>
 #include "CaseJ.hpp"
-#include "Plateau.hpp"
 #include "Unite.hpp"
+#include "Plateau.hpp"
 
 class Fenetre {
 

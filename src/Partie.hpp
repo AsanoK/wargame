@@ -11,16 +11,17 @@
 #include <vector>
 #include <iostream>
 
-#include "Plateau.hpp"
 #include "Joueur.hpp"
-#include "Fenetre.hpp"
+
+class Plateau;
+class Fenetre;
 
 class Partie {
 
 private:
 	std::vector<Joueur> m_joueurs;
-	Fenetre m_fenetre;
-	Plateau m_plateau;
+	Fenetre *m_fenetre;
+	Plateau *m_plateau;
 	int m_tourDeJeu;
 
 public:
@@ -30,12 +31,11 @@ private:
 	void lancerPartie();
 
 public:
-	Plateau &getPlateau() const;
-	Fenetre &getFenetre() const;
-	Joueur &getJoueur1() const;
-	Joueur &getJoueur2() const;
-	int getTourDeJeu() const;
+	Plateau &getPlateau();
+	Fenetre &getFenetre();
+	Joueur &getJoueur1();
+	Joueur &getJoueur2();
+	int getTourDeJeu();
 };
-
 
 #endif /* PARTIE_HPP_ */

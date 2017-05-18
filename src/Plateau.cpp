@@ -27,14 +27,14 @@ void Plateau::deployerUnitesInitiales()
 	Joueur p2 = partie->getJoueur2();
 
 	for (int i=NBCASES/2-NB_TROUPES_DEPART/2;i<NB_TROUPES_DEPART;i++)
-		cases[0][i].setUnite(&p1.getUnite(i));
+		cases[0][i].setUnite(p1.getUnite(i));
 
 	for (int i=NBCASES/2-NB_TROUPES_DEPART/2;i<NB_TROUPES_DEPART;i++)
-		cases[NBCASES-1][i].setUnite(&p2.getUnite(i));
+		cases[NBCASES-1][i].setUnite(p2.getUnite(i));
 }
 
-CaseJ& Plateau::getCase(int i, int j) const{
-	return &CaseJ[i][j];
+CaseJ& Plateau::getCase(int i, int j){
+	return CaseJ[i][j];
 }
 
 
