@@ -85,5 +85,5 @@ Cavalier::~Cavalier() {
 	// TODO Auto-generated destructor stub
 }
 char Cavalier::toChar(){
-	return 'CHARCAV';
+	return CHARCAV;
 }

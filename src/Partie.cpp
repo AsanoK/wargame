@@ -71,3 +71,4 @@ Joueur &Partie::getJoueur2(){
 int Partie::getTourDeJeu(){
 	return m_tourDeJeu;
 }
+
