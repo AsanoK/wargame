@@ -7,8 +7,8 @@
 #include "Fantassin.hpp"
 
 Fantassin::Fantassin(CaseJ& c, Joueur& prop){
-	position = c;
-	joueur = prop;
+	position = &c;
+	joueur = &prop;
 	vie = VIEFANT;
 	attaque = ATTFANT;
 	defense = DEFFANT;
