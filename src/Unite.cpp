@@ -43,14 +43,14 @@ bool Unite::deplacer(CaseJ& cible){
 bool Unite::attaquer(CaseJ& cible){
 	bool ret = false;
 	if((isCaseAttaquable(cible))and(isAttaqueExecutee()==false)and(cible.getUnite()!=nullptr)and(cible.getUnite()->getJoueur()!=getJoueur())){
-		//rï¿½soudre attaque;
-		//comment?
+		attaquer(cible.getUnite());
 		ret = true;
 	}
 
 	AttaqueExecutee = true;
 	return ret;
 }
+
 
 int Unite::getAttaque(){
 	return attaque;
@@ -91,4 +91,25 @@ int Unite::getAttaque(){
 	void Unite::setAttaqueExecutee( const bool b){
 		AttaqueExecutee = b;
 	}
-
+	/**
+	 * méthode de résolution des attaques (on suppose que celle-ci est possible)
+	 * @param : l'unité contre laquelle on est engagé
+	 *
+	 */
+void Unite::attaquer(Unite* cible){
+	int modvie = attaque-cible->getdefense();
+	if(modvie>0){
+		int resteVieCible = cible->getVie()-modvie;
+		if(resteVieCible>cible->getVie()){
+			//on ne fait rien
+		}else if(resteVieCible>0){
+			cible->setVie(resteVieCible);
+		}else {
+			~cible();
+		}
+	}
+}
+Unite::~Unite(){
+	position->setUnite(nullptr);
+	//joueur->supprimerUnite(unePosition);//TODO : coder une méthode permettant de récupérer le numéro d'une unité dans la liste
+}
