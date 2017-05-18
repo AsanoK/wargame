@@ -74,33 +74,33 @@ CaseJ &Fenetre::demanderCaseAttaquant(){
 }
 
 CaseJ &Fenetre::demanderCaseAttaquee(){
-	std::cout << "entrez la case à attaquer (7S):" << std::endl;
+	std::cout << "entrez la case ï¿½ attaquer (7S):" << std::endl;
     std::string s;
     std::cin >> s;
     while ( (int)s[0] <= 48 || (int)s[0] >=55 || (int)s[1] <= 65 || (int)s[1] >= 83){
-    	std::cout << "entrez la case à attaquer (7S):" << std::endl;
+    	std::cout << "entrez la case ï¿½ attaquer (7S):" << std::endl;
         std::cin >> s;
     }
     return p_plateau->getCase((int)s[0] - 48, (int)s[1]);
 }
 
 CaseJ &Fenetre::demanderCaseDepart(){
-	std::cout << "entrez la position de l'unité à déplacer (7S):" << std::endl;
+	std::cout << "entrez la position de l'unitï¿½ ï¿½ dï¿½placer (7S):" << std::endl;
     std::string s;
     std::cin >> s;
     while ( (int)s[0] <= 48 || (int)s[0] >=55 || (int)s[1] <= 65 || (int)s[1] >= 83){
-    	std::cout << "entrez la position de l'unité à déplacer (7S):" << std::endl;
+    	std::cout << "entrez la position de l'unitï¿½ ï¿½ dï¿½placer (7S):" << std::endl;
         std::cin >> s;
     }
     return p_plateau->getCase((int)s[0] - 48, (int)s[1]);
 }
 
 CaseJ &Fenetre::demanderCaseArrivee(){
-	std::cout << "entrez la position d'arrivée (7S):" << std::endl;
+	std::cout << "entrez la position d'arrivï¿½e (7S):" << std::endl;
     std::string s;
     std::cin >> s;
     while ( (int)s[0] <= 48 || (int)s[0] >=55 || (int)s[1] <= 65 || (int)s[1] >= 83){
-    	std::cout << "entrez la position d'arrivée (7S):" << std::endl;
+    	std::cout << "entrez la position d'arrivï¿½e (7S):" << std::endl;
         std::cin >> s;
     }
     return p_plateau->getCase((int)s[0] - 48, (int)s[1]);

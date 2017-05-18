@@ -9,6 +9,8 @@
 #define SRC_FENETRE_HPP_
 
 #include <string>
+#include <iostream>
+
 class CaseJ;
 class Plateau;
 class Joueur;
