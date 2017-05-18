@@ -6,7 +6,16 @@
  */
 #include "Unite.hpp"
 
-
+Unite::Unite(CaseJ& c, Joueur& prop) {
+	// TODO Auto-generated constructor stub
+	position = &c;
+		joueur = &prop;
+		vie = VIECAV;
+		attaque = ATTCAV;
+		defense = DEFCAV;
+		DeplacementExecute = false;
+		AttaqueExecutee = false;
+}
 bool Unite::deplacer(CaseJ& cible){
 	bool ret = false;
  if((isCaseAtteignable(cible))and(DeplacementExecute==false)and(cible.getUnite()==nullptr)){

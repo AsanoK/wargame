@@ -20,6 +20,7 @@ class Unite{
 	CaseJ* position;
 	bool AttaqueExecutee,DeplacementExecute;
 	public:
+	Unite();
 	Unite(CaseJ&, Joueur&);
 	int getAttaque();
 	int getdefense();
