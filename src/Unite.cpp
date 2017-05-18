@@ -5,39 +5,49 @@
  *      Author: Hugin
  */
 #include "Unite.hpp"
-
+/**
+ * constructeur de base de la classe unité
+ * @param c : case sur laquelle on crée l'unité
+ * @pram prop : joueur propriétaire de l'unité
+ */
 Unite::Unite(CaseJ& c, Joueur& prop) {
 	// TODO Auto-generated constructor stub
 	position = &c;
 		joueur = &prop;
-		vie = VIECAV;
-		attaque = ATTCAV;
-		defense = DEFCAV;
+		vie = 1;
+		attaque = 1;
+		defense = 1;
 		DeplacementExecute = false;
 		AttaqueExecutee = false;
 }
+/**
+ * méthode effectuant le déplacement de l'unité, y compris les changements de contenu des cases
+ * @param cible : la case visée par le déplacement
+ * @return : vrai si le déplacement a été résolue, faux sinon.
+ */
 bool Unite::deplacer(CaseJ& cible){
 	bool ret = false;
  if((isCaseAtteignable(cible))and(DeplacementExecute==false)and(cible.getUnite()==nullptr)){
-	 //modifier contenu de la case d'origine
-	 position->setUnite(nullptr);
-	 //modifier position
-
-	 position = &cible;
-	 //modifier contenu de la case d'arrivï¿½e
-	 position->setUnite(nullptr);
+	 this->setPosition(cible);
+	 ret = true;
  }
- ret = true;
+
  DeplacementExecute = true;
  return ret;
 }
+/**
+ * méthode permettant de gérer l'attaque d'une case
+ * @param cible : case visée par l'attaque
+ * @return : vrai si l'attaque a été résolue, faux sinon
+ */
 bool Unite::attaquer(CaseJ& cible){
 	bool ret = false;
 	if((isCaseAttaquable(cible))and(isAttaqueExecutee()==false)and(cible.getUnite()!=nullptr)and(cible.getUnite()->getJoueur()!=getJoueur())){
 		//rï¿½soudre attaque;
 		//comment?
+		ret = true;
 	}
-	ret = true;
+
 	AttaqueExecutee = true;
 	return ret;
 }
@@ -63,6 +73,9 @@ int Unite::getAttaque(){
 	bool Unite::isdeplacementExecute(){
 		return DeplacementExecute;
 	}
+	/**
+	 * méthode pour changer la position
+	 */
 	void Unite::setPosition(CaseJ& c){
 		position->setUnite(nullptr);
 		position = c;

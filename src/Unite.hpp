@@ -12,7 +12,9 @@
 #include "CaseJ.hpp"
 class CaseJ;
 class Joueur;
-
+/**
+ * classe mère des différents types d'unité
+ */
 class Unite{
 	protected :
 	int attaque, defense, vie;
