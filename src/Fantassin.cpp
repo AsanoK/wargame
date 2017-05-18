@@ -62,5 +62,5 @@ void Fantassin::regenerer(){
 	vie=vie+bvie;
 }
 char Fantassin::toChar(){
-	return 'CHARFANT';
+	return CHARFANT;
 }
