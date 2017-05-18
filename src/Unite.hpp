@@ -33,8 +33,8 @@ class Unite{
 	void setDeplacementExecute(const bool);
 	void setAttaqueExecutee(const bool);
 
-	bool  virtual isCaseAtteignable(const CaseJ ) = 0;
-	bool virtual isCaseAttaquable(const CaseJ) = 0;
+	bool   isCaseAtteignable(const CaseJ&) = 0;
+	bool  isCaseAttaquable(const CaseJ&) = 0;
 	bool deplacer(CaseJ&);
 	bool attaquer(CaseJ&);
 	virtual ~Unite();

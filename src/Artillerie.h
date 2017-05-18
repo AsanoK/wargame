@@ -11,8 +11,12 @@
 
 class Artillerie : Unite {
 public:
-	Artillerie(CaseJ, Joueur);
+	Artillerie(CaseJ&, Joueur&);
 	virtual ~Artillerie();
+	bool isCaseAtteignable(const CaseJ& );
+	bool isCaseAttaquable(const CaseJ&);
+	void regenerer();
+	char toChar();
 };
 
 #endif /* SRC_ARTILLERIE_H_ */

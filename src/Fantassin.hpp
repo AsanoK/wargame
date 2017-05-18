@@ -14,11 +14,11 @@ class CaseJ;
 
 class Fantassin : Unite{
 public:
-Fantassin(CaseJ, Joueur);
-bool isCaseAtteignable(const CaseJ );//TODO Antoine your job (Et oui, c'est à cause de ça que mes tests buguaient, c'était pas une erreur de ma part)
-bool isCaseAttaquable(const CaseJ);//TODO Antoine your job (Et oui, c'est à cause de ça que mes tests buguaient, c'était pas une erreur de ma part)
-void regenerer();//TODO Antoine your job (Et oui, c'est à cause de ça que mes tests buguaient, c'était pas une erreur de ma part)
-char toChar();//TODO Antoine your job (Et oui, c'est à cause de ça que mes tests buguaient, c'était pas une erreur de ma part)
+Fantassin(CaseJ&, Joueur&);
+bool isCaseAtteignable(const CaseJ& );
+bool isCaseAttaquable(const CaseJ&);
+void regenerer();
+char toChar();
 virtual ~Fantassin();
 };
 

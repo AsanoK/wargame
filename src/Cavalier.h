@@ -11,8 +11,12 @@
 #include "ConstantesUnites.hpp"
 class Cavalier : Unite {
 public:
-	Cavalier(CaseJ, Joueur);
+	Cavalier(CaseJ&, Joueur&);
 	virtual ~Cavalier();
+	bool isCaseAtteignable(const CaseJ& );
+	bool isCaseAttaquable(const CaseJ&);
+	void regenerer();
+	char toChar();
 
 };
 

@@ -7,7 +7,7 @@
 
 #include "Cavalier.h"
 
-Cavalier::Cavalier(CaseJ c, Joueur prop) {
+Cavalier::Cavalier(CaseJ& c, Joueur& prop) {
 	// TODO Auto-generated constructor stub
 	position = &c;
 		joueur = &prop;
@@ -17,7 +17,7 @@ Cavalier::Cavalier(CaseJ c, Joueur prop) {
 		DeplacementExecute = false;
 		AttaqueExecutee = false;
 }
-bool Unite::isCaseAttaquable(CaseJ cible){
+bool Unite::isCaseAttaquable(const CaseJ& cible){
 	//le cavalier peut attaquer devant lui et derrière lui
 	bool res = false;
 	if((cible.getPositionY()==position->getPositionY()+1 or cible.getPositionY()==position->getPositionY()-1)and (cible.getPositionY()==position->getPositionY())){
@@ -28,7 +28,7 @@ bool Unite::isCaseAttaquable(CaseJ cible){
 	}
 	return res;
 }
-bool Unite::isCaseAtteignable(CaseJ cible){
+bool Unite::isCaseAtteignable( const CaseJ& cible){
 	//le cavalier peut se déplacer de deux cases en vertical, ou d'une horizontale, ou les deux.
 	//xxx
 	//xxx
