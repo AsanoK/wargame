@@ -18,6 +18,10 @@ CaseJ::CaseJ(int posX,int posY)
 	unite=NULL;
 }
 
+CaseJ::CaseJ(){
+
+}
+
 CaseJ::~CaseJ() {
 	// TODO Auto-generated destructor stub
 }
