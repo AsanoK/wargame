@@ -9,7 +9,7 @@
 #define UNITE_HPP_
 
 #include "ConstantesUnites.hpp"
-
+#include "CaseJ.hpp"
 class CaseJ;
 class Joueur;
 
@@ -33,8 +33,8 @@ class Unite{
 	void setDeplacementExecute(const bool);
 	void setAttaqueExecutee(const bool);
 
-	bool isCaseAtteignable(const CaseJ&) = 0;
-	bool isCaseAttaquable(const CaseJ&) = 0;
+	bool virtual  isCaseAtteignable(const CaseJ&) = 0;
+	bool virtual isCaseAttaquable(const CaseJ&) = 0;
 	bool deplacer(CaseJ&);
 	bool attaquer(CaseJ&);
 	virtual ~Unite();
