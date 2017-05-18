@@ -105,7 +105,7 @@ void Unite::attaquer(Unite* cible){
 		}else if(resteVieCible>0){
 			cible->setVie(resteVieCible);
 		}else {
-			~cible();
+			delete cible;
 		}
 	}
 }
