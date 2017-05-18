@@ -23,6 +23,6 @@
 #define VIEART 5
 #define ATTART 25
 #define DEFART 5
-#define CHARART
+#define CHARART A
 
 #endif /* CONSTANTESUNITES_HPP_ */
