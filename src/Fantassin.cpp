@@ -7,10 +7,10 @@
 #include "Fantassin.hpp"
 /**
  * Constructeur de l'infanterie
- * @param c : case sur laquelle on crée l'unité
- * @param prop : propritaire de l'unité
+ * @param c : case sur laquelle on crï¿½e l'unitï¿½
+ * @param prop : propritaire de l'unitï¿½
  */
-Fantassin::Fantassin(CaseJ& c, Joueur& prop){
+Fantassin::Fantassin(CaseJ& c, Joueur& prop): Unite(c,prop) {
 	position = &c;
 	joueur = &prop;
 	vie = VIEFANT;
@@ -20,9 +20,9 @@ Fantassin::Fantassin(CaseJ& c, Joueur& prop){
 	AttaqueExecutee = false;
 }
 /**
- * méthode déterminant si les positions de la case d'origine et de celle d'arrivée permettent le déplacement
- * @param cible : la case vers laquelle on souhaite déplacer l'unité
- * @return : vrai si on peut effectuer le déplacement, faux sinon
+ * mï¿½thode dï¿½terminant si les positions de la case d'origine et de celle d'arrivï¿½e permettent le dï¿½placement
+ * @param cible : la case vers laquelle on souhaite dï¿½placer l'unitï¿½
+ * @return : vrai si on peut effectuer le dï¿½placement, faux sinon
  */
 bool Fantassin::isCaseAtteignable(const CaseJ& cible ) {
 
@@ -34,8 +34,8 @@ bool Fantassin::isCaseAtteignable(const CaseJ& cible ) {
 	return ret;
 }
 /**
- * méthode déterminant si il est possible d'attaquer une position
- * @param cible : la case visée
+ * mï¿½thode dï¿½terminant si il est possible d'attaquer une position
+ * @param cible : la case visï¿½e
  * @return vrai si la case est attaquable, faux sinon
  */
 bool Fantassin::isCaseAttaquable(const CaseJ& cible) {
@@ -47,7 +47,7 @@ bool Fantassin::isCaseAttaquable(const CaseJ& cible) {
 	return ret;
 }
 /**
- * méthode qui devrait être appelée à chaque tour : reset des booléns, et régénération de vie.
+ * mï¿½thode qui devrait ï¿½tre appelï¿½e ï¿½ chaque tour : reset des boolï¿½ns, et rï¿½gï¿½nï¿½ration de vie.
  */
 void Fantassin::regenerer(){
 	DeplacementExecute = false;
@@ -63,4 +63,9 @@ void Fantassin::regenerer(){
 }
 char Fantassin::toChar(){
 	return CHARFANT;
+}
+
+Fantassin::~Fantassin()
+{
+
 }

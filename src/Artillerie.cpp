@@ -11,14 +11,14 @@
  * @param pos : position de l'unit� cr��e
  * @param prop : propri�taire de l'unit�
  */
-Artillerie::Artillerie(CaseJ& pos, Joueur& prop) {
+Artillerie::Artillerie(CaseJ& pos, Joueur& prop): Unite(pos,prop) {
 	position = &pos;
-			joueur = &prop;
-			vie = VIEART;
-			attaque = ATTART;
-			defense = DEFART;
-			DeplacementExecute = false;
-			AttaqueExecutee = false;
+	joueur = &prop;
+	vie = VIEART;
+	attaque = ATTART;
+	defense = DEFART;
+	DeplacementExecute = false;
+	AttaqueExecutee = false;
 
 }
 

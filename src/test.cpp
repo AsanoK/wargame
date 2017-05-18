@@ -5,7 +5,7 @@
  *      Author: gdamay
  */
 
-#define TEST true
+#define TEST false
 #define BOOST_TEST_MODULE MyTest
 #if TEST
 #include <boost/test/unit_test.hpp>
