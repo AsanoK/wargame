@@ -10,6 +10,7 @@
 
 #include <string>
 #include <iostream>
+#include "CaseJ.hpp"
 
 class CaseJ;
 class Plateau;
