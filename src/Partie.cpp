@@ -9,22 +9,22 @@
 
 
 
-Partie::Partie():m_tourDeJeu(0), m_fenetre(){
+Partie::Partie():m_tourDeJeu(0), m_plateau(), m_fenetre(){
 	// cration du premier joueur
-	std::string pseudo1 = m_fenetre->demanderPseudo(1);
+	std::string pseudo1 = m_fenetre.demanderPseudo(1);
 	char couleur1[3] = {255,255,0};
 	Joueur joueur1(*this, pseudo1, couleur1);
 	this->m_joueurs.push_back(joueur1);
 
 	// creation du deuxieme joueur
-	std::string pseudo2 = m_fenetre->demanderPseudo(2);
+	std::string pseudo2 = m_fenetre.demanderPseudo(2);
 	char couleur2[3] = {0,255,255};
 	Joueur joueur2(*this, pseudo2, couleur2);
 	this->m_joueurs.push_back(joueur2);
 
 	// Initialisation de Plateau
-	m_plateau = new Plateau(this);
-	m_fenetre->setPlateau(*m_plateau);
+	m_plateau.setPartie(*this);
+	m_fenetre.setPlateau(m_plateau);
 
 }
 
@@ -53,19 +53,19 @@ void Partie::lancerPartie(){
 
 	}
 	if (fin==1){
-		m_fenetre->afficherVainqueur(getJoueur1().getPseudo());
+		m_fenetre.afficherVainqueur(getJoueur1().getPseudo());
 	}
 	else{
-		m_fenetre->afficherVainqueur(getJoueur2().getPseudo());
+		m_fenetre.afficherVainqueur(getJoueur2().getPseudo());
 	}
 }
 
 
 Plateau &Partie::getPlateau(){
-	return *m_plateau;
+	return m_plateau;
 }
 Fenetre &Partie::getFenetre(){
-	return *m_fenetre;
+	return m_fenetre;
 }
 Joueur &Partie::getJoueur1(){
 	return m_joueurs.at(0);

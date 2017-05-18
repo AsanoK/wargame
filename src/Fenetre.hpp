@@ -10,11 +10,9 @@
 
 #include <string>
 #include <iostream>
-#include "CaseJ.hpp"
-#include "Unite.hpp"
-#include "Plateau.hpp"
 
 class Plateau;
+class CaseJ;
 
 class Fenetre {
 
@@ -26,13 +24,13 @@ public:
 	virtual ~Fenetre();
 
 	void afficherGrille();
-	void afficherVainqueur(std::string &vainqueur);
-	std::string demanderAction();
-	std::string demanderPseudo(int joueur);
-	CaseJ &demanderCaseAttaquant();
-	CaseJ &demanderCaseAttaquee();
-	CaseJ &demanderCaseDepart();
-	CaseJ &demanderCaseArrivee();
+	void afficherVainqueur(std::string &vainqueur) const;
+	std::string &demanderAction() const;
+	std::string &demanderPseudo(int joueur) const;
+	CaseJ &demanderCaseAttaquant() const;
+	CaseJ &demanderCaseAttaquee() const;
+	CaseJ &demanderCaseDepart() const;
+	CaseJ &demanderCaseArrivee() const;
 
 	void setPlateau(Plateau &unPlateau);
 };

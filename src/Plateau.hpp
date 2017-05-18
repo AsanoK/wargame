@@ -6,30 +6,34 @@
  */
 
 
-#ifndef PLATEAU_HPP_
-#define PLATEAU_HPP_
+#ifndef SRC_PLATEAU_HPP_
+#define SRC_PLATEAU_HPP_
 
 
 
-#include "ConstantesUnites.hpp"
 #include "CaseJ.hpp"
-#include "Joueur.hpp"
 #include "Fantassin.hpp"
-#include "Cavalier.h"
-#include "Artillerie.h"
+#include "Cavalier.hpp"
+#include "Artillerie.hpp"
+#include "ConstantesUnites.hpp"
 
 class Partie;
+class Joueur;
 
 class Plateau {
+
 public:
 	static const int NBCASES = 20;
+
 private:
 	CaseJ cases[NBCASES][NBCASES];
 	Partie* partie;
 	void genererGrilleAleatoire();
 	void deployerUnitesInitiales();
+
 public:
-	Plateau(Partie* p);
+	Plateau();
+	void setPartie(Partie &unePartie);
 	virtual ~Plateau();
 
 	CaseJ &getCase(int i, int j);

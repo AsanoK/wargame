@@ -5,6 +5,7 @@
  *      Author: emacedegastines
  */
 
+#include "Plateau.hpp"
 #include "Fenetre.hpp"
 
 Fenetre::Fenetre() : p_plateau(0){
@@ -40,11 +41,11 @@ void Fenetre::afficherGrille(){
 
 }
 
-void Fenetre::afficherVainqueur(std::string &vainqueur){
+void Fenetre::afficherVainqueur(std::string &vainqueur) const{
 	std::cout << "bravo, le vainqueur est le joueur "<< vainqueur << std::endl;
 }
 
-std::string Fenetre::demanderAction(){
+std::string &Fenetre::demanderAction() const{
 	std::cout << "quelle action souhaitez vous faire? (q : arret, a a: attaquer, d : deplacer)" << std::endl;
 	std::string action;
 	std::cin >> action;
@@ -55,14 +56,14 @@ std::string Fenetre::demanderAction(){
 	return action;
 }
 
-std::string Fenetre::demanderPseudo(int joueur){
+std::string &Fenetre::demanderPseudo(int joueur) const{
 	std::cout << "Joueur " << joueur << ", entrez votre pseudo:" << std::endl;
 	std::string pseudo;
 	std::cin >> pseudo;
 	return pseudo;
 }
 
-CaseJ &Fenetre::demanderCaseAttaquant(){
+CaseJ &Fenetre::demanderCaseAttaquant() const{
 	std::cout << "entrez la position de l'attaquant (7S):" << std::endl;
     std::string s;
     std::cin >> s;
@@ -73,7 +74,7 @@ CaseJ &Fenetre::demanderCaseAttaquant(){
     return p_plateau->getCase((int)s[0] - 48, (int)s[1]);
 }
 
-CaseJ &Fenetre::demanderCaseAttaquee(){
+CaseJ &Fenetre::demanderCaseAttaquee() const{
 	std::cout << "entrez la case � attaquer (7S):" << std::endl;
     std::string s;
     std::cin >> s;
@@ -84,7 +85,7 @@ CaseJ &Fenetre::demanderCaseAttaquee(){
     return p_plateau->getCase((int)s[0] - 48, (int)s[1]);
 }
 
-CaseJ &Fenetre::demanderCaseDepart(){
+CaseJ &Fenetre::demanderCaseDepart() const{
 	std::cout << "entrez la position de l'unit� � d�placer (7S):" << std::endl;
     std::string s;
     std::cin >> s;
@@ -95,7 +96,7 @@ CaseJ &Fenetre::demanderCaseDepart(){
     return p_plateau->getCase((int)s[0] - 48, (int)s[1]);
 }
 
-CaseJ &Fenetre::demanderCaseArrivee(){
+CaseJ &Fenetre::demanderCaseArrivee() const{
 	std::cout << "entrez la position d'arriv�e (7S):" << std::endl;
     std::string s;
     std::cin >> s;
@@ -106,7 +107,7 @@ CaseJ &Fenetre::demanderCaseArrivee(){
     return p_plateau->getCase((int)s[0] - 48, (int)s[1]);
 }
 
-void Fenetre::setPlateau(Plateau &unPlateau){
+void Fenetre::setPlateau(Plateau &unPlateau) {
 	p_plateau = &unPlateau;
 }
 

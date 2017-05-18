@@ -5,12 +5,16 @@
  *      Author: Hugin
  */
 
-#include "Cavalier.h"
+#include "CaseJ.hpp"
+#include "Cavalier.hpp"
+
+
 /**
  * Constructeur de la cavalerie (�curie?)
  * @param c : case sur laquelle on cr�e la cavalerie
  * @param prop : propri�taire de la cavalerie
  */
+
 Cavalier::Cavalier(CaseJ& c, Joueur& prop) : Unite(c,prop) {
 	// TODO Auto-generated constructor stub
 	position = &c;

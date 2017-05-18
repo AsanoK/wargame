@@ -4,12 +4,17 @@
  *  Created on: 28 avr. 2017
  *      Author: Hugin
  */
+
+#include "CaseJ.hpp"
 #include "Fantassin.hpp"
+
+
 /**
  * Constructeur de l'infanterie
  * @param c : case sur laquelle on cr�e l'unit�
  * @param prop : propritaire de l'unit�
  */
+
 Fantassin::Fantassin(CaseJ& c, Joueur& prop): Unite(c,prop) {
 	position = &c;
 	joueur = &prop;

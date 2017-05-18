@@ -5,8 +5,8 @@
  *      Author: Hugin
  */
 
-#ifndef CONSTANTESUNITES_HPP_
-#define CONSTANTESUNITES_HPP_
+#ifndef SRC_CONSTANTESUNITES_HPP_
+#define SRC_CONSTANTESUNITES_HPP_
 //globales
 #define NB_TROUPES_DEPART 10
 //fantassins

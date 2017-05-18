@@ -4,8 +4,12 @@
  *  Created on: 28 avr. 2017
  *      Author: Hugin
  */
+
+#include "CaseJ.hpp"
 #include "Unite.hpp"
+
 #include <stdio.h>
+
 /**
  * constructeur de base de la classe unit�
  * @param c : case sur laquelle on cr�e l'unit�
