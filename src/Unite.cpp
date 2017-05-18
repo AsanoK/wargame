@@ -5,10 +5,11 @@
  *      Author: Hugin
  */
 #include "Unite.hpp"
+#include <stdio.h>
 /**
- * constructeur de base de la classe unité
- * @param c : case sur laquelle on crée l'unité
- * @pram prop : joueur propriétaire de l'unité
+ * constructeur de base de la classe unitï¿½
+ * @param c : case sur laquelle on crï¿½e l'unitï¿½
+ * @pram prop : joueur propriï¿½taire de l'unitï¿½
  */
 Unite::Unite(CaseJ& c, Joueur& prop) {
 	// TODO Auto-generated constructor stub
@@ -21,13 +22,13 @@ Unite::Unite(CaseJ& c, Joueur& prop) {
 		AttaqueExecutee = false;
 }
 /**
- * méthode effectuant le déplacement de l'unité, y compris les changements de contenu des cases
- * @param cible : la case visée par le déplacement
- * @return : vrai si le déplacement a été résolue, faux sinon.
+ * mï¿½thode effectuant le dï¿½placement de l'unitï¿½, y compris les changements de contenu des cases
+ * @param cible : la case visï¿½e par le dï¿½placement
+ * @return : vrai si le dï¿½placement a ï¿½tï¿½ rï¿½solue, faux sinon.
  */
 bool Unite::deplacer(CaseJ& cible){
 	bool ret = false;
- if((isCaseAtteignable(cible))and(DeplacementExecute==false)and(cible.getUnite()==nullptr)){
+ if((isCaseAtteignable(cible))and(DeplacementExecute==false)and(cible.getUnite()==NULL)){
 	 this->setPosition(cible);
 	 ret = true;
  }
@@ -36,13 +37,13 @@ bool Unite::deplacer(CaseJ& cible){
  return ret;
 }
 /**
- * méthode permettant de gérer l'attaque d'une case
- * @param cible : case visée par l'attaque
- * @return : vrai si l'attaque a été résolue, faux sinon
+ * mï¿½thode permettant de gï¿½rer l'attaque d'une case
+ * @param cible : case visï¿½e par l'attaque
+ * @return : vrai si l'attaque a ï¿½tï¿½ rï¿½solue, faux sinon
  */
 bool Unite::attaquer(CaseJ& cible){
 	bool ret = false;
-	if((isCaseAttaquable(cible))and(isAttaqueExecutee()==false)and(cible.getUnite()!=nullptr)and(cible.getUnite()->getJoueur()!=getJoueur())){
+	if((isCaseAttaquable(cible))and(isAttaqueExecutee()==false)and(cible.getUnite()!=NULL)and(cible.getUnite()->getJoueur()!=this->getJoueur())){
 		attaquer(cible.getUnite());
 		ret = true;
 	}
@@ -55,61 +56,61 @@ bool Unite::attaquer(CaseJ& cible){
 int Unite::getAttaque(){
 	return attaque;
 }
-	int Unite::getdefense(){
-		return defense;
-	}
-	int Unite::getVie(){
-		return vie;
-	}
-	CaseJ Unite::getposition(){
-		return position;
-	}
-	Joueur Unite::getJoueur(){
-		return joueur;
-	}
-	bool Unite::isAttaqueExecutee(){
-		return AttaqueExecutee;
-	}
-	bool Unite::isdeplacementExecute(){
-		return DeplacementExecute;
-	}
-	/**
-	 * méthode pour changer la position
-	 */
-	void Unite::setPosition(CaseJ& c){
-		position->setUnite(nullptr);
-		position = c;
-		c.setUnite(this);
+int Unite::getdefense(){
+	return defense;
+}
+int Unite::getVie(){
+	return vie;
+}
+CaseJ* Unite::getposition(){
+	return position;
+}
+Joueur* Unite::getJoueur(){
+	return joueur;
+}
+bool Unite::isAttaqueExecutee(){
+	return AttaqueExecutee;
+}
+bool Unite::isdeplacementExecute(){
+	return DeplacementExecute;
+}
+/**
+ * mï¿½thode pour changer la position
+ */
+void Unite::setPosition(CaseJ& c){
+	position->setUnite(NULL);
+	position = &c;
+	c.setUnite(this);
 
-	}
-	void Unite::setVie( const int v){
-		vie = v;
-	}
-	void Unite::setDeplacementExecute( const bool b){
-		DeplacementExecute = b;
-	}
-	void Unite::setAttaqueExecutee( const bool b){
-		AttaqueExecutee = b;
-	}
-	/**
-	 * méthode de résolution des attaques (on suppose que celle-ci est possible)
-	 * @param : l'unité contre laquelle on est engagé
-	 *
-	 */
+}
+void Unite::setVie( const int v){
+	vie = v;
+}
+void Unite::setDeplacementExecute( const bool b){
+	DeplacementExecute = b;
+}
+void Unite::setAttaqueExecutee( const bool b){
+	AttaqueExecutee = b;
+}
+/**
+ * mï¿½thode de rï¿½solution des attaques (on suppose que celle-ci est possible)
+ * @param : l'unitï¿½ contre laquelle on est engagï¿½
+ *
+ */
 void Unite::attaquer(Unite* cible){
-	int modvie = attaque-cible->getdefense();
-	if(modvie>0){
-		int resteVieCible = cible->getVie()-modvie;
-		if(resteVieCible>cible->getVie()){
-			//on ne fait rien
-		}else if(resteVieCible>0){
-			cible->setVie(resteVieCible);
-		}else {
-			delete cible;
+int modvie = attaque-cible->getdefense();
+if(modvie>0){
+	int resteVieCible = cible->getVie()-modvie;
+	if(resteVieCible>cible->getVie()){
+		//on ne fait rien
+	}else if(resteVieCible>0){
+		cible->setVie(resteVieCible);
+	}else {
+		delete cible;
 		}
 	}
 }
 Unite::~Unite(){
-	position->setUnite(nullptr);
-	//joueur->supprimerUnite(unePosition);//TODO : coder une méthode permettant de récupérer le numéro d'une unité dans la liste
+	position->setUnite(NULL);
+	//joueur->supprimerUnite(unePosition);//TODO : coder une mï¿½thode permettant de rï¿½cupï¿½rer le numï¿½ro d'une unitï¿½ dans la liste
 }
