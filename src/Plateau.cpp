@@ -33,7 +33,7 @@ void Plateau::deployerUnitesInitiales()
 		cases[NBCASES-1][i].setUnite(&p2.getUnite(i));
 }
 
-CaseJ* Plateau::getCase(int i, int j) const{
+CaseJ& Plateau::getCase(int i, int j) const{
 	return &CaseJ[i][j];
 }
 
