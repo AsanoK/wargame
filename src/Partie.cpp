@@ -72,8 +72,4 @@ Joueur &Partie::getJoueur2() const{
 int Partie::getTourDeJeu() const{
 	return m_tourDeJeu;
 }
-int main( int argc, const char* argv[] )
-{
-	Partie p=Partie();
-	p.lancerPartie();
-}
+
