@@ -38,7 +38,11 @@ BOOST_AUTO_TEST_CASE(test_CaseJ)
 	}
 	BOOST_CHECK(pos1.getUnite() == NULL);
 
-	Joueur joueur();
+	char cTest[3] = {0, 0, 0};
+	char* cTest2 = cTest;
+	Partie pTest();
+	std::string nTest = "test";
+	Joueur joueur(pTest, nTest, cTest2);
 	Fantassin fant1(pos1, joueur);
 	pos1.setUnite(&fant1);
 	BOOST_CHECK(pos1.getUnite() == &fant1);
