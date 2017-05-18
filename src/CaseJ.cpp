@@ -19,7 +19,9 @@ CaseJ::CaseJ(int posX,int posY)
 }
 
 CaseJ::CaseJ(){
-
+	positionX=0;
+	positionY=0;
+	unite=NULL;
 }
 
 CaseJ::~CaseJ() {

@@ -7,6 +7,7 @@
 //============================================================================
 
 #include <iostream>
+#include "Partie.hpp"
 using namespace std;
 
 #if !TEST
@@ -17,3 +18,4 @@ int main( int argc, const char* argv[] )
 	p.lancerPartie();
 	return 0;
 }
+#endif

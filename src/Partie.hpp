@@ -26,11 +26,7 @@ private:
 
 public:
 	Partie();
-
-private:
 	void lancerPartie();
-
-public:
 	Plateau &getPlateau();
 	Fenetre &getFenetre();
 	Joueur &getJoueur1();
@@ -39,3 +35,4 @@ public:
 };
 
 #endif /* PARTIE_HPP_ */
+

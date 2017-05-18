@@ -7,11 +7,11 @@
 
 #include "Cavalier.h"
 /**
- * Constructeur de la cavalerie (écurie?)
- * @param c : case sur laquelle on crée la cavalerie
- * @param prop : propriétaire de la cavalerie
+ * Constructeur de la cavalerie (ï¿½curie?)
+ * @param c : case sur laquelle on crï¿½e la cavalerie
+ * @param prop : propriï¿½taire de la cavalerie
  */
-Cavalier::Cavalier(CaseJ& c, Joueur& prop) {
+Cavalier::Cavalier(CaseJ& c, Joueur& prop) : Unite(c,prop) {
 	// TODO Auto-generated constructor stub
 	position = &c;
 		joueur = &prop;
@@ -22,12 +22,12 @@ Cavalier::Cavalier(CaseJ& c, Joueur& prop) {
 		AttaqueExecutee = false;
 }
 /**
- *méthode déterminant si une case est attaquable (case adjacente pour la cavalerie)
+ *mï¿½thode dï¿½terminant si une case est attaquable (case adjacente pour la cavalerie)
  *@param cible : la cible de la tentative (une case)
  *@return : vrai si la case est attaquable, faux sinon
  */
-bool Unite::isCaseAttaquable(const CaseJ& cible){
-	//le cavalier peut attaquer devant lui et derrière lui
+bool Cavalier::isCaseAttaquable(const CaseJ& cible){
+	//le cavalier peut attaquer devant lui et derriï¿½re lui
 	bool res = false;
 	if((cible.getPositionY()==position->getPositionY()+1 or cible.getPositionY()==position->getPositionY()-1)and (cible.getPositionY()==position->getPositionY())){
 		res = true;
@@ -38,19 +38,19 @@ bool Unite::isCaseAttaquable(const CaseJ& cible){
 	return res;
 }
 /**
- * méthode déterminant si il est possible de se déplacer sur une case. Ne prend en compte que les positions des cases
- * @param cible: la case visée
+ * mï¿½thode dï¿½terminant si il est possible de se dï¿½placer sur une case. Ne prend en compte que les positions des cases
+ * @param cible: la case visï¿½e
  * @return  vrai si il est possible d'aller sur la cible, faux sinon.
  *
  */
 bool Cavalier::isCaseAtteignable( const CaseJ& cible){
-	//le cavalier peut se déplacer de deux cases en vertical, ou d'une horizontale, ou les deux.
+	//le cavalier peut se dï¿½placer de deux cases en vertical, ou d'une horizontale, ou les deux.
 	//xxx
 	//xxx
 	//xox <----le 'o' est la position d'origine du cavalier
 	//xxx
 	//xxx
-	//représentation graphique de sa zone de déplacement
+	//reprï¿½sentation graphique de sa zone de dï¿½placement
 	int xi = position->getPositionX();
 	int yi = position->getPositionY();
 	int xo = cible.getPositionX();
@@ -65,13 +65,13 @@ bool Cavalier::isCaseAtteignable( const CaseJ& cible){
 	return res;
 }
 /**
- * la méthode appelée à chaqque tour : on reset les booléens et on ajoute de la vie.
+ * la mï¿½thode appelï¿½e ï¿½ chaqque tour : on reset les boolï¿½ens et on ajoute de la vie.
  */
 void Cavalier::regenerer(){
-	//on reset les booléen de déplacement et d'attaque
+	//on reset les boolï¿½en de dï¿½placement et d'attaque
 	DeplacementExecute = false;
 	AttaqueExecutee = false;
-	//régen de vie? 1/4 du total ou de quoi revenir au maximum
+	//rï¿½gen de vie? 1/4 du total ou de quoi revenir au maximum
 	int bvie = 0;
 	if(vie<VIECAV){
 		bvie = (int)VIECAV/4;
