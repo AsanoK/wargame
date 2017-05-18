@@ -15,14 +15,14 @@
 // Fonctions
 //=====================================================================
 
-Joueur::Joueur(const Partie &unePartie, const std::string &unPseudo, const char *uneCouleur): m_pseudo(unPseudo), this.m_couleur(uneCouleur), p_partie(&unePartie), p_fenetre(p_partie->getFenetre()){
+Joueur::Joueur(Partie &unePartie, std::string &unPseudo, char *uneCouleur): m_pseudo(unPseudo), m_couleur(uneCouleur), p_partie(&unePartie), p_fenetre(&p_partie->getFenetre()){
 
 }
 
 
 void Joueur::regenererTroupe(){
 	for (int i=0; i<m_unites.size(); ++i){
-		m_unites.at(i).setVie( m_unites.at(i).getVie()*1.3 );
+		m_unites.at(i)->setVie( m_unites.at(i)->getVie()*1.3 );
 	}
 
 }
@@ -47,7 +47,7 @@ void Joueur::terminerTour(){
 void Joueur::attaquer(){
 	CaseJ caseAttaquant = p_fenetre->demanderCaseAttaquant();
 	CaseJ caseAttaquee = p_fenetre->demanderCaseAttaquee();
-	caseAttaquant.getUnite().attaquer(caseAttaquee);
+	caseAttaquant.getUnite()->attaquer(caseAttaquee);
 	p_fenetre->afficherGrille();
 
 
@@ -56,7 +56,7 @@ void Joueur::attaquer(){
 void Joueur::deplacer(){
 	CaseJ caseDepart = p_fenetre->demanderCaseDepart();
 	CaseJ caseArrivee = p_fenetre->demanderCaseArrivee();
-	caseDepart.getUnite().deplacer(caseArrivee);
+	caseDepart.getUnite()->deplacer(caseArrivee);
 	p_fenetre->afficherGrille();
 
 }
@@ -74,7 +74,7 @@ void Joueur::setPseudo(const std::string &unPseudo){
 	m_pseudo = unPseudo;
 }
 
-char &Joueur::getCouleur(){
+char *Joueur::getCouleur(){
 	return m_couleur;
 }
 
@@ -82,7 +82,7 @@ void Joueur::setCouleur(char *uneCouleur){
 	m_couleur = uneCouleur;
 }
 
-Unite &Joueur::getUnite(int unePosition){
+Unite *Joueur::getUnite(int unePosition){
 	return m_unites.at(unePosition);
 }
 
@@ -90,8 +90,8 @@ void Joueur::supprimerUnite(int unePosition){
 	m_unites.erase(m_unites.begin()+unePosition);
 }
 
-void Joueur::ajouterUnite(const Unite &uneUnite){
-	m_unites.push_back(uneUnite);
+void Joueur::ajouterUnite(Unite &uneUnite){
+	m_unites.push_back(&uneUnite);
 }
 
 int Joueur::getNbrUnite() const{

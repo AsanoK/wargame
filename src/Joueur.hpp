@@ -12,8 +12,8 @@
 #include <vector>
 
 #include "Unite.hpp"
-class Partie;
-class Fenetre;
+#include "Fenetre.hpp"
+#include "Partie.hpp"
 
 
 class Joueur{
@@ -25,7 +25,7 @@ class Joueur{
 private:
 	std::string m_pseudo;
 	char m_couleur[3];
-	std::vector<Unite> m_unites;
+	std::vector<Unite*> m_unites;
 	Partie *p_partie;
 	Fenetre *p_fenetre;
 
@@ -34,7 +34,7 @@ private:
 	//=====================================================================
 
 public:
-	Joueur(const Partie& unePartie, const std::string &unPseudo, const char *uneCouleur);
+	Joueur(Partie& unePartie, std::string &unPseudo, char *uneCouleur);
 	void regenererTroupe();
 	void executerTour();
 private:
@@ -49,11 +49,11 @@ private:
 public:
 	std::string &getPseudo();
 	void setPseudo(const std::string &unPseudo);
-	char &getCouleur();
+	char *getCouleur();
 	void setCouleur(char uneCouleur[3]);
-	Unite &getUnite(int unePosition);
+	Unite *getUnite(int unePosition);
 	void supprimerUnite(int unePosition);
-	void ajouterUnite(const Unite &uneUnite);
+	void ajouterUnite(Unite &uneUnite);
 	int getNbrUnite() const;
 
 
