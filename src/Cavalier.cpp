@@ -28,7 +28,7 @@ bool Unite::isCaseAttaquable(const CaseJ& cible){
 	}
 	return res;
 }
-bool Unite::isCaseAtteignable( const CaseJ& cible){
+bool Cavalier::isCaseAtteignable( const CaseJ& cible){
 	//le cavalier peut se déplacer de deux cases en vertical, ou d'une horizontale, ou les deux.
 	//xxx
 	//xxx
@@ -49,7 +49,7 @@ bool Unite::isCaseAtteignable( const CaseJ& cible){
 	}
 	return res;
 }
-void Unite::regenerer(){
+void Cavalier::regenerer(){
 	//on reset les booléen de déplacement et d'attaque
 	DeplacementExecute = false;
 	AttaqueExecutee = false;
@@ -66,6 +66,6 @@ void Unite::regenerer(){
 Cavalier::~Cavalier() {
 	// TODO Auto-generated destructor stub
 }
-char Unite::toChar(){
+char Cavalier::toChar(){
 	return 'CHARCAV';
 }

@@ -22,7 +22,7 @@ Artillerie::~Artillerie() {
 	// TODO Auto-generated destructor stub
 }
 
-bool Unite::isCaseAttaquable(const CaseJ& cible){
+bool Artillerie::isCaseAttaquable(const CaseJ& cible){
 	//l'artilerie peut attaquer à toute case située à deux cases de distance:
 	/*
 	 * xxxxx
@@ -42,7 +42,7 @@ bool Unite::isCaseAttaquable(const CaseJ& cible){
 	}
 	return res;
 }
-bool Unite::isCaseAtteignable(const CaseJ& cible){
+bool Artillerie::isCaseAtteignable(const CaseJ& cible){
 
 	//pour l'artillerie, on dï¿½place uniquement sur les places adjacente : 4 possibilitï¿½s
 	bool ret = false;
@@ -51,7 +51,7 @@ bool Unite::isCaseAtteignable(const CaseJ& cible){
 	}
 	return ret;
 }
-void Unite::regenerer(){
+void Artillerie::regenerer(){
 	//on reset les booléen de déplacement et d'attaque
 	DeplacementExecute = false;
 	AttaqueExecutee = false;
@@ -65,6 +65,6 @@ void Unite::regenerer(){
 	}
 	vie=vie+bvie;
 }
-char Unite::toChar(){
+char Artillerie::toChar(){
 	return 'CHARART';
 }

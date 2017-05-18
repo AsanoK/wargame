@@ -32,7 +32,7 @@ bool Fantassin::isCaseAttaquable(const CaseJ& cible) {
 
 	return ret;
 }
-void Unite::regenerer(){
+void Fantassin::regenerer(){
 	DeplacementExecute = false;
 	AttaqueExecutee = false;
 	int bvie = 0;
@@ -44,6 +44,6 @@ void Unite::regenerer(){
 	}
 	vie=vie+bvie;
 }
-char Unite::toChar(){
+char Fantassin::toChar(){
 	return 'CHARFANT';
 }
