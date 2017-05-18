@@ -9,7 +9,7 @@
 #define BOOST_TEST_MODULE MyTest
 #if TEST
 #include <boost/test/unit_test.hpp>
-#include "Joueur.cpp"
+#include "Partie.hpp"
 #include "Fantassin.hpp"
 
 BOOST_AUTO_TEST_SUITE(Tous_les_tests)
@@ -40,9 +40,9 @@ BOOST_AUTO_TEST_CASE(test_CaseJ)
 
 	char cTest[3] = {0, 0, 0};
 	char* cTest2 = cTest;
-	Partie pTest();
-	std::string nTest = "test";
-	Joueur joueur(pTest, nTest, cTest2);
+	Partie *pTest = new Partie();
+	std::string nTest("test");
+	Joueur joueur(*pTest, nTest, cTest2);
 	Fantassin fant1(pos1, joueur);
 	pos1.setUnite(&fant1);
 	BOOST_CHECK(pos1.getUnite() == &fant1);
