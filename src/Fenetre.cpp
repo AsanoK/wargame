@@ -18,7 +18,7 @@ Fenetre::~Fenetre() {
 
 void Fenetre::afficherGrille(){
 	std::cout << "  A B C D E F G H I J K L M N O P Q R S  " << std::endl;
-	CaseJ caseAffichee;
+	CaseJ *caseAffichee = NULL;
 	for (int i=0; i<Plateau::NBCASES; ++i){
 		if (i < 10){
 		std::cout << " ";
@@ -26,12 +26,12 @@ void Fenetre::afficherGrille(){
 		std::cout << i << " " ;
 
 		for (int j=0; j<Plateau::NBCASES; ++i){
-			caseAffichee = p_plateau->getCase(i,j);
-			if ( caseAffichee.getUnite() == 0 ){
+			caseAffichee = &p_plateau->getCase(i,j);
+			if ( caseAffichee->getUnite() == 0 ){
 				std::cout << ".";
 			}
 			else{
-				std::cout << caseAffichee.getUnite()->toChar();
+				std::cout << caseAffichee->getUnite()->toChar();
 			}
 			std::cout << " ";
 		}

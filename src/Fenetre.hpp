@@ -12,6 +12,7 @@
 #include <iostream>
 #include "CaseJ.hpp"
 #include "Plateau.hpp"
+#include "Unite.hpp"
 
 class CaseJ;
 class Plateau;
