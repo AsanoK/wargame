@@ -12,14 +12,18 @@
 #include "CaseJ.hpp"
 class CaseJ;
 class Joueur;
-
+/**
+ * classe mère des différents types d'unité
+ */
 class Unite{
-	protected :
+private:
+	void attaquer(Unite*);
+protected :
 	int attaque, defense, vie;
 	Joueur* joueur;
 	CaseJ* position;
 	bool AttaqueExecutee,DeplacementExecute;
-	public:
+public:
 	Unite();
 	Unite(CaseJ&, Joueur&);
 	int getAttaque();

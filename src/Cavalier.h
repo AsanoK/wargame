@@ -9,6 +9,9 @@
 #define SRC_CAVALIER_H_
 #include "Unite.hpp"
 #include "ConstantesUnites.hpp"
+/**
+ * classe de cavalerie, qui est un type d'unité (et donc hérite de la classe unité)
+ */
 class Cavalier : Unite {
 public:
 	Cavalier(CaseJ&, Joueur&);
