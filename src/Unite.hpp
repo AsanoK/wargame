@@ -9,7 +9,7 @@
 #define UNITE_HPP_
 
 #include "ConstantesUnites.hpp"
-
+#include "CaseJ.hpp"
 class CaseJ;
 class Joueur;
 
