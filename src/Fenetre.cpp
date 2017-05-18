@@ -31,7 +31,7 @@ void Fenetre::afficherGrille(){
 				std::cout << ".";
 			}
 			else{
-				std::cout << caseAffichee.getUnite().toChar();
+				std::cout << caseAffichee.getUnite()->toChar();
 			}
 			std::cout << " ";
 		}
