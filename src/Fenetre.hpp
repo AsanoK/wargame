@@ -14,10 +14,6 @@
 #include "Plateau.hpp"
 #include "Unite.hpp"
 
-class CaseJ;
-class Plateau;
-class Joueur;
-
 class Fenetre {
 
 private:
