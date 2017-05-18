@@ -5,7 +5,9 @@
  *      Author: gdamay
  */
 
+#define TEST true
 #define BOOST_TEST_MODULE MyTest
+#if TEST
 #include <boost/test/unit_test.hpp>
 #include "Joueur.cpp"
 #include "Fantassin.hpp"
@@ -57,4 +59,4 @@ BOOST_AUTO_TEST_CASE(test_fantassin)
 }
 
 BOOST_AUTO_TEST_SUITE_END();
-
+#endif

@@ -34,7 +34,7 @@ private:
 	//=====================================================================
 
 public:
-	Joueur(const Partie& unePartie, const std::string &unPseudo, const char (&uneCouleur)[3]);
+	Joueur(const Partie& unePartie, const std::string &unPseudo, const char *uneCouleur);
 	void regenererTroupe();
 	void executerTour();
 private:
@@ -47,11 +47,11 @@ private:
 	//=====================================================================
 
 public:
-	std::string &getPseudo() const;
+	std::string &getPseudo();
 	void setPseudo(const std::string &unPseudo);
-	char &getCouleur() const;
-	void setCouleur(const char (&uneCouleur)[3]);
-	Unite &getUnite(int unePosition) const;
+	char &getCouleur();
+	void setCouleur(char uneCouleur[3]);
+	Unite &getUnite(int unePosition);
 	void supprimerUnite(int unePosition);
 	void ajouterUnite(const Unite &uneUnite);
 	int getNbrUnite() const;
