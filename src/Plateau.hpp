@@ -14,6 +14,9 @@
 #include "ConstantesUnites.hpp"
 #include "CaseJ.hpp"
 #include "Joueur.hpp"
+#include "Fantassin.hpp"
+#include "Cavalier.h"
+#include "Artillerie.h"
 
 class Partie;
 
