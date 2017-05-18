@@ -13,7 +13,7 @@
 class CaseJ;
 class Joueur;
 /**
- * classe mère des différents types d'unité
+ * classe mï¿½re des diffï¿½rents types d'unitï¿½
  */
 class Unite{
 private:
@@ -29,8 +29,8 @@ public:
 	int getAttaque();
 	int getdefense();
 	int getVie();
-	CaseJ getposition();
-	Joueur getJoueur();
+	CaseJ* getposition();
+	Joueur* getJoueur();
 	bool isAttaqueExecutee();
 	bool isdeplacementExecute();
 	void setPosition(CaseJ&);
