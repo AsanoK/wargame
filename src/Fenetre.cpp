@@ -62,7 +62,7 @@ std::string Fenetre::demanderPseudo(int joueur){
 	return pseudo;
 }
 
-Case Fenetre::demanderCaseAttaquant(){
+CaseJ &Fenetre::demanderCaseAttaquant(){
 	std::cout << "entrez la position de l'attaquant (7S):" << std::endl;
     std::string s;
     std::cin >> s;
@@ -73,7 +73,7 @@ Case Fenetre::demanderCaseAttaquant(){
     return p_plateau->getCase((int)s[0] - 48, (int)s[1]);
 }
 
-Case Fenetre::demanderCaseAttaquee(){
+CaseJ &Fenetre::demanderCaseAttaquee(){
 	std::cout << "entrez la case à attaquer (7S):" << std::endl;
     std::string s;
     std::cin >> s;
@@ -84,7 +84,7 @@ Case Fenetre::demanderCaseAttaquee(){
     return p_plateau->getCase((int)s[0] - 48, (int)s[1]);
 }
 
-Case Fenetre::demanderCaseDepart(){
+CaseJ &Fenetre::demanderCaseDepart(){
 	std::cout << "entrez la position de l'unité à déplacer (7S):" << std::endl;
     std::string s;
     std::cin >> s;
@@ -95,7 +95,7 @@ Case Fenetre::demanderCaseDepart(){
     return p_plateau->getCase((int)s[0] - 48, (int)s[1]);
 }
 
-Case Fenetre::demanderCaseArrivee(){
+CaseJ &Fenetre::demanderCaseArrivee(){
 	std::cout << "entrez la position d'arrivée (7S):" << std::endl;
     std::string s;
     std::cin >> s;
