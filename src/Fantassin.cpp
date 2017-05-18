@@ -6,7 +6,7 @@
  */
 #include "Fantassin.hpp"
 
-Fantassin::Fantassin(CaseJ c, Joueur prop){
+Fantassin::Fantassin(CaseJ& c, Joueur& prop){
 	position = c;
 	joueur = prop;
 	vie = VIEFANT;
@@ -15,7 +15,7 @@ Fantassin::Fantassin(CaseJ c, Joueur prop){
 	DeplacementExecute = false;
 	AttaqueExecutee = false;
 }
-bool Unite::isCaseAtteignable(CaseJ cible ) {
+bool Fantassin::isCaseAtteignable(const CaseJ& cible ) {
 
 	//pour le fantassin, on d�place uniquement sur les places adjacente : 4 possibilit�s
 	bool ret = false;
@@ -24,7 +24,7 @@ bool Unite::isCaseAtteignable(CaseJ cible ) {
 	}
 	return ret;
 }
-bool Unite::isCaseAttaquable(CaseJ cible) {
+bool Fantassin::isCaseAttaquable(const CaseJ& cible) {
 	bool ret = false;
 	if(((cible.getPositionX()==position->getPositionX())and(cible.getPositionY()==position->getPositionY()+1))or((cible.getPositionX()==position->getPositionX())and(cible.getPositionY()==position->getPositionY()-1))or((cible.getPositionX()==position->getPositionX()+1)and(cible.getPositionY()==position->getPositionY()))or((cible.getPositionX()==position->getPositionX()-1)and(cible.getPositionY()==position->getPositionY()))){
 			ret=true;
