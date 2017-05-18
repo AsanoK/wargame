@@ -7,7 +7,7 @@
 
 #ifndef SRC_ARTILLERIE_H_
 #define SRC_ARTILLERIE_H_
-#include "unite.hpp"
+#include "Unite.hpp"
 
 class Artillerie : Unite {
 public:
