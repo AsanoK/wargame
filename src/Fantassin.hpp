@@ -11,7 +11,9 @@
 #include "Unite.hpp"
 class Unite;
 class CaseJ;
-
+/**
+ * l'infanterie, une sous-classe d'unité
+ */
 class Fantassin : Unite{
 public:
 Fantassin(CaseJ&, Joueur&);

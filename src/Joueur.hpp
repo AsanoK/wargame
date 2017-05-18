@@ -24,7 +24,7 @@ class Joueur{
 
 private:
 	std::string m_pseudo;
-	char m_couleur[3];
+	char *m_couleur;
 	std::vector<Unite*> m_unites;
 	Partie *p_partie;
 	Fenetre *p_fenetre;

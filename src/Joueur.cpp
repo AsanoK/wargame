@@ -15,13 +15,13 @@
 // Fonctions
 //=====================================================================
 
-Joueur::Joueur(Partie &unePartie, std::string &unPseudo, char *uneCouleur): m_pseudo(unPseudo), m_couleur(uneCouleur), p_partie(&unePartie), p_fenetre(&p_partie->getFenetre()){
+Joueur::Joueur(Partie &unePartie, std::string &unPseudo, char uneCouleur[3]): m_pseudo(unPseudo), m_couleur(uneCouleur), p_partie(&unePartie), p_fenetre(&p_partie->getFenetre()){
 
 }
 
 
 void Joueur::regenererTroupe(){
-	for (int i=0; i<m_unites.size(); ++i){
+	for (unsigned int i=0; i<m_unites.size(); ++i){
 		m_unites.at(i)->setVie( m_unites.at(i)->getVie()*1.3 );
 	}
 
@@ -78,7 +78,7 @@ char *Joueur::getCouleur(){
 	return m_couleur;
 }
 
-void Joueur::setCouleur(char *uneCouleur){
+void Joueur::setCouleur(char uneCouleur[3]){
 	m_couleur = uneCouleur;
 }
 

@@ -8,7 +8,9 @@
 #ifndef SRC_ARTILLERIE_H_
 #define SRC_ARTILLERIE_H_
 #include "Unite.hpp"
-
+/**
+ * classe artillerie, représentant une unité d'attaque à distance, hérite d'artillerie
+ */
 class Artillerie : Unite {
 public:
 	Artillerie(CaseJ&, Joueur&);
@@ -17,6 +19,7 @@ public:
 	bool isCaseAttaquable(const CaseJ&);
 	void regenerer();
 	char toChar();
+
 };
 
 #endif /* SRC_ARTILLERIE_H_ */
