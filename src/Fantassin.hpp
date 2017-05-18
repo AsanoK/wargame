@@ -14,7 +14,7 @@ class CaseJ;
 /**
  * l'infanterie, une sous-classe d'unité
  */
-class Fantassin : Unite{
+class Fantassin : public Unite{
 public:
 Fantassin(CaseJ&, Joueur&);
 bool isCaseAtteignable(const CaseJ& );
