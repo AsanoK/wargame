@@ -21,7 +21,7 @@ Joueur::Joueur(Partie &unePartie, std::string &unPseudo, char uneCouleur[3]): m_
 
 
 void Joueur::regenererTroupe(){
-	for (int i=0; i<m_unites.size(); ++i){
+	for (unsigned int i=0; i<m_unites.size(); ++i){
 		m_unites.at(i)->setVie( m_unites.at(i)->getVie()*1.3 );
 	}
 

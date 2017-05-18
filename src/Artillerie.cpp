@@ -7,9 +7,9 @@
 
 #include "Artillerie.h"
 /**
- * constructeur de l'artillerie (ingénieur de siège)
- * @param pos : position de l'unité créée
- * @param prop : propriétaire de l'unité
+ * constructeur de l'artillerie (ingï¿½nieur de siï¿½ge)
+ * @param pos : position de l'unitï¿½ crï¿½ï¿½e
+ * @param prop : propriï¿½taire de l'unitï¿½
  */
 Artillerie::Artillerie(CaseJ& pos, Joueur& prop) {
 	position = &pos;
@@ -26,7 +26,7 @@ Artillerie::~Artillerie() {
 	// TODO Auto-generated destructor stub
 }
 /**
- * méthode déterminant si une case est attaquable ou non. Dans le cas de l'artillerie, toute cible à deux cases de distance dans toute les direction (donc un carré)
+ * mï¿½thode dï¿½terminant si une case est attaquable ou non. Dans le cas de l'artillerie, toute cible ï¿½ deux cases de distance dans toute les direction (donc un carrï¿½)
  *
  *     xxxxx
 	 * x   x
@@ -37,7 +37,7 @@ Artillerie::~Artillerie() {
  * @return vrai si la case est attaquable, faux sinon.
  */
 bool Artillerie::isCaseAttaquable(const CaseJ& cible){
-	//l'artilerie peut attaquer à toute case située à deux cases de distance:
+	//l'artilerie peut attaquer ï¿½ toute case situï¿½e ï¿½ deux cases de distance:
 	/*
 	 * xxxxx
 	 * x   x
@@ -57,8 +57,8 @@ bool Artillerie::isCaseAttaquable(const CaseJ& cible){
 	return res;
 }
 /**
- * méthode permettant de savoir si une case est atteignable en un mouvement (les cases adjacentes pour l'artillerie
- * @param cible : la case visée
+ * mï¿½thode permettant de savoir si une case est atteignable en un mouvement (les cases adjacentes pour l'artillerie
+ * @param cible : la case visï¿½e
  * @return vrai si la case est atteignable, faux sinon
  */
 bool Artillerie::isCaseAtteignable(const CaseJ& cible){
@@ -71,13 +71,13 @@ bool Artillerie::isCaseAtteignable(const CaseJ& cible){
 	return ret;
 }
 /**
- * méthode appelée normalement à chaque tour, et resettant certains paramètres, mais aussi en faisant récupérer un peu de vie.
+ * mï¿½thode appelï¿½e normalement ï¿½ chaque tour, et resettant certains paramï¿½tres, mais aussi en faisant rï¿½cupï¿½rer un peu de vie.
  */
 void Artillerie::regenerer(){
-	//on reset les booléen de déplacement et d'attaque
+	//on reset les boolï¿½en de dï¿½placement et d'attaque
 	DeplacementExecute = false;
 	AttaqueExecutee = false;
-	//régen de vie? 1/4 du total ou de quoi revenir au maximum
+	//rï¿½gen de vie? 1/4 du total ou de quoi revenir au maximum
 	int bvie = 0;
 	if(vie<VIEART){
 		bvie = (int)VIEART/4;
@@ -88,5 +88,5 @@ void Artillerie::regenerer(){
 	vie=vie+bvie;
 }
 char Artillerie::toChar(){
-	return 'CHARART';
+	return CHARART;
 }
