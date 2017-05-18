@@ -12,7 +12,7 @@
 /**
  * classe de cavalerie, qui est un type d'unité (et donc hérite de la classe unité)
  */
-class Cavalier : Unite {
+class Cavalier : public Unite {
 public:
 	Cavalier(CaseJ&, Joueur&);
 	virtual ~Cavalier();
