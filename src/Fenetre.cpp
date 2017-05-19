@@ -5,8 +5,11 @@
  *      Author: emacedegastines
  */
 
+#include <cstdlib>
+
 #include "Plateau.hpp"
 #include "Fenetre.hpp"
+
 
 Fenetre::Fenetre() : p_plateau(NULL){
 	// TODO Auto-generated constructor stub
@@ -18,21 +21,27 @@ Fenetre::~Fenetre() {
 }
 
 void Fenetre::afficherGrille(){
-	std::cout << "  A B C D E F G H I J K L M N O P Q R S  " << std::endl;
+	std::cout << "  A B C D E F G H I J K L M N O P Q R S T " << std::endl;
 	CaseJ *caseAffichee = NULL;
 	for (int i=0; i<Plateau::NBCASES; ++i){
 		if (i < 10){
 		std::cout << " ";
 		}
-		std::cout << i << " " ;
+		std::cout << i + 1 << " " ;
 
 		for (int j=0; j<Plateau::NBCASES; ++j){
 			caseAffichee = &p_plateau->getCase(i,j);
-			if ( caseAffichee->getUnite() == 0 ){
+			Unite* unite = caseAffichee->getUnite();
+			if ( unite == NULL){
 				std::cout << ".";
 			}
 			else{
+<<<<<<< HEAD
+				std::cout << unite->toChar();
+=======
+				std::cout << 1 << std::endl;
 				std::cout << caseAffichee->getUnite()->toChar();
+>>>>>>> 0f2ef3c062d9341844188047635b620152009260
 			}
 			std::cout << " ";
 		}
@@ -64,47 +73,91 @@ std::string Fenetre::demanderPseudo(int joueur) const{
 }
 
 CaseJ &Fenetre::demanderCaseAttaquant() const{
-	std::cout << "entrez la position de l'attaquant (7S):" << std::endl;
+	std::cout << "entrez la ligne de l'attaquant:" << std::endl;
     std::string s;
     std::cin >> s;
-    while ( (int)s[0] <= 48 || (int)s[0] >=55 || (int)s[1] <= 65 || (int)s[1] >= 83){
-    	std::cout << "entrez la position de l'attaquant (7S):" << std::endl;
+
+    while ( atoi(s.c_str()) <= 0 || atoi(s.c_str()) > Plateau::NBCASES){
+    	std::cout << "entrez la ligne de l'attaquant:" << std::endl;
         std::cin >> s;
     }
-    return p_plateau->getCase((int)s[0] - 48, (int)s[1]);
+    int position1 = atoi(s.c_str());
+
+	std::cout << "entrez la colonne de l'attaquant:" << std::endl;
+    std::cin >> s;
+    while ( (int)s[0] - 64 <= 0|| (int)s[0] -64 > Plateau::NBCASES){
+    	std::cout << "entrez la colonne de l'attaquant:" << std::endl;
+        std::cin >> s;
+    }
+    int position2 = (int)s[0] - 64;
+
+    return p_plateau->getCase(position1, position2);
 }
 
 CaseJ &Fenetre::demanderCaseAttaquee() const{
-	std::cout << "entrez la case � attaquer (7S):" << std::endl;
+	std::cout << "entrez la ligne de la case à attaquer:" << std::endl;
     std::string s;
     std::cin >> s;
-    while ( (int)s[0] <= 48 || (int)s[0] >=55 || (int)s[1] <= 65 || (int)s[1] >= 83){
-    	std::cout << "entrez la case � attaquer (7S):" << std::endl;
+
+    while ( atoi(s.c_str()) <= 0 || atoi(s.c_str()) > Plateau::NBCASES){
+    	std::cout << "entrez la ligne de la case à attaquer:" << std::endl;
         std::cin >> s;
     }
-    return p_plateau->getCase((int)s[0] - 48, (int)s[1]);
+    int position1 = atoi(s.c_str());
+
+	std::cout << "entrez la colonne de la case à attaquer:" << std::endl;
+    std::cin >> s;
+    while ( (int)s[0] - 64 <= 0|| (int)s[0] -64 > Plateau::NBCASES){
+    	std::cout << "entrez la colonne de la case à attaquer:" << std::endl;
+        std::cin >> s;
+    }
+    int position2 = (int)s[0] - 64;
+
+    return p_plateau->getCase(position1, position2);
 }
 
 CaseJ &Fenetre::demanderCaseDepart() const{
-	std::cout << "entrez la position de l'unit� � d�placer (7S):" << std::endl;
+	std::cout << "entrez la ligne de l'unite à déplacer:" << std::endl;
     std::string s;
     std::cin >> s;
-    while ( (int)s[0] <= 48 || (int)s[0] >=55 || (int)s[1] <= 65 || (int)s[1] >= 83){
-    	std::cout << "entrez la position de l'unit� � d�placer (7S):" << std::endl;
+
+    while ( atoi(s.c_str()) <= 0 || atoi(s.c_str()) > Plateau::NBCASES){
+    	std::cout << "entrez la ligne de l'unite à déplacer:" << std::endl;
         std::cin >> s;
     }
-    return p_plateau->getCase((int)s[0] - 48, (int)s[1]);
+    int position1 = atoi(s.c_str());
+
+	std::cout << "entrez la colonne de l'unite à déplacer:" << std::endl;
+    std::cin >> s;
+    while ( (int)s[0] - 64 <= 0|| (int)s[0] -64 > Plateau::NBCASES){
+    	std::cout << "entrez la colonne de l'unite à déplacer:" << std::endl;
+        std::cin >> s;
+    }
+    int position2 = (int)s[0] - 64;
+
+    return p_plateau->getCase(position1, position2);
 }
 
 CaseJ &Fenetre::demanderCaseArrivee() const{
-	std::cout << "entrez la position d'arriv�e (7S):" << std::endl;
+	std::cout << "entrez la ligne de la position d'arrivée:" << std::endl;
     std::string s;
     std::cin >> s;
-    while ( (int)s[0] <= 48 || (int)s[0] >=55 || (int)s[1] <= 65 || (int)s[1] >= 83){
-    	std::cout << "entrez la position d'arriv�e (7S):" << std::endl;
+
+    while ( atoi(s.c_str()) <= 0 || atoi(s.c_str()) > Plateau::NBCASES){
+    	std::cout << "entrez la ligne de la position d'arrivée:" << std::endl;
         std::cin >> s;
     }
-    return p_plateau->getCase((int)s[0] - 48, (int)s[1]);
+    int position1 = atoi(s.c_str());
+
+	std::cout << "entrez la colonne de la position d'arrivée:" << std::endl;
+    std::cin >> s;
+    while ( (int)s[0] - 64 <= 0|| (int)s[0] -64 > Plateau::NBCASES){
+    	std::cout << "entrez la colonne de la position d'arrivée:" << std::endl;
+        std::cin >> s;
+    }
+    int position2 = (int)s[0] - 64;
+
+    return p_plateau->getCase(position1, position2);
 }
 
 void Fenetre::setPlateau(Plateau &unPlateau) {

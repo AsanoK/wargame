@@ -17,7 +17,7 @@
 // Fonctions
 //=====================================================================
 
-Joueur::Joueur(Partie &unePartie, std::string &unPseudo, char uneCouleur[3]): m_pseudo(unPseudo), m_couleur(uneCouleur), p_partie(&unePartie), p_fenetre(&p_partie->getFenetre()){
+Joueur::Joueur(Partie &unePartie, std::string &unPseudo, int unNumero, char uneCouleur[3]): m_pseudo(unPseudo), m_numero(unNumero), m_couleur(uneCouleur), p_partie(&unePartie), p_fenetre(&p_partie->getFenetre()){
 
 }
 
@@ -30,6 +30,7 @@ void Joueur::regenererTroupe(){
 }
 
 void Joueur::executerTour(){
+	p_fenetre->afficherTour(this->m_pseudo);
 	p_fenetre->afficherGrille();
 	std::string action = p_fenetre->demanderAction();
 	p_fenetre->afficherGrille();
@@ -79,6 +80,10 @@ void Joueur::setPseudo(const std::string &unPseudo){
 	m_pseudo = unPseudo;
 }
 
+int Joueur::getNumero() const{
+	return m_numero;
+}
+
 char *Joueur::getCouleur(){
 	return m_couleur;
 }
@@ -87,7 +92,7 @@ void Joueur::setCouleur(char uneCouleur[3]){
 	m_couleur = uneCouleur;
 }
 
-Unite *Joueur::getUnite(int unePosition){
+Unite *Joueur::getUnite(int unePosition) const{
 	return m_unites.at(unePosition);
 }
 
