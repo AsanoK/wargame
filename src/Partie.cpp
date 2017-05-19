@@ -61,11 +61,11 @@ void Partie::lancerPartie(){
 }
 
 
-Plateau &Partie::getPlateau(){
-	return m_plateau;
+Plateau *Partie::getPlateau(){
+	return &m_plateau;
 }
-Fenetre &Partie::getFenetre(){
-	return m_fenetre;
+Fenetre *Partie::getFenetre(){
+	return &m_fenetre;
 }
 Joueur* Partie::getJoueur1(){
 	return &m_joueurs.at(0);

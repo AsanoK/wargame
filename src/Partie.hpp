@@ -26,8 +26,8 @@ private:
 public:
 	Partie();
 	void lancerPartie();
-	Plateau &getPlateau();
-	Fenetre &getFenetre();
+	Plateau *getPlateau();
+	Fenetre *getFenetre();
 	Joueur* getJoueur1();
 	Joueur* getJoueur2();
 	int getTourDeJeu();
