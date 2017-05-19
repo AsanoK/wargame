@@ -56,7 +56,7 @@ std::string &Fenetre::demanderAction() const{
 	return action;
 }
 
-std::string &Fenetre::demanderPseudo(int joueur) const{
+std::string Fenetre::demanderPseudo(int joueur) const{
 	std::cout << "Joueur " << joueur << ", entrez votre pseudo:" << std::endl;
 	std::string pseudo;
 	std::cin >> pseudo;
