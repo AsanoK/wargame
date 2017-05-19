@@ -6,6 +6,7 @@
  */
 
 #include <string>
+#include <stdio.h>
 
 #include "Fenetre.hpp"
 #include "Partie.hpp"
@@ -16,6 +17,7 @@
 //=====================================================================
 // Fonctions
 //=====================================================================
+
 /**
  * constructeur de la classe joueur
  * @param unePartie : la partie à laquelle il appartiendra
@@ -24,8 +26,15 @@
  * @param uneCouleur : la couleur qui sera utilisée pour ce joueur
  *
  */
-Joueur::Joueur(Partie &unePartie, std::string &unPseudo, int unNumero, char uneCouleur[3]): m_pseudo(unPseudo), m_numero(unNumero), m_couleur(uneCouleur), p_partie(&unePartie), p_fenetre(p_partie->getFenetre()){
-
+Joueur::Joueur(Partie &unePartie, std::string &unPseudo, int unNumero, unsigned char uneCouleur[3]): m_pseudo(unPseudo), m_numero(unNumero), p_partie(&unePartie), p_fenetre(p_partie->getFenetre()){
+	m_couleur = new unsigned char[3];
+	for(int i = 0; i<3; i++)
+		m_couleur[i] = uneCouleur[i];
+#if COULEUR
+	char buffer[3];
+	sprintf(buffer, "%d", m_couleur[0] + 1);
+	m_pseudo = "\e[38;5;" + (std::string)buffer + "m" + m_pseudo + "\e[39m";
+#endif
 }
 
 /**
@@ -122,12 +131,13 @@ int Joueur::getNumero() const{
 	return m_numero;
 }
 
-char *Joueur::getCouleur(){
+unsigned char *Joueur::getCouleur(){
 	return m_couleur;
 }
 
-void Joueur::setCouleur(char uneCouleur[3]){
-	m_couleur = uneCouleur;
+void Joueur::setCouleur(unsigned char uneCouleur[3]){
+	for(int i = 0; i<3; i++)
+		m_couleur[i] = uneCouleur[i];
 }
 
 Unite *Joueur::getUnite(int unePosition) const{
@@ -150,4 +160,7 @@ int Joueur::getNbrUnite() const{
 	return m_unites.size();
 }
 
+Joueur::~Joueur(){
+	delete m_couleur;
+}
 
