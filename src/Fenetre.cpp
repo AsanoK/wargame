@@ -89,7 +89,7 @@ void Fenetre::afficherGrille(){
 				else
 					couleurBack = "\e[40m";
 			}
-			caseAffichee = &p_plateau->getCase(i,j);
+			caseAffichee = p_plateau->getCase(i,j);
 			Unite* unite = caseAffichee->getUnite();
 			if ( unite == NULL){
 				couleurFront = "\e[39m";
