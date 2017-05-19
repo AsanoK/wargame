@@ -78,7 +78,7 @@ void Cavalier::regenerer(){
 	//r�gen de vie? 1/4 du total ou de quoi revenir au maximum
 	int bvie = 0;
 	if(vie<VIECAV){
-		bvie = (int)VIECAV/4;
+		bvie = (int)VIECAV*REGEN;
 		if(vie+bvie>VIECAV){
 			bvie = VIECAV-vie;
 		}

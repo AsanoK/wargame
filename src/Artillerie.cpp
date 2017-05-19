@@ -83,7 +83,7 @@ void Artillerie::regenerer(){
 	//r�gen de vie? 1/4 du total ou de quoi revenir au maximum
 	int bvie = 0;
 	if(vie<VIEART){
-		bvie = (int)VIEART/4;
+		bvie = (int)VIEART*REGEN;
 		if(vie+bvie>VIEART){
 			bvie = VIEART-vie;
 		}
