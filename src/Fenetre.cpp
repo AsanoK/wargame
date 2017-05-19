@@ -54,11 +54,11 @@ void Fenetre::afficherTour(std::string pseudo) const{
 }
 
 std::string Fenetre::demanderAction() const{
-	std::cout << "quelle action souhaitez vous faire? (q : arret, a a: attaquer, d : deplacer)" << std::endl;
+	std::cout << "quelle action souhaitez vous faire? (q : arret, a: attaquer, d : deplacer)" << std::endl;
 	std::string action;
 	std::cin >> action;
 	while (action != "a" && action !="q" && action != "d"){
-		std::cout << "quelle action souhaitez vous faire? (q : arret, a a: attaquer, d : deplacer)" << std::endl;
+		std::cout << "quelle action souhaitez vous faire? (q : arret, a: attaquer, d : deplacer)" << std::endl;
 		std::cin >> action;
 	}
 	return action;
