@@ -111,6 +111,7 @@ if(modvie>0){
 	int resteVieCible = cible->getVie()-modvie;
 	if(resteVieCible>cible->getVie()){
 		//on ne fait rien
+
 	}else if(resteVieCible>0){
 		cible->setVie(resteVieCible);
 		Fenetre::affichageCibleEnVie();
