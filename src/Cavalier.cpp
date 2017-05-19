@@ -86,7 +86,8 @@ void Cavalier::regenerer(){
 	vie=vie+bvie;
 }
 Cavalier::~Cavalier() {
-	// TODO Auto-generated destructor stub
+	position->setUnite(NULL);
+	joueur->supprimerUnite(*this);
 }
 char Cavalier::toChar(){
 	return CHARCAV;

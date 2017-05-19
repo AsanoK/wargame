@@ -30,11 +30,11 @@ Artillerie::~Artillerie() {
 }
 /**
  * mï¿½thode dï¿½terminant si une case est attaquable ou non. Dans le cas de l'artillerie, toute cible ï¿½ deux cases de distance dans toute les direction (donc un carrï¿½)
- *
+ *schéma des cases atteignables : x case possible, o pour l'origine et _ pour vide
  *     xxxxx
-	 * x   x
-	 * x o x
-	 * x   x
+	 * x___x
+	 * x_o_x
+	 * x___x
 	 * xxxxx
  * @param cible : case dont l'on souhaite savoir si elle est attaquable
  * @return vrai si la case est attaquable, faux sinon.
