@@ -5,12 +5,13 @@
  *      Author: cdecultot
  */
 
-#ifndef CASE_HPP_
-#define CASE_HPP_
+#ifndef SRC_CASE_HPP_
+#define SRC_CASE_HPP_
 
-class Unite;
+#include "Unite.hpp"
 
 class CaseJ {
+
 private:
 	int positionX;
 	int positionY;
@@ -21,8 +22,8 @@ public:
 	virtual ~CaseJ();
 	int getPositionX()const;
 	int getPositionY()const;
-	Unite* getUnite();
-	void setUnite(Unite* u);
+	Unite *getUnite();
+	void setUnite(Unite *u);
 
 };
 

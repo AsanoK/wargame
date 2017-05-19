@@ -8,13 +8,14 @@
 #ifndef UNITE_HPP_
 #define UNITE_HPP_
 
-#include "ConstantesUnites.hpp"
-#include "CaseJ.hpp"
 class CaseJ;
 class Joueur;
+
 /**
  * classe m�re des diff�rents types d'unit�
  */
+
+
 class Unite{
 private:
 	void attaquer(Unite*);
@@ -25,12 +26,12 @@ protected :
 	bool AttaqueExecutee,DeplacementExecute;
 public:
 	Unite();
-	Unite(CaseJ&, Joueur&);
+	Unite(CaseJ& uneCase, Joueur& unJoueur);
 	int getAttaque();
 	int getdefense();
 	int getVie();
-	CaseJ* getposition();
-	Joueur* getJoueur();
+	CaseJ *getposition();
+	Joueur *getJoueur();
 	bool isAttaqueExecutee();
 	bool isdeplacementExecute();
 	void setPosition(CaseJ&);
@@ -38,10 +39,10 @@ public:
 	void setDeplacementExecute(const bool);
 	void setAttaqueExecutee(const bool);
 
-	bool virtual  isCaseAtteignable(const CaseJ&) = 0;
-	bool virtual isCaseAttaquable(const CaseJ&) = 0;
-	bool deplacer(CaseJ&);
-	bool attaquer(CaseJ&);
+	bool virtual  isCaseAtteignable(const CaseJ& uneCase) = 0;
+	bool virtual isCaseAttaquable(const CaseJ& uneCase) = 0;
+	bool deplacer(CaseJ& uneCase);
+	bool attaquer(CaseJ& uneCase);
 	virtual ~Unite();
 	void virtual regenerer() = 0;
 	char virtual toChar() = 0;

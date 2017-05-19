@@ -5,9 +5,18 @@
  *      Author: Hugin
  */
 
-#ifndef SRC_ARTILLERIE_H_
-#define SRC_ARTILLERIE_H_
-#include "Unite.hpp"
+#ifndef SRC_ARTILLERIE_HPP_
+#define SRC_ARTILLERIE_HPP_
+
+
+
+#include "ConstantesUnites.hpp"
+#include  "Unite.hpp"
+
+class CaseJ;
+class Joueur;
+
+class Unite;
 /**
  * classe artillerie, représentant une unité d'attaque à distance, hérite d'artillerie
  */
@@ -22,4 +31,4 @@ public:
 
 };
 
-#endif /* SRC_ARTILLERIE_H_ */
+#endif /* SRC_ARTILLERIE_HPP_ */

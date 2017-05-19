@@ -5,10 +5,16 @@
  *      Author: Hugin
  */
 
-#ifndef SRC_CAVALIER_H_
-#define SRC_CAVALIER_H_
-#include "Unite.hpp"
+#ifndef SRC_CAVALIER_HPP_
+#define SRC_CAVALIER_HPP_
+
 #include "ConstantesUnites.hpp"
+#include  "Unite.hpp"
+
+class CaseJ;
+class Joueur;
+
+
 /**
  * classe de cavalerie, qui est un type d'unité (et donc hérite de la classe unité)
  */
@@ -23,4 +29,4 @@ public:
 
 };
 
-#endif /* SRC_CAVALIER_H_ */
+#endif /* SRC_CAVALIER_HPP_ */

@@ -5,11 +5,15 @@
  *      Author: cdecultot
  */
 
+#include "Partie.hpp"
 #include "Plateau.hpp"
 
+Plateau::Plateau():partie(0){
 
-Plateau::Plateau(Partie* p) {
-	partie=p;
+}
+
+void Plateau::setPartie(Partie &p) {
+	partie=&p;
 	Plateau::genererGrilleAleatoire();
 	Plateau::deployerUnitesInitiales();
 }
@@ -29,20 +33,20 @@ void Plateau::deployerUnitesInitiales()
 	// Creation et déploiement des unités initiales du premier joueur
 	for (int i=0;i<NB_TROUPES_DEPART;i++)
 	{
-		Fantassin f=Fantassin(cases[1][i],p1);
+		Fantassin f(cases[1][i],p1);
 		p1.ajouterUnite(f);
 		cases[1][i].setUnite(&f);
 	}
-	Cavalier c1=Cavalier(cases[0][NBCASES/2-NB_TROUPES_DEPART/2-2],p1);
+	Cavalier c1(cases[0][NBCASES/2-NB_TROUPES_DEPART/2-2],p1);
 	p1.ajouterUnite(c1);
 	cases[0][NBCASES/2-NB_TROUPES_DEPART/2-2].setUnite(&c1);
-	Cavalier c2=Cavalier(cases[0][NBCASES/2-NB_TROUPES_DEPART/2+2],p1);
+	Cavalier c2(cases[0][NBCASES/2-NB_TROUPES_DEPART/2+2],p1);
 	p1.ajouterUnite(c2);
 	cases[0][NBCASES/2-NB_TROUPES_DEPART/2+2].setUnite(&c2);
-	Artillerie a1=Artillerie(cases[0][NBCASES/2-NB_TROUPES_DEPART/2-1],p1);
+	Artillerie a1(cases[0][NBCASES/2-NB_TROUPES_DEPART/2-1],p1);
 	p1.ajouterUnite(a1);
 	cases[0][NBCASES/2-NB_TROUPES_DEPART/2-1].setUnite(&a1);
-	Artillerie a2=Artillerie(cases[0][NBCASES/2-NB_TROUPES_DEPART/2+1],p1);
+	Artillerie a2(cases[0][NBCASES/2-NB_TROUPES_DEPART/2+1],p1);
 	p1.ajouterUnite(a2);
 	cases[0][NBCASES/2-NB_TROUPES_DEPART/2+1].setUnite(&a2);
 
@@ -50,20 +54,20 @@ void Plateau::deployerUnitesInitiales()
 
 	for (int i=0;i<NB_TROUPES_DEPART;i++)
 	{
-		Fantassin f=Fantassin(cases[NBCASES-2][i],p2);
+		Fantassin f(cases[NBCASES-2][i],p2);
 		p2.ajouterUnite(f);
 		cases[NBCASES-2][i].setUnite(p2.getUnite(i));
 	}
-	Cavalier c3=Cavalier(cases[0][NBCASES/2-NB_TROUPES_DEPART/2-2],p2);
+	Cavalier c3(cases[0][NBCASES/2-NB_TROUPES_DEPART/2-2],p2);
 	p2.ajouterUnite(c3);
 	cases[0][NBCASES/2-NB_TROUPES_DEPART/2-2].setUnite(&c3);
-	Cavalier c4=Cavalier(cases[0][NBCASES/2-NB_TROUPES_DEPART/2+2],p2);
+	Cavalier c4(cases[0][NBCASES/2-NB_TROUPES_DEPART/2+2],p2);
 	p2.ajouterUnite(c4);
 	cases[0][NBCASES/2-NB_TROUPES_DEPART/2+2].setUnite(&c4);
-	Artillerie a3=Artillerie(cases[0][NBCASES/2-NB_TROUPES_DEPART/2-1],p2);
+	Artillerie a3(cases[0][NBCASES/2-NB_TROUPES_DEPART/2-1],p2);
 	p2.ajouterUnite(a3);
 	cases[0][NBCASES/2-NB_TROUPES_DEPART/2-1].setUnite(&a3);
-	Artillerie a4=Artillerie(cases[0][NBCASES/2-NB_TROUPES_DEPART/2+1],p2);
+	Artillerie a4(cases[0][NBCASES/2-NB_TROUPES_DEPART/2+1],p2);
 	p2.ajouterUnite(a4);
 	cases[0][NBCASES/2-NB_TROUPES_DEPART/2+1].setUnite(&a4);
 }

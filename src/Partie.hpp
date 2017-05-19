@@ -5,23 +5,22 @@
  *      Author: emacedegastines
  */
 
-#ifndef PARTIE_HPP_
-#define PARTIE_HPP_
+#ifndef SRC_PARTIE_HPP_
+#define SRC_PARTIE_HPP_
 
 #include <vector>
 #include <iostream>
 
 #include "Joueur.hpp"
-
-class Plateau;
-class Fenetre;
+#include "Plateau.hpp"
+#include "Fenetre.hpp"
 
 class Partie {
 
 private:
 	std::vector<Joueur> m_joueurs;
-	Fenetre *m_fenetre;
-	Plateau *m_plateau;
+	Fenetre m_fenetre;
+	Plateau m_plateau;
 	int m_tourDeJeu;
 
 public:

@@ -5,7 +5,10 @@
  *      Author: Hugin
  */
 
-#include "Artillerie.h"
+
+#include "CaseJ.hpp"
+#include "Artillerie.hpp"
+
 /**
  * constructeur de l'artillerie (ing�nieur de si�ge)
  * @param pos : position de l'unit� cr��e

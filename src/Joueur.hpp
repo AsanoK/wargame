@@ -5,16 +5,16 @@
  *      Author: Hugin
  */
 
-#ifndef JOUEUR_HPP_
-#define JOUEUR_HPP_
+#ifndef SRC_JOUEUR_HPP_
+#define SRC_JOUEUR_HPP_
 
 #include <string>
 #include <vector>
 
 #include "Unite.hpp"
-#include "Fenetre.hpp"
-#include "Partie.hpp"
 
+class Fenetre;
+class Partie;
 
 class Joueur{
 

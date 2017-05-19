@@ -7,6 +7,8 @@
 
 #include <string>
 
+#include "Fenetre.hpp"
+#include "Partie.hpp"
 #include "Joueur.hpp"
 
 
