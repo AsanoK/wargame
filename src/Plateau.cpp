@@ -85,7 +85,7 @@ Plateau::~Plateau() {
 		{
 			Unite* u=cases[i][j].getUnite();
 			if (u!=NULL)
-				u->getJoueur().supprimerUnite(u);
+				u->getJoueur()->supprimerUnite(*u);
 			delete(&cases[i][j]);
 		}
 }
