@@ -256,32 +256,32 @@ void Fenetre::setPlateau(Plateau &unPlateau) {
 }
 
 void  Fenetre::affichageAttaqueRealisee(){
-	std::cout<<"l'assaut est terminÃ©"<<std::endl;
+	std::cout<<MSSG_ATTAQUE_REALISEE<<std::endl;
 }
 void  Fenetre::affichageDeplacementRealise(){
-	std::cout<<"dÃ©placement effectuÃ©"<<std::endl;
+	std::cout<<MSSG_DEPLAC_REALISE<<std::endl;
 }
 void Fenetre::affichageCibleEnVie(){
-	std::cout<<"Les troupes ennemies ont tenues malgrÃ© vos assauts"<<std::endl;
+	std::cout<<MSSG_CIBLE_EN_VIE<<std::endl;
 }
 void Fenetre::affichageCibleDetruite(){
-	std::cout<<"Vos troupes ont prÃ©valu, l'assaut est une rÃ©ussite!"<<std::endl;
+	std::cout<<MSSG_CIBLE_DETRUITE<<std::endl;
 }
 void Fenetre::affichageAttaqueLancee(){
-	std::cout<<"vos troupes se lancent au combat"<<std::endl;
+	std::cout<<MSSG_ATTAQUE_LANCEE<<std::endl;
 }
 void Fenetre::affichageDeplacementLance(){
-	std::cout<<"vos troupes se mettent en marche"<<std::endl;
+	std::cout<<MSSG_DEPLAC_LANCE<<std::endl;
 }
 void Fenetre::affichageFinDeTour(){
-	std::cout<<"fin du tour"<<std::endl;
+	std::cout<<MSSG_FIN_TOUR<<std::endl;
 }
 void Fenetre::affichageDegats(){
-	std::cout<<"les troupes ennemies ont subi des pertes"<<std::endl;
+	std::cout<<MSSG_DEGATS<<std::endl;
 }
 void Fenetre::affichageAttaqueInutile(){
-	std::cout<<"l'attaque se sera révélée infructueuse"<<std::endl;
+	std::cout<<MSSG_ATTAQUE_INUTILE<<std::endl;
 }
 void Fenetre::affichageAttaqueInterdite(){
-	std::cout<<"Vos troupes sont confuses devant cet ordre improbable et n'y obéissent pas"<<std::endl;
+	std::cout<<MSSG_ATTAQUE_INTERDITE<<std::endl;
 }
