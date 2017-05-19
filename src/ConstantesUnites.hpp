@@ -27,4 +27,5 @@
 
 //régénération de vie
 #define REGEN (1/4)
+//comprise entre 0 et 1
 #endif /* CONSTANTESUNITES_HPP_ */
