@@ -108,6 +108,7 @@ void Fenetre::afficherGrille(){
 		couleurBack = "\e[49m";
 		std::cout << couleurFront << couleurBack << std::endl;
 	}
+	std::cout << std::endl;
 #endif
 }
 /**
@@ -274,4 +275,13 @@ void Fenetre::affichageDeplacementLance(){
 }
 void Fenetre::affichageFinDeTour(){
 	std::cout<<"fin du tour"<<std::endl;
+}
+void Fenetre::affichageDegats(){
+	std::cout<<"les troupes ennemies ont subi des pertes"<<std::endl;
+}
+void Fenetre::affichageAttaqueInutile(){
+	std::cout<<"l'attaque se sera révélée infructueuse"<<std::endl;
+}
+void Fenetre::affichageAttaqueInterdite(){
+	std::cout<<"Vos troupes sont confuses devant cet ordre improbable et n'y obéissent pas"<<std::endl;
 }
