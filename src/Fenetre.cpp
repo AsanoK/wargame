@@ -36,12 +36,7 @@ void Fenetre::afficherGrille(){
 				std::cout << ".";
 			}
 			else{
-<<<<<<< HEAD
 				std::cout << unite->toChar();
-=======
-				std::cout << 1 << std::endl;
-				std::cout << caseAffichee->getUnite()->toChar();
->>>>>>> 0f2ef3c062d9341844188047635b620152009260
 			}
 			std::cout << " ";
 		}
@@ -55,11 +50,11 @@ void Fenetre::afficherVainqueur(std::string &vainqueur) const{
 }
 
 std::string Fenetre::demanderAction() const{
-	std::cout << "quelle action souhaitez vous faire? (q : arret, a a: attaquer, d : deplacer)" << std::endl;
+	std::cout << "quelle action souhaitez vous faire? (q : arret, a: attaquer, d : deplacer)" << std::endl;
 	std::string action;
 	std::cin >> action;
 	while (action != "a" && action !="q" && action != "d"){
-		std::cout << "quelle action souhaitez vous faire? (q : arret, a a: attaquer, d : deplacer)" << std::endl;
+		std::cout << "quelle action souhaitez vous faire? (q : arret, a: attaquer, d : deplacer)" << std::endl;
 		std::cin >> action;
 	}
 	return action;
