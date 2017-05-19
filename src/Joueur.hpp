@@ -54,7 +54,7 @@ public:
 	char *getCouleur();
 	void setCouleur(char uneCouleur[3]);
 	Unite *getUnite(int unePosition) const;
-	void supprimerUnite(int unePosition);
+	void supprimerUnite(Unite &uneUnite);
 	void ajouterUnite(Unite &uneUnite);
 	int getNbrUnite() const;
 
