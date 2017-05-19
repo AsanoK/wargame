@@ -6,6 +6,7 @@
  */
 
 #include <string>
+#include <cstring>
 
 #include "Fenetre.hpp"
 #include "Partie.hpp"
@@ -17,8 +18,8 @@
 // Fonctions
 //=====================================================================
 
-Joueur::Joueur(Partie &unePartie, std::string &unPseudo, int unNumero, unsigned char uneCouleur[3]): m_pseudo(unPseudo), m_numero(unNumero), m_couleur(uneCouleur), p_partie(&unePartie), p_fenetre(&p_partie->getFenetre()){
-
+Joueur::Joueur(Partie &unePartie, std::string &unPseudo, int unNumero, unsigned char uneCouleur[3]): m_pseudo(unPseudo), m_numero(unNumero), p_partie(&unePartie), p_fenetre(&p_partie->getFenetre()){
+	std::memcpy(m_couleur, uneCouleur, sizeof(unsigned char) * 3);
 }
 
 
