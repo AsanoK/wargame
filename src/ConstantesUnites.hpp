@@ -25,7 +25,12 @@
 #define DEFART 5
 #define CHARART 'A'
 
-//régénération de vie
+#define COULEUR true
+
+#define COULEUR_J1 192
+#define COULEUR_J2 192
+
+//rï¿½gï¿½nï¿½ration de vie
 #define REGEN (1/4)
 //comprise entre 0 et 1
 #endif /* CONSTANTESUNITES_HPP_ */
