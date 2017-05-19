@@ -24,6 +24,7 @@ class Joueur{
 
 private:
 	std::string m_pseudo;
+	int m_numero;
 	char *m_couleur;
 	std::vector<Unite*> m_unites;
 	Partie *p_partie;
@@ -34,7 +35,7 @@ private:
 	//=====================================================================
 
 public:
-	Joueur(Partie& unePartie, std::string &unPseudo, char *uneCouleur);
+	Joueur(Partie& unePartie, std::string &unPseudo, int unNumero, char *uneCouleur);
 	void regenererTroupe();
 	void executerTour();
 private:
@@ -49,9 +50,10 @@ private:
 public:
 	std::string &getPseudo();
 	void setPseudo(const std::string &unPseudo);
+	int getNumero() const;
 	char *getCouleur();
 	void setCouleur(char uneCouleur[3]);
-	Unite *getUnite(int unePosition);
+	Unite *getUnite(int unePosition) const;
 	void supprimerUnite(int unePosition);
 	void ajouterUnite(Unite &uneUnite);
 	int getNbrUnite() const;
