@@ -8,17 +8,19 @@
 #include "Partie.hpp"
 
 
-
+/**
+ * Constructeur de la partie
+ *
+ */
 Partie::Partie():m_tourDeJeu(0), m_plateau(), m_fenetre(){
-	// cration du premier joueur
+	// création du premier joueur
 	this->m_joueurs.reserve(2);
-
 	std::string pseudo1 = m_fenetre.demanderPseudo(1);
 	unsigned char couleur1[3] = {COULEUR_J1,COULEUR_J1, COULEUR_J1};
 	Joueur *joueur1 = new Joueur(*this, pseudo1, 1, couleur1);
 	this->m_joueurs.push_back(*joueur1);
 
-	// creation du deuxieme joueur
+	// création du deuxième joueur
 	std::string pseudo2 = m_fenetre.demanderPseudo(2);
 	unsigned char couleur2[3] = {COULEUR_J2, COULEUR_J2, COULEUR_J2};
 	Joueur *joueur2 = new Joueur(*this, pseudo2, 2, couleur2);
@@ -30,7 +32,9 @@ Partie::Partie():m_tourDeJeu(0), m_plateau(), m_fenetre(){
 	return;
 }
 
-
+/**
+ * Gestion de la partie
+ */
 void Partie::lancerPartie(){
 	int fin = 0;
 	while(fin == 0){
@@ -63,11 +67,11 @@ void Partie::lancerPartie(){
 }
 
 
-Plateau &Partie::getPlateau(){
-	return m_plateau;
+Plateau *Partie::getPlateau(){
+	return &m_plateau;
 }
-Fenetre &Partie::getFenetre(){
-	return m_fenetre;
+Fenetre *Partie::getFenetre(){
+	return &m_fenetre;
 }
 Joueur* Partie::getJoueur1(){
 	return &m_joueurs.at(0);

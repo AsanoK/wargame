@@ -14,7 +14,9 @@
 #include "Joueur.hpp"
 #include "Plateau.hpp"
 #include "Fenetre.hpp"
-
+/**
+ * classe gérant la totalité de la partie, notamment l'alternance des tours de jeu
+ */
 class Partie {
 
 private:
@@ -26,8 +28,8 @@ private:
 public:
 	Partie();
 	void lancerPartie();
-	Plateau &getPlateau();
-	Fenetre &getFenetre();
+	Plateau *getPlateau();
+	Fenetre *getFenetre();
 	Joueur* getJoueur1();
 	Joueur* getJoueur2();
 	int getTourDeJeu();

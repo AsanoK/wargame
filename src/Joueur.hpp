@@ -15,7 +15,9 @@
 
 class Fenetre;
 class Partie;
-
+/**
+ * classe représentant un des joueurs
+ */
 class Joueur{
 
 	//=====================================================================

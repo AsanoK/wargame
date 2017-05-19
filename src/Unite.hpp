@@ -12,7 +12,7 @@ class CaseJ;
 class Joueur;
 
 /**
- * classe m�re des diff�rents types d'unit�
+ * classe mère des différents types d'unité
  */
 
 
