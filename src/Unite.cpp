@@ -51,7 +51,11 @@ bool Unite::deplacer(CaseJ& cible){
 bool Unite::attaquer(CaseJ& cible){
 	bool ret = false;
 	Fenetre::affichageAttaqueLancee();
-	if((isCaseAttaquable(cible))and(isAttaqueExecutee()==false)and(cible.getUnite()!=NULL)and(cible.getUnite()->getJoueur()!=this->getJoueur())){
+	if((isCaseAttaquable(cible))
+			and(isAttaqueExecutee()==false)
+			and(cible.getUnite()!=NULL)
+			and(cible.getUnite()->getJoueur()!=this->getJoueur())){
+
 		attaquer(cible.getUnite());
 		Fenetre::affichageAttaqueRealisee();
 		ret = true;
