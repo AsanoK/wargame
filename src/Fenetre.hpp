@@ -32,7 +32,10 @@ public:
 	CaseJ &demanderCaseAttaquee() const;
 	CaseJ &demanderCaseDepart() const;
 	CaseJ &demanderCaseArrivee() const;
-
+	void static affichageAttaqueRealisee();
+	void static affichageDeplacementRealise();
+	void static affichageCibleEnVie();
+	void static affichageCibleDetruite();
 	void setPlateau(Plateau &unPlateau);
 };
 
