@@ -162,15 +162,15 @@ CaseJ &Fenetre::demanderCaseArrivee() const{
 void Fenetre::setPlateau(Plateau &unPlateau) {
 	p_plateau = &unPlateau;
 }
-void  affichageAttaqueRealisee(){
-	std::cout<<"l'assaut est terminé"<<std::endl;
+void  Fenetre::affichageAttaqueRealisee(){
+	std::cout<<"l'assaut est terminÃ©"<<std::endl;
 }
-void  affichageDeplacementRealise(){
-	std::cout<<"déplacement effectué"<<std::endl;
+void  Fenetre::affichageDeplacementRealise(){
+	std::cout<<"dï¿½placement effectuï¿½"<<std::endl;
 }
-void affichageCibleEnVie(){
-	std::cout<<"Les troupes ennemies ont tenues malgré vos assauts"<<std::endl;
+void Fenetre::affichageCibleEnVie(){
+	std::cout<<"Les troupes ennemies ont tenues malgrï¿½ vos assauts"<<std::endl;
 }
-void  affichageCibleDetruite(){
-	std::cout<<"Vos troupes ont prévalu, l'assaut est une réussite!"<<std::endl;
+void Fenetre::affichageCibleDetruite(){
+	std::cout<<"Vos troupes ont prï¿½valu, l'assaut est une rï¿½ussite!"<<std::endl;
 }
