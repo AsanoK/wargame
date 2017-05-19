@@ -12,16 +12,16 @@
 //fantassins
 #define VIEFANT 20
 #define ATTFANT 10
-#define DEFFANT 15
+#define DEFFANT 10
 #define CHARFANT 'F'
 //cavaliers
 #define VIECAV 15
-#define ATTCAV 15
+#define ATTCAV 20
 #define DEFCAV 5
 #define CHARCAV 'C'
 //artilerie
 #define VIEART 5
-#define ATTART 20
+#define ATTART 30
 #define DEFART 5
 #define CHARART 'A'
 
