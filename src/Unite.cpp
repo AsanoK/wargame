@@ -8,6 +8,7 @@
 #include "Joueur.hpp"
 #include "CaseJ.hpp"
 #include "Unite.hpp"
+#include "Fenetre.hpp"
 
 #include <stdio.h>
 

@@ -32,31 +32,31 @@ Partie::Partie():m_tourDeJeu(0), m_plateau(), m_fenetre(){
 void Partie::lancerPartie(){
 	int fin = 0;
 	while(fin == 0){
-		getJoueur1().executerTour();
-		if (getJoueur1().getNbrUnite() == 0){
+		getJoueur1()->executerTour();
+		if (getJoueur1()->getNbrUnite() == 0){
 			fin = 1;
 			break;
 		}
-		if (getJoueur2().getNbrUnite() == 0){
+		if (getJoueur2()->getNbrUnite() == 0){
 			fin = 2;
 			break;
 		}
-		getJoueur2().executerTour();
-		if (getJoueur1().getNbrUnite() == 0){
+		getJoueur2()->executerTour();
+		if (getJoueur1()->getNbrUnite() == 0){
 			fin = 1;
 			break;
 		}
-		if (getJoueur2().getNbrUnite() == 0){
+		if (getJoueur2()->getNbrUnite() == 0){
 			fin = 2;
 			break;
 		}
 
 	}
 	if (fin==1){
-		m_fenetre.afficherVainqueur(getJoueur1().getPseudo());
+		m_fenetre.afficherVainqueur(getJoueur1()->getPseudo());
 	}
 	else{
-		m_fenetre.afficherVainqueur(getJoueur2().getPseudo());
+		m_fenetre.afficherVainqueur(getJoueur2()->getPseudo());
 	}
 }
 
@@ -67,11 +67,11 @@ Plateau &Partie::getPlateau(){
 Fenetre &Partie::getFenetre(){
 	return m_fenetre;
 }
-Joueur &Partie::getJoueur1(){
-	return m_joueurs.at(0);
+Joueur* Partie::getJoueur1(){
+	return &m_joueurs.at(0);
 }
-Joueur &Partie::getJoueur2(){
-	return m_joueurs.at(1);
+Joueur* Partie::getJoueur2(){
+	return &m_joueurs.at(1);
 }
 int Partie::getTourDeJeu(){
 	return m_tourDeJeu;
