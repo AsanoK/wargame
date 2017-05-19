@@ -34,11 +34,12 @@ Unite::Unite(CaseJ& c, Joueur& prop) {
  */
 bool Unite::deplacer(CaseJ& cible){
 	bool ret = false;
- if((isCaseAtteignable(cible))and(DeplacementExecute==false)and(cible.getUnite()==NULL)){
-	 this->setPosition(cible);
-	 Fenetre::affichageDeplacementRealise();
-	 ret = true;
- }
+	Fenetre::affichageDeplacementLance();
+	 if((isCaseAtteignable(cible))and(DeplacementExecute==false)and(cible.getUnite()==NULL)){
+		 this->setPosition(cible);
+		 Fenetre::affichageDeplacementRealise();
+		 ret = true;
+	 }
 
  DeplacementExecute = true;
  return ret;
@@ -50,6 +51,7 @@ bool Unite::deplacer(CaseJ& cible){
  */
 bool Unite::attaquer(CaseJ& cible){
 	bool ret = false;
+	Fenetre::affichageAttaqueLancee();
 	if((isCaseAttaquable(cible))and(isAttaqueExecutee()==false)and(cible.getUnite()!=NULL)and(cible.getUnite()->getJoueur()!=this->getJoueur())){
 		attaquer(cible.getUnite());
 		Fenetre::affichageAttaqueRealisee();

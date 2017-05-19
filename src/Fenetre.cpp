@@ -6,6 +6,9 @@
  */
 
 #include <cstdlib>
+#include <stdio.h>
+#include <string>
+#include <iostream>
 
 #include "Plateau.hpp"
 #include "Fenetre.hpp"
@@ -21,11 +24,12 @@ Fenetre::~Fenetre() {
 }
 
 void Fenetre::afficherGrille(){
+#if !COULEUR
 	std::cout << "   A B C D E F G H I J K L M N O P Q R S T " << std::endl;
 	CaseJ *caseAffichee = NULL;
 	for (int i=0; i<Plateau::NBCASES; ++i){
 		if (i < 9){
-		std::cout << " ";
+			std::cout << " ";
 		}
 		std::cout << i + 1 << " " ;
 
@@ -42,7 +46,69 @@ void Fenetre::afficherGrille(){
 		}
 		std::cout << std::endl;
 	}
+#else
+	std::string couleurBack;
+	std::string couleurFront = "\e[39m";
+	std::cout << "   ";
+	for(char lettre = 'A'; lettre < 'A' + Plateau::NBCASES; lettre++)
+	{
+		if((lettre-'A')%2 == 1)
+			couleurBack = "\e[40m";
+		else
+			couleurBack = "\e[44m";
+		std::cout << couleurFront << couleurBack << lettre << " ";
+	}
+	couleurBack = "\e[40m";
+	std::cout << couleurFront << couleurBack << std::endl;
 
+	CaseJ *caseAffichee = NULL;
+	for (int i=0; i<Plateau::NBCASES; ++i){
+		if(i%2==0)
+			couleurBack = "\e[100m";
+		else
+			couleurBack = "\e[40m";
+		if (i < 9){
+			std::cout << couleurFront << couleurBack << " ";
+		}
+		else
+			std::cout << couleurFront << couleurBack;
+		std::cout << i + 1 << " " ;
+
+		for (int j=0; j<Plateau::NBCASES; ++j){
+			if(i%2==0)
+			{
+				if(j%2 == 0)
+					couleurBack = "\e[104m";
+				else
+					couleurBack = "\e[100m";
+			}
+			else
+			{
+				if(j%2 == 0)
+					couleurBack = "\e[44m";
+				else
+					couleurBack = "\e[40m";
+			}
+			caseAffichee = &p_plateau->getCase(i,j);
+			Unite* unite = caseAffichee->getUnite();
+			if ( unite == NULL){
+				couleurFront = "\e[39m";
+				std::cout << couleurFront << couleurBack << ".";
+			}
+			else{
+				char buffer[3];
+				sprintf(buffer, "%d", unite->getJoueur()->getCouleur()[0] + 1);
+				couleurFront = "\e[38;5;" + (std::string)buffer;
+				couleurFront += "m";
+				std::cout << couleurFront << couleurBack << unite->toChar();
+			}
+			std::cout << " ";
+		}
+		couleurFront = "\e[39m";
+		couleurBack = "\e[49m";
+		std::cout << couleurFront << couleurBack << std::endl;
+	}
+#endif
 }
 
 void Fenetre::afficherVainqueur(std::string &vainqueur) const{
@@ -174,4 +240,10 @@ void Fenetre::affichageCibleEnVie(){
 }
 void Fenetre::affichageCibleDetruite(){
 	std::cout<<"Vos troupes ont prévalu, l'assaut est une réussite!"<<std::endl;
+}
+void Fenetre::affichageAttaqueLancee(){
+	std::cout<<'vos troupes se lacent au combat'<<std::endl;
+}
+void Fenetre::affichageDeplacementLance(){
+	std::cout<<'les troupes se mettent en marche'<<std::endl;
 }
