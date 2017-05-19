@@ -111,7 +111,7 @@ CaseJ *Fenetre::demanderCaseAttaquee() const{
         std::cin >> s;
     }
     int position2 = (int)s[0] - 64;
-    std::cout << position1 << position2 << std::endl;
+    //std::cout << position1 << position2 << std::endl;
     return p_plateau->getCase(position1-1, position2-1);
 }
 
@@ -167,11 +167,11 @@ void  Fenetre::affichageAttaqueRealisee(){
 	std::cout<<"l'assaut est terminé"<<std::endl;
 }
 void  Fenetre::affichageDeplacementRealise(){
-	std::cout<<"d�placement effectu�"<<std::endl;
+	std::cout<<"déplacement effectué"<<std::endl;
 }
 void Fenetre::affichageCibleEnVie(){
-	std::cout<<"Les troupes ennemies ont tenues malgr� vos assauts"<<std::endl;
+	std::cout<<"Les troupes ennemies ont tenues malgré vos assauts"<<std::endl;
 }
 void Fenetre::affichageCibleDetruite(){
-	std::cout<<"Vos troupes ont pr�valu, l'assaut est une r�ussite!"<<std::endl;
+	std::cout<<"Vos troupes ont prévalu, l'assaut est une réussite!"<<std::endl;
 }
