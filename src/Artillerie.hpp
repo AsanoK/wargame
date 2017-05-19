@@ -18,7 +18,7 @@ class Joueur;
 
 class Unite;
 /**
- * classe artillerie, représentant une unité d'attaque à distance, hérite d'artillerie
+ * classe artillerie, reprÃ©sentant une unitÃ© d'attaque Ã  distance, hÃ©rite d'artillerie
  */
 class Artillerie : public Unite {
 public:

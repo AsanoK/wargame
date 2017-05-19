@@ -18,10 +18,10 @@
 //=====================================================================
 /**
  * constructeur de la classe joueur
- * @param unePartie : la partie à laquelle il appartiendra
+ * @param unePartie : la partie Ã  laquelle il appartiendra
  * @param unPseudo : le pseudo du joueur
- * @param unNumero : le numéro du joueur
- * @param uneCouleur : la couleur qui sera utilisée pour ce joueur
+ * @param unNumero : le numÃ©ro du joueur
+ * @param uneCouleur : la couleur qui sera utilisÃ©e pour ce joueur
  *
  */
 Joueur::Joueur(Partie &unePartie, std::string &unPseudo, int unNumero, char uneCouleur[3]): m_pseudo(unPseudo), m_numero(unNumero), m_couleur(uneCouleur), p_partie(&unePartie), p_fenetre(&p_partie->getFenetre()){
@@ -29,7 +29,7 @@ Joueur::Joueur(Partie &unePartie, std::string &unPseudo, int unNumero, char uneC
 }
 
 /**
- * méthode permettant d'effectuer la régénération de toutes les unités du joueur. Normalement appelé à tous les tours
+ * mÃ©thode permettant d'effectuer la rÃ©gÃ©nÃ©ration de toutes les unitÃ©s du joueur. Normalement appelÃ©e Ã  tous les tours
  */
 void Joueur::regenererTroupe(){
 	for (unsigned int i=0; i<m_unites.size(); ++i){
@@ -38,7 +38,7 @@ void Joueur::regenererTroupe(){
 
 }
 /**
- * méthode gérant le tour d'un joueur
+ * mÃ©thode gÃ©rant le tour d'un joueur
  */
 void Joueur::executerTour(){
 	regenererTroupe();
@@ -59,13 +59,13 @@ void Joueur::executerTour(){
 	terminerTour();
 }
 /**
- * méthode permettant d'effectuer les actions effectuées sytématiquement à la fin du tour
+ * mÃ©thode permettant d'effectuer les actions effectuÃ©es sytÃ©matiquement Ã  la fin du tour
  */
 void Joueur::terminerTour(){
 	Fenetre::affichageFinDeTour();
 }
 /**
- * méthode permettant de lancer une attaque
+ * mÃ©thode permettant de lancer une attaque
  */
 void Joueur::attaquer(){
 	CaseJ* caseAttaquant = p_fenetre->demanderCaseAttaquant();
@@ -83,7 +83,7 @@ void Joueur::attaquer(){
 	}
 }
 /**
- * méthode permettant d'effectueer un déplacement
+ * mÃ©thode permettant d'effectuer un dÃ©placement
  */
 void Joueur::deplacer(){
 	CaseJ* caseDepart = p_fenetre->demanderCaseDepart();

@@ -18,7 +18,7 @@ void Plateau::setPartie(Partie &p) {
 	Plateau::deployerUnitesInitiales();
 }
 /**
- * méthode permettant d'obtenir une grille aléatoire
+ * mÃ©thode permettant d'obtenir une grille alÃ©atoire
  */
 void Plateau::genererGrilleAleatoire()
 {
@@ -27,7 +27,7 @@ void Plateau::genererGrilleAleatoire()
 			cases[i][j]=CaseJ(i,j);
 }
 /**
- * méthode permettant de placer les unités de départ des joueurs.
+ * mÃ©thode permettant de placer les unitÃ©s de dÃ©part des joueurs.
  */
 void Plateau::deployerUnitesInitiales()
 {

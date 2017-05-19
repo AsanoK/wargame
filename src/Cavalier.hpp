@@ -16,7 +16,7 @@ class Joueur;
 
 
 /**
- * classe de cavalerie, qui est un type d'unité (et donc hérite de la classe unité)
+ * Classe de cavalerie, qui est un type d'unitÃ© (et donc hÃ©rite de la classe unitÃ©)
  */
 class Cavalier : public Unite {
 public:

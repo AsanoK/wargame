@@ -15,15 +15,13 @@
 
 
 Fenetre::Fenetre() : p_plateau(NULL){
-	// TODO Auto-generated constructor stub
 
 }
 
 Fenetre::~Fenetre() {
-	// TODO Auto-generated destructor stub
 }
 /**
- * méthode gérant la totalité de l'afficahge du plateau, couleurs et unités inclues
+ * mÃ©thode gÃ©rant la totalitÃ© de l'affichage du plateau, couleurs et unitÃ©s inclues
  */
 void Fenetre::afficherGrille(){
 #if !COULEUR
@@ -113,22 +111,22 @@ void Fenetre::afficherGrille(){
 #endif
 }
 /**
- * méthode gérant l'affichage du vainqueur
+ * mÃ©thode gÃ©rant l'affichage du vainqueur
  * @param vainqueur : pseudo du joueur gagnant
  */
 void Fenetre::afficherVainqueur(std::string &vainqueur) const{
 	std::cout << "bravo, le vainqueur est le joueur "<< vainqueur << std::endl;
 }
 /**
- * méthode permettant d'afficher le joueur dont c'est le tour.
+ * mÃ©thode permettant d'afficher le joueur dont c'est le tour.
  * @param pseudo : le pseudo du joueur dont c'est le tour.
  */
 void Fenetre::afficherTour(std::string pseudo) const{
 	std::cout << "C'est au tour du joueur " << pseudo << std::endl;
 }
 /**
- * méthode permettant de demander au joueur quel sera son action
- * @return une chaine de caractère qui pourra être interprétée en tant que commande
+ * mÃ©thode permettant de demander au joueur quel sera son action
+ * @return une chaine de caractÃ¨re qui pourra Ãªtre interprÃ©tÃ©e en tant que commande
  */
 std::string Fenetre::demanderAction() const{
 	std::cout << "quelle action souhaitez vous faire? (q : arret, a: attaquer, d : deplacer)" << std::endl;
@@ -141,9 +139,9 @@ std::string Fenetre::demanderAction() const{
 	return action;
 }
 /**
- * méthode demandant à l'utilisateur le pseudonyme d'un joueur donné
- * @param : le joueur dont on souhaite récupérer le pseudo
- * @return : la chaine de caractère représentant ce pseudo
+ * mÃ©thode demandant Ã  l'utilisateur le pseudonyme d'un joueur donnÃ©
+ * @param : le joueur dont on souhaite rÃ©cupÃ©rer le pseudo
+ * @return : la chaine de caractÃ¨re reprÃ©sentant ce pseudo
  */
 std::string Fenetre::demanderPseudo(int joueur) const{
 	std::cout << "Joueur " << joueur << ", entrez votre pseudo:" << std::endl;
@@ -152,8 +150,8 @@ std::string Fenetre::demanderPseudo(int joueur) const{
 	return pseudo;
 }
 /**
- * méthode demandant quelle est la case d'une unité attaquante
- * @return la case sélectionnée
+ * mÃ©thode demandant quelle est la case d'une unitÃ© attaquante
+ * @return la case sÃ©lectionnÃ©e
  */
 CaseJ *Fenetre::demanderCaseAttaquant() const{
 	std::cout << "entrez la ligne de l'attaquant:" << std::endl;
@@ -177,8 +175,8 @@ CaseJ *Fenetre::demanderCaseAttaquant() const{
     return p_plateau->getCase(position1-1, position2-1);
 }
 /**
- * méthode demandant quelle est la case qui sera cible d'une attaque
- * @return la case à viser
+ * mÃ©thode demandant quelle est la case qui sera cible d'une attaque
+ * @return la case Ã  viser
  */
 CaseJ *Fenetre::demanderCaseAttaquee() const{
 	std::cout << "entrez la ligne de la case Ã  attaquer:" << std::endl;
@@ -202,8 +200,8 @@ CaseJ *Fenetre::demanderCaseAttaquee() const{
     return p_plateau->getCase(position1-1, position2-1);
 }
 /**
- * méthode permettant d'obtenir la case d'où va partir une unité
- * @return : la case de départ
+ * mÃ©thode permettant d'obtenir la case d'oÃ¹ va partir une unitÃ©
+ * @return : la case de dÃ©part
  */
 CaseJ *Fenetre::demanderCaseDepart() const{
 	std::cout << "entrez la ligne de l'unite Ã  dÃ©placer:" << std::endl;
@@ -227,8 +225,8 @@ CaseJ *Fenetre::demanderCaseDepart() const{
     return p_plateau->getCase(position1-1, position2-1);
 }
 /**
- * méthode permettant d'obtenir la case vers laquelle se déplace une unité
- * @return la case visée par le déplacement
+ * mÃ©thode permettant d'obtenir la case vers laquelle se dÃ©place une unitÃ©
+ * @return la case visÃ©e par le dÃ©placement
  */
 CaseJ *Fenetre::demanderCaseArrivee() const{
 	std::cout << "entrez la ligne de la position d'arrivÃ©e:" << std::endl;
@@ -269,11 +267,11 @@ void Fenetre::affichageCibleDetruite(){
 	std::cout<<"Vos troupes ont prÃ©valu, l'assaut est une rÃ©ussite!"<<std::endl;
 }
 void Fenetre::affichageAttaqueLancee(){
-	std::cout<<'vos troupes se lancent au combat'<<std::endl;
+	std::cout<<"vos troupes se lancent au combat"<<std::endl;
 }
 void Fenetre::affichageDeplacementLance(){
-	std::cout<<'vos troupes se mettent en marche'<<std::endl;
+	std::cout<<"vos troupes se mettent en marche"<<std::endl;
 }
 void Fenetre::affichageFinDeTour(){
-	std::cout<<'fin du tour'<<std::endl;
+	std::cout<<"fin du tour"<<std::endl;
 }

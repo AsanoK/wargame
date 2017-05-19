@@ -13,12 +13,11 @@
 #include <stdio.h>
 
 /**
- * constructeur de base de la classe unit�
- * @param c : case sur laquelle on cr�e l'unit�
- * @pram prop : joueur propri�taire de l'unit�
+ * constructeur de base de la classe unité
+ * @param c : case sur laquelle on crée l'unité
+ * @pram prop : joueur propriétaire de l'unité
  */
 Unite::Unite(CaseJ& c, Joueur& prop) {
-	// TODO Auto-generated constructor stub
 	position = &c;
 		joueur = &prop;
 		vie = 1;
@@ -28,9 +27,9 @@ Unite::Unite(CaseJ& c, Joueur& prop) {
 		AttaqueExecutee = false;
 }
 /**
- * m�thode effectuant le d�placement de l'unit�, y compris les changements de contenu des cases
- * @param cible : la case vis�e par le d�placement
- * @return : vrai si le d�placement a �t� r�solue, faux sinon.
+ * méthode effectuant le déplacement de l'unité, y compris les changements de contenu des cases
+ * @param cible : la case visée par le déplacement
+ * @return : vrai si le déplacement a été résolue, faux sinon.
  */
 bool Unite::deplacer(CaseJ& cible){
 	bool ret = false;
@@ -45,9 +44,9 @@ bool Unite::deplacer(CaseJ& cible){
  return ret;
 }
 /**
- * m�thode permettant de g�rer l'attaque d'une case
- * @param cible : case vis�e par l'attaque
- * @return : vrai si l'attaque a �t� r�solue, faux sinon
+ * méthode permettant de gérer l'attaque d'une case
+ * @param cible : case visée par l'attaque
+ * @return : vrai si l'attaque a été résolue, faux sinon
  */
 bool Unite::attaquer(CaseJ& cible){
 	bool ret = false;
@@ -85,7 +84,7 @@ bool Unite::isdeplacementExecute(){
 	return DeplacementExecute;
 }
 /**
- * m�thode pour changer la position
+ * méthode pour changer la position
  */
 void Unite::setPosition(CaseJ& c){
 	position->setUnite(NULL);
@@ -103,8 +102,8 @@ void Unite::setAttaqueExecutee( const bool b){
 	AttaqueExecutee = b;
 }
 /**
- * m�thode de r�solution des attaques (on suppose que celle-ci est possible)
- * @param : l'unit� contre laquelle on est engag�
+ * méthode de résolution des attaques (on suppose que celle-ci est possible)
+ * @param : l'unité contre laquelle on est engagé
  *
  */
 void Unite::attaquer(Unite* cible){

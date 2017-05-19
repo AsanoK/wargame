@@ -10,9 +10,9 @@
 #include "Artillerie.hpp"
 
 /**
- * constructeur de l'artillerie (ing�nieur de si�ge)
- * @param pos : position de l'unit� cr��e
- * @param prop : propri�taire de l'unit�
+ * constructeur de l'artillerie (ingénieur de siège)
+ * @param pos : position de l'unité créée
+ * @param prop : propriétaire de l'unité
  */
 Artillerie::Artillerie(CaseJ& pos, Joueur& prop): Unite(pos,prop) {
 	position = &pos;
@@ -29,18 +29,18 @@ Artillerie::~Artillerie() {
 	// TODO Auto-generated destructor stub
 }
 /**
- * m�thode d�terminant si une case est attaquable ou non. Dans le cas de l'artillerie, toute cible � deux cases de distance dans toute les direction (donc un carr�)
+ * méthode déterminant si une case est attaquable ou non. Dans le cas de l'artillerie, toute cible à deux cases de distance dans toute les direction (donc un carré)
  *
  *     xxxxx
-	 * x   x
-	 * x o x
-	 * x   x
-	 * xxxxx
+ *	   x   x
+ *     x o x
+ *     x   x
+ *     xxxxx
  * @param cible : case dont l'on souhaite savoir si elle est attaquable
  * @return vrai si la case est attaquable, faux sinon.
  */
 bool Artillerie::isCaseAttaquable(const CaseJ& cible){
-	//l'artilerie peut attaquer � toute case situ�e � deux cases de distance:
+	//l'artilerie peut attaquer à toute case située à deux cases de distance:
 	/*
 	 * xxxxx
 	 * x   x
@@ -60,13 +60,13 @@ bool Artillerie::isCaseAttaquable(const CaseJ& cible){
 	return res;
 }
 /**
- * m�thode permettant de savoir si une case est atteignable en un mouvement (les cases adjacentes pour l'artillerie
- * @param cible : la case vis�e
+ * méthode permettant de savoir si une case est atteignable en un mouvement (les cases adjacentes pour l'artillerie)
+ * @param cible : la case visée
  * @return vrai si la case est atteignable, faux sinon
  */
 bool Artillerie::isCaseAtteignable(const CaseJ& cible){
 
-	//pour l'artillerie, on d�place uniquement sur les places adjacente : 4 possibilit�s
+	//pour l'artillerie, on déplace uniquement sur les places adjacente : 4 possibilités
 	bool ret = false;
 	if(((cible.getPositionX()==position->getPositionX())and(cible.getPositionY()==position->getPositionY()+1))or((cible.getPositionX()==position->getPositionX())and(cible.getPositionY()==position->getPositionY()-1))or((cible.getPositionX()==position->getPositionX()+1)and(cible.getPositionY()==position->getPositionY()))or((cible.getPositionX()==position->getPositionX()-1)and(cible.getPositionY()==position->getPositionY()))){
 		ret=true;
@@ -74,13 +74,13 @@ bool Artillerie::isCaseAtteignable(const CaseJ& cible){
 	return ret;
 }
 /**
- * m�thode appel�e normalement � chaque tour, et resettant certains param�tres, mais aussi en faisant r�cup�rer un peu de vie.
+ * méthode appelée normalement à chaque tour, et resettant certains paramètres, mais aussi en faisant récupérer un peu de vie.
  */
 void Artillerie::regenerer(){
-	//on reset les bool�en de d�placement et d'attaque
+	//on reset les booléen de déplacement et d'attaque
 	DeplacementExecute = false;
 	AttaqueExecutee = false;
-	//r�gen de vie? 1/4 du total ou de quoi revenir au maximum
+	//régen de vie? 1/4 du total ou de quoi revenir au maximum
 	int bvie = 0;
 	if(vie<VIEART){
 		bvie = (int)VIEART*REGEN;

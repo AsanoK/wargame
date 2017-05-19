@@ -9,17 +9,17 @@
 
 
 /**
- * constructeur de la partie
+ * Constructeur de la partie
  *
  */
 Partie::Partie():m_tourDeJeu(0), m_plateau(), m_fenetre(){
-	// cration du premier joueur
+	// création du premier joueur
 	std::string pseudo1 = m_fenetre.demanderPseudo(1);
 	char couleur1[3] = {COULEUR_J1,COULEUR_J1, COULEUR_J1};
 	Joueur joueur1(*this, pseudo1, 1, couleur1);
 	this->m_joueurs.push_back(joueur1);
 
-	// creation du deuxieme joueur
+	// création du deuxième joueur
 	std::string pseudo2 = m_fenetre.demanderPseudo(2);
 	char couleur2[3] = {COULEUR_J2,0,0};
 	Joueur joueur2(*this, pseudo2, 2, couleur2);
@@ -32,7 +32,7 @@ Partie::Partie():m_tourDeJeu(0), m_plateau(), m_fenetre(){
 }
 
 /**
- * gestion de la partie
+ * Gestion de la partie
  */
 void Partie::lancerPartie(){
 	int fin = 0;

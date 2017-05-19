@@ -20,7 +20,7 @@
 class Partie;
 class Joueur;
 /**
- * classe représentant le plateau de jeu, avec l'ensemble des cases
+ * classe reprÃ©sentant le plateau de jeu, avec l'ensemble des cases
  */
 class Plateau {
 
