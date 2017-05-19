@@ -8,6 +8,7 @@
 #include "Joueur.hpp"
 #include "CaseJ.hpp"
 #include "Unite.hpp"
+#include "Fenetre.hpp"
 
 #include <stdio.h>
 
@@ -33,10 +34,12 @@ Unite::Unite(CaseJ& c, Joueur& prop) {
  */
 bool Unite::deplacer(CaseJ& cible){
 	bool ret = false;
- if((isCaseAtteignable(cible))and(DeplacementExecute==false)and(cible.getUnite()==NULL)){
-	 this->setPosition(cible);
-	 ret = true;
- }
+	Fenetre::affichageDeplacementLance();
+	 if((isCaseAtteignable(cible))and(DeplacementExecute==false)and(cible.getUnite()==NULL)){
+		 this->setPosition(cible);
+		 Fenetre::affichageDeplacementRealise();
+		 ret = true;
+	 }
 
  DeplacementExecute = true;
  return ret;
@@ -48,8 +51,10 @@ bool Unite::deplacer(CaseJ& cible){
  */
 bool Unite::attaquer(CaseJ& cible){
 	bool ret = false;
+	Fenetre::affichageAttaqueLancee();
 	if((isCaseAttaquable(cible))and(isAttaqueExecutee()==false)and(cible.getUnite()!=NULL)and(cible.getUnite()->getJoueur()!=this->getJoueur())){
 		attaquer(cible.getUnite());
+		Fenetre::affichageAttaqueRealisee();
 		ret = true;
 	}
 
@@ -108,11 +113,13 @@ if(modvie>0){
 	int resteVieCible = cible->getVie()-modvie;
 	if(resteVieCible>cible->getVie()){
 		//on ne fait rien
+
 	}else if(resteVieCible>0){
 		cible->setVie(resteVieCible);
+		Fenetre::affichageCibleEnVie();
 	}else {
 		delete cible;
-
+		Fenetre::affichageCibleDetruite();
 		}
 	}
 }

@@ -36,7 +36,7 @@ public:
 	void setPartie(Partie &unePartie);
 	virtual ~Plateau();
 
-	CaseJ &getCase(int i, int j);
+	CaseJ *getCase(int i, int j);
 };
 
 #endif /* PLATEAU_HPP_ */

@@ -30,6 +30,7 @@ void Joueur::regenererTroupe(){
 }
 
 void Joueur::executerTour(){
+	regenererTroupe();
 	p_fenetre->afficherTour(this->m_pseudo);
 	p_fenetre->afficherGrille();
 	std::string action = p_fenetre->demanderAction();
@@ -42,6 +43,7 @@ void Joueur::executerTour(){
 			deplacer();
 		}
 		p_fenetre->afficherGrille();
+		action = p_fenetre->demanderAction();
 	}
 	terminerTour();
 }
@@ -51,18 +53,37 @@ void Joueur::terminerTour(){
 }
 
 void Joueur::attaquer(){
-	CaseJ caseAttaquant = p_fenetre->demanderCaseAttaquant();
-	CaseJ caseAttaquee = p_fenetre->demanderCaseAttaquee();
-	caseAttaquant.getUnite()->attaquer(caseAttaquee);
-	p_fenetre->afficherGrille();
-
-
+	CaseJ* caseAttaquant = p_fenetre->demanderCaseAttaquant();
+	if (caseAttaquant->getUnite() != NULL){
+		CaseJ* caseAttaquee = p_fenetre->demanderCaseAttaquee();
+		if(caseAttaquee->getUnite() != NULL){
+			CaseJ* caseAttaquee = p_fenetre->demanderCaseAttaquee();
+		}
+		else{
+			//afficher erreur
+		}
+	}
+	else{
+		//afficher erreur
+	}
 }
 
 void Joueur::deplacer(){
-	CaseJ caseDepart = p_fenetre->demanderCaseDepart();
-	CaseJ caseArrivee = p_fenetre->demanderCaseArrivee();
-	caseDepart.getUnite()->deplacer(caseArrivee);
+	CaseJ* caseDepart = p_fenetre->demanderCaseDepart();
+	if (caseDepart->getUnite() != NULL){
+		CaseJ* caseArrivee = p_fenetre->demanderCaseArrivee();
+		if (caseArrivee->getUnite() == NULL){
+			caseDepart->getUnite()->deplacer(*caseArrivee);
+		}
+		else{
+			//erreur
+			std::cout << "déjà une unité" << std::endl;
+		}
+	}
+	else{
+		//erreur
+		std::cout << "pas d'unité" << std::endl;
+	}
 	p_fenetre->afficherGrille();
 
 }

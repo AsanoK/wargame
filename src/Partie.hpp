@@ -28,8 +28,8 @@ public:
 	void lancerPartie();
 	Plateau &getPlateau();
 	Fenetre &getFenetre();
-	Joueur &getJoueur1();
-	Joueur &getJoueur2();
+	Joueur* getJoueur1();
+	Joueur* getJoueur2();
 	int getTourDeJeu();
 };
 

@@ -30,11 +30,17 @@ public:
 	void afficherVainqueur(std::string &vainqueur) const;
 	std::string demanderAction() const;
 	std::string demanderPseudo(int joueur) const;
-	CaseJ &demanderCaseAttaquant() const;
-	CaseJ &demanderCaseAttaquee() const;
-	CaseJ &demanderCaseDepart() const;
-	CaseJ &demanderCaseArrivee() const;
 
+	CaseJ *demanderCaseAttaquant() const;
+	CaseJ *demanderCaseAttaquee() const;
+	CaseJ *demanderCaseDepart() const;
+	CaseJ *demanderCaseArrivee() const;
+	void static affichageAttaqueRealisee();
+	void static affichageDeplacementRealise();
+	void static affichageCibleEnVie();
+	void static affichageCibleDetruite();
+	void static affichageAttaqueLancee();
+	void static affichageDeplacementLance();
 	void setPlateau(Plateau &unPlateau);
 };
 

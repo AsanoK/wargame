@@ -34,7 +34,7 @@ void Fenetre::afficherGrille(){
 		std::cout << i + 1 << " " ;
 
 		for (int j=0; j<Plateau::NBCASES; ++j){
-			caseAffichee = &p_plateau->getCase(i,j);
+			caseAffichee = p_plateau->getCase(i,j);
 			Unite* unite = caseAffichee->getUnite();
 			if ( unite == NULL){
 				std::cout << ".";
@@ -137,7 +137,7 @@ std::string Fenetre::demanderPseudo(int joueur) const{
 	return pseudo;
 }
 
-CaseJ &Fenetre::demanderCaseAttaquant() const{
+CaseJ *Fenetre::demanderCaseAttaquant() const{
 	std::cout << "entrez la ligne de l'attaquant:" << std::endl;
     std::string s;
     std::cin >> s;
@@ -156,10 +156,10 @@ CaseJ &Fenetre::demanderCaseAttaquant() const{
     }
     int position2 = (int)s[0] - 64;
 
-    return p_plateau->getCase(position1, position2);
+    return p_plateau->getCase(position1-1, position2-1);
 }
 
-CaseJ &Fenetre::demanderCaseAttaquee() const{
+CaseJ *Fenetre::demanderCaseAttaquee() const{
 	std::cout << "entrez la ligne de la case à attaquer:" << std::endl;
     std::string s;
     std::cin >> s;
@@ -177,11 +177,11 @@ CaseJ &Fenetre::demanderCaseAttaquee() const{
         std::cin >> s;
     }
     int position2 = (int)s[0] - 64;
-
-    return p_plateau->getCase(position1, position2);
+    std::cout << position1 << position2 << std::endl;
+    return p_plateau->getCase(position1-1, position2-1);
 }
 
-CaseJ &Fenetre::demanderCaseDepart() const{
+CaseJ *Fenetre::demanderCaseDepart() const{
 	std::cout << "entrez la ligne de l'unite à déplacer:" << std::endl;
     std::string s;
     std::cin >> s;
@@ -200,10 +200,10 @@ CaseJ &Fenetre::demanderCaseDepart() const{
     }
     int position2 = (int)s[0] - 64;
 
-    return p_plateau->getCase(position1, position2);
+    return p_plateau->getCase(position1-1, position2-1);
 }
 
-CaseJ &Fenetre::demanderCaseArrivee() const{
+CaseJ *Fenetre::demanderCaseArrivee() const{
 	std::cout << "entrez la ligne de la position d'arrivée:" << std::endl;
     std::string s;
     std::cin >> s;
@@ -222,10 +222,28 @@ CaseJ &Fenetre::demanderCaseArrivee() const{
     }
     int position2 = (int)s[0] - 64;
 
-    return p_plateau->getCase(position1, position2);
+    return p_plateau->getCase(position1-1, position2-1);
 }
 
 void Fenetre::setPlateau(Plateau &unPlateau) {
 	p_plateau = &unPlateau;
 }
 
+void  Fenetre::affichageAttaqueRealisee(){
+	std::cout<<"l'assaut est terminé"<<std::endl;
+}
+void  Fenetre::affichageDeplacementRealise(){
+	std::cout<<"d�placement effectu�"<<std::endl;
+}
+void Fenetre::affichageCibleEnVie(){
+	std::cout<<"Les troupes ennemies ont tenues malgr� vos assauts"<<std::endl;
+}
+void Fenetre::affichageCibleDetruite(){
+	std::cout<<"Vos troupes ont pr�valu, l'assaut est une r�ussite!"<<std::endl;
+}
+void Fenetre::affichageAttaqueLancee(){
+	std::cout<<'vos troupes se lacent au combat'<<std::endl;
+}
+void Fenetre::affichageDeplacementLance(){
+	std::cout<<'les troupes se mettent en marche'<<std::endl;
+}
