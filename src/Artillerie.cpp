@@ -67,7 +67,6 @@ bool Artillerie::isCaseAttaquable(const CaseJ& cible){
 bool Artillerie::isCaseAtteignable(const CaseJ& cible){
 
 	//pour l'artillerie, on déplace uniquement sur les places adjacente : 4 possibilités
-<<<<<<< HEAD
 	bool ret =true;
 		int xf = this->getposition()->getPositionX();
 		int yf = this->getposition()->getPositionY();
@@ -77,16 +76,7 @@ bool Artillerie::isCaseAtteignable(const CaseJ& cible){
 			ret= false;
 		}
 		return ret;
-=======
-	bool ret = false;
-	if(((cible.getPositionX()==position->getPositionX())and(cible.getPositionY()==position->getPositionY()+1))
-			or((cible.getPositionX()==position->getPositionX())and(cible.getPositionY()==position->getPositionY()-1))
-			or((cible.getPositionX()==position->getPositionX()+1)and(cible.getPositionY()==position->getPositionY()))
-			or((cible.getPositionX()==position->getPositionX()-1)and(cible.getPositionY()==position->getPositionY()))){
-		ret=true;
-	}
-	return ret;
->>>>>>> branch 'master' of https://github.com/AsanoK/wargame
+
 }
 /**
  * méthode appelée normalement à chaque tour, et resettant certains paramètres, mais aussi en faisant récupérer un peu de vie.

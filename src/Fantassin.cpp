@@ -33,9 +33,6 @@ Fantassin::Fantassin(CaseJ& c, Joueur& prop): Unite(c,prop) {
  * @return : vrai si on peut effectuer le déplacement, faux sinon
  */
 bool Fantassin::isCaseAtteignable(const CaseJ& cible ) {
-
-	//pour le fantassin, on déplace uniquement sur les places adjacente : 4 possibilités
-<<<<<<< HEAD
 	bool ret =true;
 	int xf = this->getposition()->getPositionX();
 	int yf = this->getposition()->getPositionY();
@@ -43,14 +40,6 @@ bool Fantassin::isCaseAtteignable(const CaseJ& cible ) {
 	int yc = cible.getPositionY();
 	if((xc<xf-1)or(xc>xf+1)or(yc>yf+1)or(yc<yf-1)){
 		ret= false;
-=======
-	bool ret = false;
-	if(((cible.getPositionX()==position->getPositionX())and(cible.getPositionY()==position->getPositionY()+1))
-			or((cible.getPositionX()==position->getPositionX())and(cible.getPositionY()==position->getPositionY()-1))
-			or((cible.getPositionX()==position->getPositionX()+1)and(cible.getPositionY()==position->getPositionY()))
-			or((cible.getPositionX()==position->getPositionX()-1)and(cible.getPositionY()==position->getPositionY()))){
-		ret=true;
->>>>>>> branch 'master' of https://github.com/AsanoK/wargame
 	}
 	return ret;
 }
