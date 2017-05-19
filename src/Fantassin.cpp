@@ -33,15 +33,16 @@ Fantassin::Fantassin(CaseJ& c, Joueur& prop): Unite(c,prop) {
  * @return : vrai si on peut effectuer le déplacement, faux sinon
  */
 bool Fantassin::isCaseAtteignable(const CaseJ& cible ) {
-	bool ret =true;
+
 	int xf = this->getposition()->getPositionX();
 	int yf = this->getposition()->getPositionY();
 	int xc = cible.getPositionX();
 	int yc = cible.getPositionY();
 	if((xc<xf-1)or(xc>xf+1)or(yc>yf+1)or(yc<yf-1)){
-		ret= false;
-	}
-	return ret;
+		return false;
+				}else{
+					return true;
+			}
 }
 /**
  * méthode déterminant si il est possible d'attaquer une position
@@ -49,15 +50,16 @@ bool Fantassin::isCaseAtteignable(const CaseJ& cible ) {
  * @return vrai si la case est attaquable, faux sinon
  */
 bool Fantassin::isCaseAttaquable(const CaseJ& cible) {
-	bool ret =true;
+
 		int xf = this->getposition()->getPositionX();
 		int yf = this->getposition()->getPositionY();
 		int xc = cible.getPositionX();
 		int yc = cible.getPositionY();
 		if((xc<xf-1)or(xc>xf+1)or(yc>yf+1)or(yc<yf-1)){
-			ret= false;
-		}
-	return ret;
+			return false;
+					}else{
+						return true;
+				}
 }
 /**
  * méthode qui devrat être appelée à chaque tour : reset des booléens, et régénération de vie.

@@ -40,15 +40,16 @@ Artillerie::~Artillerie() {
  * @return vrai si la case est attaquable, faux sinon.
  */
 bool Artillerie::isCaseAttaquable(const CaseJ& cible){
-	bool ret =true;
+
 		int xf = this->getposition()->getPositionX();
 		int yf = this->getposition()->getPositionY();
 		int xc = cible.getPositionX();
 		int yc = cible.getPositionY();
 		if((xc<xf-2)or(xc>xf+2)or(yc>yf+2)or(yc<yf-2)){
-			ret= false;
-		}
-	return ret;
+			return false;
+					}else{
+						return true;
+				}
 }
 /**
  * méthode permettant de savoir si une case est atteignable en un mouvement (les cases adjacentes pour l'artillerie)
@@ -58,15 +59,15 @@ bool Artillerie::isCaseAttaquable(const CaseJ& cible){
 bool Artillerie::isCaseAtteignable(const CaseJ& cible){
 
 	//pour l'artillerie, on déplace uniquement sur les places adjacente : 4 possibilités
-	bool ret =true;
 		int xf = this->getposition()->getPositionX();
 		int yf = this->getposition()->getPositionY();
 		int xc = cible.getPositionX();
 		int yc = cible.getPositionY();
 		if((xc<xf-1)or(xc>xf+1)or(yc>yf+1)or(yc<yf-1)){
-			ret= false;
-		}
-		return ret;
+			return false;
+					}else{
+						return true;
+				}
 
 }
 /**
