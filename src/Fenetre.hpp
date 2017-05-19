@@ -10,7 +10,9 @@
 
 #include <string>
 #include <iostream>
+#include "Joueur.hpp"
 
+class Joueur;
 class Plateau;
 class CaseJ;
 /**

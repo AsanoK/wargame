@@ -6,6 +6,9 @@
  */
 
 #include <cstdlib>
+#include <stdio.h>
+#include <string>
+#include <iostream>
 
 #include "Plateau.hpp"
 #include "Fenetre.hpp"
@@ -23,11 +26,12 @@ Fenetre::~Fenetre() {
  * méthode gérant la totalité de l'afficahge du plateau, couleurs et unités inclues
  */
 void Fenetre::afficherGrille(){
+#if !COULEUR
 	std::cout << "   A B C D E F G H I J K L M N O P Q R S T " << std::endl;
 	CaseJ *caseAffichee = NULL;
 	for (int i=0; i<Plateau::NBCASES; ++i){
 		if (i < 9){
-		std::cout << " ";
+			std::cout << " ";
 		}
 		std::cout << i + 1 << " " ;
 
@@ -44,7 +48,69 @@ void Fenetre::afficherGrille(){
 		}
 		std::cout << std::endl;
 	}
+#else
+	std::string couleurBack;
+	std::string couleurFront = "\e[39m";
+	std::cout << "   ";
+	for(char lettre = 'A'; lettre < 'A' + Plateau::NBCASES; lettre++)
+	{
+		if((lettre-'A')%2 == 1)
+			couleurBack = "\e[40m";
+		else
+			couleurBack = "\e[44m";
+		std::cout << couleurFront << couleurBack << lettre << " ";
+	}
+	couleurBack = "\e[40m";
+	std::cout << couleurFront << couleurBack << std::endl;
 
+	CaseJ *caseAffichee = NULL;
+	for (int i=0; i<Plateau::NBCASES; ++i){
+		if(i%2==0)
+			couleurBack = "\e[100m";
+		else
+			couleurBack = "\e[40m";
+		if (i < 9){
+			std::cout << couleurFront << couleurBack << " ";
+		}
+		else
+			std::cout << couleurFront << couleurBack;
+		std::cout << i + 1 << " " ;
+
+		for (int j=0; j<Plateau::NBCASES; ++j){
+			if(i%2==0)
+			{
+				if(j%2 == 0)
+					couleurBack = "\e[104m";
+				else
+					couleurBack = "\e[100m";
+			}
+			else
+			{
+				if(j%2 == 0)
+					couleurBack = "\e[44m";
+				else
+					couleurBack = "\e[40m";
+			}
+			caseAffichee = &p_plateau->getCase(i,j);
+			Unite* unite = caseAffichee->getUnite();
+			if ( unite == NULL){
+				couleurFront = "\e[39m";
+				std::cout << couleurFront << couleurBack << ".";
+			}
+			else{
+				char buffer[3];
+				sprintf(buffer, "%d", unite->getJoueur()->getCouleur()[0] + 1);
+				couleurFront = "\e[38;5;" + (std::string)buffer;
+				couleurFront += "m";
+				std::cout << couleurFront << couleurBack << unite->toChar();
+			}
+			std::cout << " ";
+		}
+		couleurFront = "\e[39m";
+		couleurBack = "\e[49m";
+		std::cout << couleurFront << couleurBack << std::endl;
+	}
+#endif
 }
 /**
  * méthode gérant l'affichage du vainqueur
@@ -132,7 +198,7 @@ CaseJ *Fenetre::demanderCaseAttaquee() const{
         std::cin >> s;
     }
     int position2 = (int)s[0] - 64;
-    std::cout << position1 << position2 << std::endl;
+    //std::cout << position1 << position2 << std::endl;
     return p_plateau->getCase(position1-1, position2-1);
 }
 /**
@@ -194,13 +260,13 @@ void  Fenetre::affichageAttaqueRealisee(){
 	std::cout<<"l'assaut est terminÃ©"<<std::endl;
 }
 void  Fenetre::affichageDeplacementRealise(){
-	std::cout<<"dï¿½placement effectuï¿½"<<std::endl;
+	std::cout<<"dÃ©placement effectuÃ©"<<std::endl;
 }
 void Fenetre::affichageCibleEnVie(){
-	std::cout<<"Les troupes ennemies ont tenues malgrï¿½ vos assauts"<<std::endl;
+	std::cout<<"Les troupes ennemies ont tenues malgrÃ© vos assauts"<<std::endl;
 }
 void Fenetre::affichageCibleDetruite(){
-	std::cout<<"Vos troupes ont prï¿½valu, l'assaut est une rï¿½ussite!"<<std::endl;
+	std::cout<<"Vos troupes ont prÃ©valu, l'assaut est une rÃ©ussite!"<<std::endl;
 }
 void Fenetre::affichageAttaqueLancee(){
 	std::cout<<'vos troupes se lancent au combat'<<std::endl;

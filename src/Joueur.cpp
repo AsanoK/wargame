@@ -72,7 +72,7 @@ void Joueur::attaquer(){
 	if (caseAttaquant->getUnite() != NULL){
 		CaseJ* caseAttaquee = p_fenetre->demanderCaseAttaquee();
 		if(caseAttaquee->getUnite() != NULL){
-			CaseJ* caseAttaquee = p_fenetre->demanderCaseAttaquee();
+			caseAttaquant->getUnite()->attaquer(*caseAttaquee);
 		}
 		else{
 			//afficher erreur
