@@ -5,6 +5,7 @@
  *      Author: Hugin
  */
 
+#include "Joueur.hpp"
 #include "CaseJ.hpp"
 #include "Unite.hpp"
 
@@ -111,10 +112,11 @@ if(modvie>0){
 		cible->setVie(resteVieCible);
 	}else {
 		delete cible;
+
 		}
 	}
 }
 Unite::~Unite(){
 	position->setUnite(NULL);
-	//joueur->supprimerUnite(unePosition);//TODO : coder une m�thode permettant de r�cup�rer le num�ro d'une unit� dans la liste
+	joueur->supprimerUnite(*this);
 }

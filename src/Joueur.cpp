@@ -96,8 +96,12 @@ Unite *Joueur::getUnite(int unePosition) const{
 	return m_unites.at(unePosition);
 }
 
-void Joueur::supprimerUnite(int unePosition){
-	m_unites.erase(m_unites.begin()+unePosition);
+void Joueur::supprimerUnite(Unite &uneUnite){
+	int i=0;
+	while(m_unites.at(i) != &uneUnite){
+		i=i+1;
+	}
+	m_unites.erase(m_unites.begin()+i);
 }
 
 void Joueur::ajouterUnite(Unite &uneUnite){
