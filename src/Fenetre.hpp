@@ -24,6 +24,7 @@ public:
 	virtual ~Fenetre();
 
 	void afficherGrille();
+	void Fenetre::afficherTour(std::string pseudo) const;
 	void afficherVainqueur(std::string &vainqueur) const;
 	std::string demanderAction() const;
 	std::string demanderPseudo(int joueur) const;
