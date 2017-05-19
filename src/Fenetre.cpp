@@ -175,3 +175,9 @@ void Fenetre::affichageCibleEnVie(){
 void Fenetre::affichageCibleDetruite(){
 	std::cout<<"Vos troupes ont pr�valu, l'assaut est une r�ussite!"<<std::endl;
 }
+void Fenetre::affichageAttaqueLancee(){
+	std::cout<<'vos troupes se lacent au combat'<<std::endl;
+}
+void Fenetre::affichageDeplacementLance(){
+	std::cout<<'les troupes se mettent en marche'<<std::endl;
+}

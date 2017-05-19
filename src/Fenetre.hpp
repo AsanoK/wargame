@@ -37,7 +37,8 @@ public:
 	void static affichageDeplacementRealise();
 	void static affichageCibleEnVie();
 	void static affichageCibleDetruite();
-
+	void static affichageAttaqueLancee();
+	void static affichageDeplacementLance();
 	void setPlateau(Plateau &unPlateau);
 };
 
