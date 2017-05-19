@@ -127,8 +127,6 @@ void Joueur::deplacer(){
 		//erreur
 		std::cout << "Pas d'unité à déplacer" << std::endl;
 	}
-	p_fenetre->afficherGrille();
-
 }
 
 
