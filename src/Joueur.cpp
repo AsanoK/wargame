@@ -79,16 +79,26 @@ void Joueur::terminerTour(){
 void Joueur::attaquer(){
 	CaseJ* caseAttaquant = p_fenetre->demanderCaseAttaquant();
 	if (caseAttaquant->getUnite() != NULL){
-		CaseJ* caseAttaquee = p_fenetre->demanderCaseAttaquee();
-		if(caseAttaquee->getUnite() != NULL){
-			caseAttaquant->getUnite()->attaquer(*caseAttaquee);
+		if (caseAttaquant->getUnite()->getJoueur()==this)
+		{
+			CaseJ* caseAttaquee = p_fenetre->demanderCaseAttaquee();
+			if(caseAttaquee->getUnite() != NULL){
+				caseAttaquant->getUnite()->attaquer(*caseAttaquee);
+			}
+			else{
+				//erreur
+				std::cout << "Pas d'unité à attaquer" << std::endl;
+			}
 		}
-		else{
-			//afficher erreur
+		else
+		{
+			//erreur
+			std::cout << "Cette unité ne vous appartient pas" << std::endl;
 		}
 	}
 	else{
-		//afficher erreur
+		//erreur
+		std::cout << "Pas d'unité pour attaquer" << std::endl;
 	}
 }
 /**
@@ -97,18 +107,25 @@ void Joueur::attaquer(){
 void Joueur::deplacer(){
 	CaseJ* caseDepart = p_fenetre->demanderCaseDepart();
 	if (caseDepart->getUnite() != NULL){
-		CaseJ* caseArrivee = p_fenetre->demanderCaseArrivee();
-		if (caseArrivee->getUnite() == NULL){
-			caseDepart->getUnite()->deplacer(*caseArrivee);
+		if (caseDepart->getUnite()->getJoueur()==this)
+		{
+			CaseJ* caseArrivee = p_fenetre->demanderCaseArrivee();
+			if (caseArrivee->getUnite() == NULL){
+				caseDepart->getUnite()->deplacer(*caseArrivee);
+			}
+			else{
+				//erreur
+				std::cout << "La case visée est déjà occupée" << std::endl;
+			}
 		}
-		else{
-			//erreur
-			std::cout << "déjà une unité" << std::endl;
+		else
+		{
+			std::cout << "Cette unité ne vous appartient pas" << std::endl;
 		}
 	}
 	else{
 		//erreur
-		std::cout << "pas d'unité" << std::endl;
+		std::cout << "Pas d'unité à déplacer" << std::endl;
 	}
 	p_fenetre->afficherGrille();
 
