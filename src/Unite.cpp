@@ -8,7 +8,7 @@
 #include "Joueur.hpp"
 #include "CaseJ.hpp"
 #include "Unite.hpp"
-
+#include "Fenetre.hpp"
 #include <stdio.h>
 
 /**
@@ -35,6 +35,7 @@ bool Unite::deplacer(CaseJ& cible){
 	bool ret = false;
  if((isCaseAtteignable(cible))and(DeplacementExecute==false)and(cible.getUnite()==NULL)){
 	 this->setPosition(cible);
+	 Fenetre::affichageDeplacementRealise();
 	 ret = true;
  }
 
@@ -50,6 +51,7 @@ bool Unite::attaquer(CaseJ& cible){
 	bool ret = false;
 	if((isCaseAttaquable(cible))and(isAttaqueExecutee()==false)and(cible.getUnite()!=NULL)and(cible.getUnite()->getJoueur()!=this->getJoueur())){
 		attaquer(cible.getUnite());
+		Fenetre::affichageAttaqueRealisee();
 		ret = true;
 	}
 
@@ -110,9 +112,10 @@ if(modvie>0){
 		//on ne fait rien
 	}else if(resteVieCible>0){
 		cible->setVie(resteVieCible);
+		Fenetre::affichageCibleEnVie();
 	}else {
 		delete cible;
-
+		Fenetre::affichageCibleDetruite();
 		}
 	}
 }

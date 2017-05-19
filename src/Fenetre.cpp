@@ -162,4 +162,15 @@ CaseJ *Fenetre::demanderCaseArrivee() const{
 void Fenetre::setPlateau(Plateau &unPlateau) {
 	p_plateau = &unPlateau;
 }
-
+void affichageAttaqueRealisee(){
+	std::cout<<"l'assaut est termin�"<<std::endl;
+}
+void affichageDeplacementRealise(){
+	std::cout<<"d�placement effectu�"<<std::endl;
+}
+void affichageCibleEnVie(){
+	std::cout<<"Les troupes ennemies ont tenues malgr� vos assauts"<<std::endl;
+}
+void affichageCibleDetruite(){
+	std::cout<<"Vos troupes ont pr�valu, l'assaut est une r�ussite!"<<std::endl;
+}
