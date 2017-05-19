@@ -8,7 +8,10 @@
 #include "Partie.hpp"
 
 
-
+/**
+ * constructeur de la partie
+ *
+ */
 Partie::Partie():m_tourDeJeu(0), m_plateau(), m_fenetre(){
 	// cration du premier joueur
 	std::string pseudo1 = m_fenetre.demanderPseudo(1);
@@ -28,7 +31,9 @@ Partie::Partie():m_tourDeJeu(0), m_plateau(), m_fenetre(){
 
 }
 
-
+/**
+ * gestion de la partie
+ */
 void Partie::lancerPartie(){
 	int fin = 0;
 	while(fin == 0){

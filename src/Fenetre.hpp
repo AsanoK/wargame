@@ -13,7 +13,9 @@
 
 class Plateau;
 class CaseJ;
-
+/**
+ * classe gérant la totalité de l'affichage du programme
+ */
 class Fenetre {
 
 private:
@@ -39,6 +41,7 @@ public:
 	void static affichageCibleDetruite();
 	void static affichageAttaqueLancee();
 	void static affichageDeplacementLance();
+	void static affichageFinDeTour();
 	void setPlateau(Plateau &unPlateau);
 };
 
