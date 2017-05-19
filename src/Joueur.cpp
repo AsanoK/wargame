@@ -42,6 +42,7 @@ void Joueur::executerTour(){
 			deplacer();
 		}
 		p_fenetre->afficherGrille();
+		action = p_fenetre->demanderAction();
 	}
 	terminerTour();
 }
@@ -52,17 +53,36 @@ void Joueur::terminerTour(){
 
 void Joueur::attaquer(){
 	CaseJ caseAttaquant = p_fenetre->demanderCaseAttaquant();
-	CaseJ caseAttaquee = p_fenetre->demanderCaseAttaquee();
-	caseAttaquant.getUnite()->attaquer(caseAttaquee);
-	p_fenetre->afficherGrille();
-
-
+	if (caseAttaquant.getUnite() != NULL){
+		CaseJ caseAttaquee = p_fenetre->demanderCaseAttaquee();
+		if(caseAttaquee.getUnite() != NULL){
+			CaseJ caseAttaquee = p_fenetre->demanderCaseAttaquee();
+		}
+		else{
+			//afficher erreur
+		}
+	}
+	else{
+		//afficher erreur
+	}
 }
 
 void Joueur::deplacer(){
 	CaseJ caseDepart = p_fenetre->demanderCaseDepart();
-	CaseJ caseArrivee = p_fenetre->demanderCaseArrivee();
-	caseDepart.getUnite()->deplacer(caseArrivee);
+	if (caseDepart.getUnite() != NULL){
+		CaseJ caseArrivee = p_fenetre->demanderCaseArrivee();
+		if (caseArrivee.getUnite() == NULL){
+			caseDepart.getUnite()->deplacer(caseArrivee);
+		}
+		else{
+			//erreur
+			std::cout << "déjà une unité" << std::endl;
+		}
+	}
+	else{
+		//erreur
+		std::cout << "pas d'unité" << std::endl;
+	}
 	p_fenetre->afficherGrille();
 
 }

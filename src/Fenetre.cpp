@@ -90,7 +90,7 @@ CaseJ &Fenetre::demanderCaseAttaquant() const{
     }
     int position2 = (int)s[0] - 64;
 
-    return p_plateau->getCase(position1, position2);
+    return p_plateau->getCase(position1-1, position2-1);
 }
 
 CaseJ &Fenetre::demanderCaseAttaquee() const{
