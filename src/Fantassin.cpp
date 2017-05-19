@@ -36,7 +36,10 @@ bool Fantassin::isCaseAtteignable(const CaseJ& cible ) {
 
 	//pour le fantassin, on déplace uniquement sur les places adjacente : 4 possibilités
 	bool ret = false;
-	if(((cible.getPositionX()==position->getPositionX())and(cible.getPositionY()==position->getPositionY()+1))or((cible.getPositionX()==position->getPositionX())and(cible.getPositionY()==position->getPositionY()-1))or((cible.getPositionX()==position->getPositionX()+1)and(cible.getPositionY()==position->getPositionY()))or((cible.getPositionX()==position->getPositionX()-1)and(cible.getPositionY()==position->getPositionY()))){
+	if(((cible.getPositionX()==position->getPositionX())and(cible.getPositionY()==position->getPositionY()+1))
+			or((cible.getPositionX()==position->getPositionX())and(cible.getPositionY()==position->getPositionY()-1))
+			or((cible.getPositionX()==position->getPositionX()+1)and(cible.getPositionY()==position->getPositionY()))
+			or((cible.getPositionX()==position->getPositionX()-1)and(cible.getPositionY()==position->getPositionY()))){
 		ret=true;
 	}
 	return ret;
