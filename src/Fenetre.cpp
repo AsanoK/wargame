@@ -276,3 +276,12 @@ void Fenetre::affichageDeplacementLance(){
 void Fenetre::affichageFinDeTour(){
 	std::cout<<"fin du tour"<<std::endl;
 }
+void Fenetre::affichageDegats(){
+	std::cout<<"les troupes ennemies ont subi des pertes"<<std::endl;
+}
+void Fenetre::affichageAttaqueInutile(){
+	std::cout<<"l'attaque se sera révélée infructueuse"<<std::endl;
+}
+void Fenetre::affichageAttaqueInterdite(){
+	std::cout<<"cette attaque n'est pas possible"<<std::endl;
+}

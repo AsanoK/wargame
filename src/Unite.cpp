@@ -55,6 +55,8 @@ bool Unite::attaquer(CaseJ& cible){
 		attaquer(cible.getUnite());
 		Fenetre::affichageAttaqueRealisee();
 		ret = true;
+	}else{
+		Fenetre::affichageAttaqueInterdite();
 	}
 
 	AttaqueExecutee = true;
@@ -111,13 +113,15 @@ int modvie = attaque-cible->getdefense();
 if(modvie>0){
 	int resteVieCible = cible->getVie()-modvie;
 	if(resteVieCible>cible->getVie()){
-		//on ne fait rien
+		Fenetre::affichageAttaqueInutile();
 
 	}else if(resteVieCible>0){
 		cible->setVie(resteVieCible);
+		Fenetre::affichageDegats();
 		Fenetre::affichageCibleEnVie();
 	}else {
 		delete cible;
+		Fenetre::affichageDegats();
 		Fenetre::affichageCibleDetruite();
 		}
 	}

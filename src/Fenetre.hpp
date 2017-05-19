@@ -44,6 +44,9 @@ public:
 	void static affichageAttaqueLancee();
 	void static affichageDeplacementLance();
 	void static affichageFinDeTour();
+	void static affichageDegats( );
+	void static affichageAttaqueInutile();
+	void static affichageAttaqueInterdite();
 	void setPlateau(Plateau &unPlateau);
 };
 
