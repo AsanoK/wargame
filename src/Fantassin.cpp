@@ -59,7 +59,7 @@ void Fantassin::regenerer(){
 	AttaqueExecutee = false;
 	int bvie = 0;
 	if(vie<VIEFANT){
-		bvie = (int)VIEFANT/4;
+		bvie = (int)VIEFANT*REGEN;
 		if(vie+bvie>VIEFANT){
 			bvie = VIEFANT-vie;
 		}

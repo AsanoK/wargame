@@ -25,4 +25,6 @@
 #define DEFART 5
 #define CHARART 'A'
 
+//régénération de vie
+#define REGEN (1/4)
 #endif /* CONSTANTESUNITES_HPP_ */
