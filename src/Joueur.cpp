@@ -52,11 +52,11 @@ void Joueur::terminerTour(){
 }
 
 void Joueur::attaquer(){
-	CaseJ caseAttaquant = p_fenetre->demanderCaseAttaquant();
-	if (caseAttaquant.getUnite() != NULL){
-		CaseJ caseAttaquee = p_fenetre->demanderCaseAttaquee();
-		if(caseAttaquee.getUnite() != NULL){
-			CaseJ caseAttaquee = p_fenetre->demanderCaseAttaquee();
+	CaseJ* caseAttaquant = p_fenetre->demanderCaseAttaquant();
+	if (caseAttaquant->getUnite() != NULL){
+		CaseJ* caseAttaquee = p_fenetre->demanderCaseAttaquee();
+		if(caseAttaquee->getUnite() != NULL){
+			CaseJ* caseAttaquee = p_fenetre->demanderCaseAttaquee();
 		}
 		else{
 			//afficher erreur
@@ -68,11 +68,11 @@ void Joueur::attaquer(){
 }
 
 void Joueur::deplacer(){
-	CaseJ caseDepart = p_fenetre->demanderCaseDepart();
-	if (caseDepart.getUnite() != NULL){
-		CaseJ caseArrivee = p_fenetre->demanderCaseArrivee();
-		if (caseArrivee.getUnite() == NULL){
-			caseDepart.getUnite()->deplacer(caseArrivee);
+	CaseJ* caseDepart = p_fenetre->demanderCaseDepart();
+	if (caseDepart->getUnite() != NULL){
+		CaseJ* caseArrivee = p_fenetre->demanderCaseArrivee();
+		if (caseArrivee->getUnite() == NULL){
+			caseDepart->getUnite()->deplacer(*caseArrivee);
 		}
 		else{
 			//erreur
