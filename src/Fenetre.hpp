@@ -11,7 +11,7 @@
 #include <string>
 #include <iostream>
 #include "Joueur.hpp"
-
+#include "Messages.h"
 class Joueur;
 class Plateau;
 class CaseJ;
