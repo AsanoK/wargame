@@ -24,7 +24,7 @@
  * @param uneCouleur : la couleur qui sera utilisée pour ce joueur
  *
  */
-Joueur::Joueur(Partie &unePartie, std::string &unPseudo, int unNumero, char uneCouleur[3]): m_pseudo(unPseudo), m_numero(unNumero), m_couleur(uneCouleur), p_partie(&unePartie), p_fenetre(&p_partie->getFenetre()){
+Joueur::Joueur(Partie &unePartie, std::string &unPseudo, int unNumero, char uneCouleur[3]): m_pseudo(unPseudo), m_numero(unNumero), m_couleur(uneCouleur), p_partie(&unePartie), p_fenetre(p_partie->getFenetre()){
 
 }
 
