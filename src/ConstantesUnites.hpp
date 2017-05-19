@@ -16,12 +16,12 @@
 #define CHARFANT 'F'
 //cavaliers
 #define VIECAV 15
-#define ATTCAV 20
+#define ATTCAV 15
 #define DEFCAV 5
 #define CHARCAV 'C'
 //artilerie
 #define VIEART 5
-#define ATTART 25
+#define ATTART 20
 #define DEFART 5
 #define CHARART 'A'
 
