@@ -11,7 +11,9 @@
 using namespace std;
 
 #if !TEST
-
+/**
+ * main du programme
+ */
 int main( int argc, const char* argv[] )
 {
 	Partie p=Partie();

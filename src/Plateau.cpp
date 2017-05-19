@@ -17,14 +17,18 @@ void Plateau::setPartie(Partie &p) {
 	Plateau::genererGrilleAleatoire();
 	Plateau::deployerUnitesInitiales();
 }
-
+/**
+ * méthode permettant d'obtenir une grille aléatoire
+ */
 void Plateau::genererGrilleAleatoire()
 {
 	for (int i;i<NBCASES;i++)
 		for (int j;j<NBCASES;j++)
 			cases[i][j]=CaseJ(i,j);
 }
-
+/**
+ * méthode permettant de placer les unités de départ des joueurs.
+ */
 void Plateau::deployerUnitesInitiales()
 {
 	Joueur* p1 = partie->getJoueur1();
