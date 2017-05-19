@@ -32,32 +32,23 @@ Artillerie::~Artillerie() {
  * méthode déterminant si une case est attaquable ou non. Dans le cas de l'artillerie, toute cible à deux cases de distance dans toute les direction (donc un carré)
  *sch�ma des cases atteignables : x case possible, o pour l'origine et _ pour vide
  *     xxxxx
-	 * x___x
-	 * x_o_x
-	 * x___x
+	 * xxxxx
+	 * xxoxx
+	 * xxxxx
 	 * xxxxx
  * @param cible : case dont l'on souhaite savoir si elle est attaquable
  * @return vrai si la case est attaquable, faux sinon.
  */
 bool Artillerie::isCaseAttaquable(const CaseJ& cible){
-	//l'artilerie peut attaquer à toute case située à deux cases de distance:
-	/*
-	 * xxxxx
-	 * x   x
-	 * x o x
-	 * x   x
-	 * xxxxx
-	 */
-	bool res = false;
-	int xa = position->getPositionX();
-	int ya = position->getPositionY();
-	int xc = cible.getPositionX();
-	int yc = cible.getPositionY();
-
-	if((((xa==xc-2)or(xa==xc+2))or((ya==yc+2)or(ya==yc-2)))and (xa-xc<=2 and ya-yc<=2)){
-		res = true;
-	}
-	return res;
+	bool ret =true;
+		int xf = this->getposition()->getPositionX();
+		int yf = this->getposition()->getPositionY();
+		int xc = cible.getPositionX();
+		int yc = cible.getPositionY();
+		if((xc<xf-2)or(xc>xf+2)or(yc>yf+2)or(yc<yf-2)){
+			ret= false;
+		}
+	return ret;
 }
 /**
  * méthode permettant de savoir si une case est atteignable en un mouvement (les cases adjacentes pour l'artillerie)

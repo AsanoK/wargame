@@ -55,19 +55,15 @@ bool Cavalier::isCaseAtteignable( const CaseJ& cible){
 	//xox <----le 'o' est la position d'origine du cavalier
 	//xxx
 	//xxx
-	//représentation graphique de sa zone de déplacement
-	int xi = position->getPositionX();
-	int yi = position->getPositionY();
-	int xo = cible.getPositionX();
-	int yo = cible.getPositionY();
-	bool res = true;
-	if((xi!=xo and xi!=xo+1 and xi!=xo-1)and(yi!=yo and yi!=yo+1 and yi!=yo+2 and yi!=yo-1 and yi!=yo-2)){
-		res = false;
-	}
-	if(this->DeplacementExecute){
-		res = false;
-	}
-	return res;
+	bool ret =true;
+		int xf = this->getposition()->getPositionX();
+		int yf = this->getposition()->getPositionY();
+		int xc = cible.getPositionX();
+		int yc = cible.getPositionY();
+		if((xc<xf-1)or(xc>xf+1)or(yc>yf+2)or(yc<yf-2)){
+			ret= false;
+		}
+	return ret;
 }
 /**
  * la méthode appelée à chaque tour : on reset les booléens et on ajoute de la vie.

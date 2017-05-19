@@ -49,11 +49,14 @@ bool Fantassin::isCaseAtteignable(const CaseJ& cible ) {
  * @return vrai si la case est attaquable, faux sinon
  */
 bool Fantassin::isCaseAttaquable(const CaseJ& cible) {
-	bool ret = false;
-	if(((cible.getPositionX()==position->getPositionX())and(cible.getPositionY()==position->getPositionY()+1))or((cible.getPositionX()==position->getPositionX())and(cible.getPositionY()==position->getPositionY()-1))or((cible.getPositionX()==position->getPositionX()+1)and(cible.getPositionY()==position->getPositionY()))or((cible.getPositionX()==position->getPositionX()-1)and(cible.getPositionY()==position->getPositionY()))){
-			ret=true;
+	bool ret =true;
+		int xf = this->getposition()->getPositionX();
+		int yf = this->getposition()->getPositionY();
+		int xc = cible.getPositionX();
+		int yc = cible.getPositionY();
+		if((xc<xf-1)or(xc>xf+1)or(yc>yf+1)or(yc<yf-1)){
+			ret= false;
 		}
-
 	return ret;
 }
 /**
