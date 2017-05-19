@@ -21,10 +21,10 @@ Fenetre::~Fenetre() {
 }
 
 void Fenetre::afficherGrille(){
-	std::cout << "  A B C D E F G H I J K L M N O P Q R S T " << std::endl;
+	std::cout << "   A B C D E F G H I J K L M N O P Q R S T " << std::endl;
 	CaseJ *caseAffichee = NULL;
 	for (int i=0; i<Plateau::NBCASES; ++i){
-		if (i < 10){
+		if (i < 9){
 		std::cout << " ";
 		}
 		std::cout << i + 1 << " " ;
