@@ -7,6 +7,8 @@
 
 #include "CaseJ.hpp"
 #include "Cavalier.hpp"
+#include "Joueur.hpp"
+#include <stdio.h>
 
 
 /**
@@ -85,11 +87,8 @@ void Cavalier::regenerer(){
 	vie=vie+bvie;
 }
 Cavalier::~Cavalier() {
-<<<<<<< HEAD
 	position->setUnite(NULL);
 	joueur->supprimerUnite(*this);
-=======
->>>>>>> branch 'master' of https://github.com/AsanoK/wargame
 }
 char Cavalier::toChar(){
 	return CHARCAV;

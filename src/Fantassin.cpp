@@ -7,6 +7,9 @@
 
 #include "CaseJ.hpp"
 #include "Fantassin.hpp"
+#include "Joueur.hpp"
+#include <stdio.h>
+
 
 
 /**
