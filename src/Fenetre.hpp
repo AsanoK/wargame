@@ -25,7 +25,7 @@ public:
 
 	void afficherGrille();
 	void afficherVainqueur(std::string &vainqueur) const;
-	std::string &demanderAction() const;
+	std::string demanderAction() const;
 	std::string demanderPseudo(int joueur) const;
 	CaseJ &demanderCaseAttaquant() const;
 	CaseJ &demanderCaseAttaquee() const;

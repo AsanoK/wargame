@@ -45,7 +45,7 @@ void Fenetre::afficherVainqueur(std::string &vainqueur) const{
 	std::cout << "bravo, le vainqueur est le joueur "<< vainqueur << std::endl;
 }
 
-std::string &Fenetre::demanderAction() const{
+std::string Fenetre::demanderAction() const{
 	std::cout << "quelle action souhaitez vous faire? (q : arret, a a: attaquer, d : deplacer)" << std::endl;
 	std::string action;
 	std::cin >> action;
