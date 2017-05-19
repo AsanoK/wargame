@@ -26,13 +26,14 @@ void Fenetre::afficherGrille(){
 		}
 		std::cout << i << " " ;
 
-		for (int j=0; j<Plateau::NBCASES; ++i){
+		for (int j=0; j<Plateau::NBCASES; ++j){
 			caseAffichee = &p_plateau->getCase(i,j);
-			if ( caseAffichee->getUnite() == 0 ){
+			Unite* unite = caseAffichee->getUnite();
+			if ( unite == NULL){
 				std::cout << ".";
 			}
 			else{
-				std::cout << caseAffichee->getUnite()->toChar();
+				std::cout << unite->toChar();
 			}
 			std::cout << " ";
 		}
