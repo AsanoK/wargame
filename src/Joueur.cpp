@@ -30,6 +30,7 @@ void Joueur::regenererTroupe(){
 }
 
 void Joueur::executerTour(){
+	p_fenetre->afficherTour(this->m_pseudo);
 	p_fenetre->afficherGrille();
 	std::string action = p_fenetre->demanderAction();
 	p_fenetre->afficherGrille();

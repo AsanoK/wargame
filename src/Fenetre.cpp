@@ -31,12 +31,12 @@ void Fenetre::afficherGrille(){
 
 		for (int j=0; j<Plateau::NBCASES; ++j){
 			caseAffichee = &p_plateau->getCase(i,j);
-			if ( caseAffichee->getUnite() == 0 ){
+			Unite* unite = caseAffichee->getUnite();
+			if ( unite == NULL){
 				std::cout << ".";
 			}
 			else{
-				std::cout << 1 << std::endl;
-				std::cout << caseAffichee->getUnite()->toChar();
+				std::cout << unite->toChar();
 			}
 			std::cout << " ";
 		}
@@ -49,12 +49,16 @@ void Fenetre::afficherVainqueur(std::string &vainqueur) const{
 	std::cout << "bravo, le vainqueur est le joueur "<< vainqueur << std::endl;
 }
 
+void Fenetre::afficherTour(std::string pseudo) const{
+	std::cout << "C'est au tour du joueur " << pseudo << std::endl;
+}
+
 std::string Fenetre::demanderAction() const{
-	std::cout << "quelle action souhaitez vous faire? (q : arret, a a: attaquer, d : deplacer)" << std::endl;
+	std::cout << "quelle action souhaitez vous faire? (q : arret, a: attaquer, d : deplacer)" << std::endl;
 	std::string action;
 	std::cin >> action;
 	while (action != "a" && action !="q" && action != "d"){
-		std::cout << "quelle action souhaitez vous faire? (q : arret, a a: attaquer, d : deplacer)" << std::endl;
+		std::cout << "quelle action souhaitez vous faire? (q : arret, a: attaquer, d : deplacer)" << std::endl;
 		std::cin >> action;
 	}
 	return action;
