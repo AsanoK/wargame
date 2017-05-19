@@ -31,6 +31,7 @@ public:
 	Joueur* getJoueur1();
 	Joueur* getJoueur2();
 	int getTourDeJeu();
+	~Partie();
 };
 
 #endif /* PARTIE_HPP_ */

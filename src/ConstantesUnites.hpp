@@ -27,8 +27,8 @@
 
 #define COULEUR true
 
-#define COULEUR_J1 192
-#define COULEUR_J2 192
+#define COULEUR_J1 82
+#define COULEUR_J2 202
 
 //r�g�n�ration de vie
 #define REGEN (1/4)

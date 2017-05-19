@@ -57,6 +57,7 @@ public:
 	void supprimerUnite(Unite &uneUnite);
 	void ajouterUnite(Unite &uneUnite);
 	int getNbrUnite() const;
+	~Joueur();
 
 
 };

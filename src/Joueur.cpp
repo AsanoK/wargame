@@ -6,7 +6,6 @@
  */
 
 #include <string>
-#include <cstring>
 
 #include "Fenetre.hpp"
 #include "Partie.hpp"
@@ -19,7 +18,9 @@
 //=====================================================================
 
 Joueur::Joueur(Partie &unePartie, std::string &unPseudo, int unNumero, unsigned char uneCouleur[3]): m_pseudo(unPseudo), m_numero(unNumero), p_partie(&unePartie), p_fenetre(&p_partie->getFenetre()){
-	std::memcpy(m_couleur, uneCouleur, sizeof(unsigned char) * 3);
+	m_couleur = new unsigned char[3];
+	for(int i = 0; i<3; i++)
+		m_couleur[i] = uneCouleur[i];
 }
 
 
@@ -111,7 +112,8 @@ unsigned char *Joueur::getCouleur(){
 }
 
 void Joueur::setCouleur(unsigned char uneCouleur[3]){
-	m_couleur = uneCouleur;
+	for(int i = 0; i<3; i++)
+		m_couleur[i] = uneCouleur[i];
 }
 
 Unite *Joueur::getUnite(int unePosition) const{
@@ -134,4 +136,7 @@ int Joueur::getNbrUnite() const{
 	return m_unites.size();
 }
 
+Joueur::~Joueur(){
+	delete m_couleur;
+}
 
