@@ -9,7 +9,9 @@
 #define SRC_CASE_HPP_
 
 #include "Unite.hpp"
-
+/**
+ * Classe représentant une case du plateau de jeu, avec un lien vers son contenu
+ */
 class CaseJ {
 
 private:
