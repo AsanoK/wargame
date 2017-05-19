@@ -9,7 +9,7 @@
 #define SRC_CONSTANTESUNITES_HPP_
 
 //Globales
-#define NB_TROUPES_DEPART 10
+#define NB_TROUPES_DEPART 5
 
 //Fantassins
 #define VIEFANT 20

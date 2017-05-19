@@ -30,7 +30,7 @@ Artillerie::~Artillerie() {
 }
 /**
  * méthode déterminant si une case est attaquable ou non. Dans le cas de l'artillerie, toute cible à deux cases de distance dans toute les direction (donc un carré)
- *sch�ma des cases atteignables : x case possible, o pour l'origine et _ pour vide
+ *sch�ma des cases atteignables : x case possible, o pour l'origine et _ pour vide
  *     xxxxx
 	 * x___x
 	 * x_o_x
@@ -67,6 +67,7 @@ bool Artillerie::isCaseAttaquable(const CaseJ& cible){
 bool Artillerie::isCaseAtteignable(const CaseJ& cible){
 
 	//pour l'artillerie, on déplace uniquement sur les places adjacente : 4 possibilités
+<<<<<<< HEAD
 	bool ret =true;
 		int xf = this->getposition()->getPositionX();
 		int yf = this->getposition()->getPositionY();
@@ -76,6 +77,16 @@ bool Artillerie::isCaseAtteignable(const CaseJ& cible){
 			ret= false;
 		}
 		return ret;
+=======
+	bool ret = false;
+	if(((cible.getPositionX()==position->getPositionX())and(cible.getPositionY()==position->getPositionY()+1))
+			or((cible.getPositionX()==position->getPositionX())and(cible.getPositionY()==position->getPositionY()-1))
+			or((cible.getPositionX()==position->getPositionX()+1)and(cible.getPositionY()==position->getPositionY()))
+			or((cible.getPositionX()==position->getPositionX()-1)and(cible.getPositionY()==position->getPositionY()))){
+		ret=true;
+	}
+	return ret;
+>>>>>>> branch 'master' of https://github.com/AsanoK/wargame
 }
 /**
  * méthode appelée normalement à chaque tour, et resettant certains paramètres, mais aussi en faisant récupérer un peu de vie.
