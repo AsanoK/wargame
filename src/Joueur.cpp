@@ -24,13 +24,14 @@ Joueur::Joueur(Partie &unePartie, std::string &unPseudo, char uneCouleur[3]): m_
 
 void Joueur::regenererTroupe(){
 	for (unsigned int i=0; i<m_unites.size(); ++i){
-		m_unites.at(i)->setVie( m_unites.at(i)->getVie()*1.3 );
+		m_unites.at(i)->regenerer();
 	}
 
 }
 
 void Joueur::executerTour(){
 	std::string action = p_fenetre->demanderAction();
+	p_fenetre->afficherGrille();
 	while ( action != "q"){
 		if (action == "a"){
 			attaquer();
@@ -38,6 +39,7 @@ void Joueur::executerTour(){
 		else if(action == "d"){
 			deplacer();
 		}
+		p_fenetre->afficherGrille();
 	}
 	terminerTour();
 }
