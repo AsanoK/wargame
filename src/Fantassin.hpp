@@ -15,7 +15,7 @@ class CaseJ;
 class Joueur;
 
 /**
- * l'infanterie, une sous-classe d'unité
+ * L'infanterie, une sous-classe d'unitÃ©
  */
 class Fantassin : public Unite{
 public:

@@ -16,7 +16,7 @@ class Joueur;
 class Plateau;
 class CaseJ;
 /**
- * classe gérant la totalité de l'affichage du programme
+ * classe gÃ©rant la totalitÃ© de l'affichage du programme
  */
 class Fenetre {
 

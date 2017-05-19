@@ -7,19 +7,23 @@
 
 #ifndef SRC_CONSTANTESUNITES_HPP_
 #define SRC_CONSTANTESUNITES_HPP_
-//globales
+
+//Globales
 #define NB_TROUPES_DEPART 10
-//fantassins
+
+//Fantassins
 #define VIEFANT 20
 #define ATTFANT 10
 #define DEFFANT 10
 #define CHARFANT 'F'
-//cavaliers
+
+//Cavaliers
 #define VIECAV 15
 #define ATTCAV 20
 #define DEFCAV 5
 #define CHARCAV 'C'
-//artilerie
+
+//Artilerie
 #define VIEART 5
 #define ATTART 30
 #define DEFART 5
@@ -30,7 +34,7 @@
 #define COULEUR_J1 192
 #define COULEUR_J2 192
 
-//r�g�n�ration de vie
+//Régénération de vie
 #define REGEN (1/4)
 //comprise entre 0 et 1
 #endif /* CONSTANTESUNITES_HPP_ */

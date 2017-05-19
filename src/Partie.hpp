@@ -15,7 +15,7 @@
 #include "Plateau.hpp"
 #include "Fenetre.hpp"
 /**
- * classe gérant la totalité de la partie, notamment l'alternance des tours de jeu
+ * classe gÃ©rant la totalitÃ© de la partie, notamment l'alternance des tours de jeu
  */
 class Partie {
 

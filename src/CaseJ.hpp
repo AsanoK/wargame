@@ -10,7 +10,7 @@
 
 #include "Unite.hpp"
 /**
- * Classe représentant une case du plateau de jeu, avec un lien vers son contenu
+ * Classe reprÃ©sentant une case du plateau de jeu, avec un lien vers son contenu
  */
 class CaseJ {
 
