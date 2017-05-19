@@ -23,7 +23,7 @@ class Joueur;
 class Plateau {
 
 public:
-	static const int NBCASES = 10;
+	static const int NBCASES = 20;
 
 private:
 	CaseJ cases[NBCASES][NBCASES];
