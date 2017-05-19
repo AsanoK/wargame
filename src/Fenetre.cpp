@@ -282,5 +282,5 @@ void Fenetre::affichageAttaqueInutile(){
 	std::cout<<"l'attaque se sera révélée infructueuse"<<std::endl;
 }
 void Fenetre::affichageAttaqueInterdite(){
-	std::cout<<"cette attaque n'est pas possible"<<std::endl;
+	std::cout<<"Vos troupes sont confuses devant cet ordre improbable et n'y obéissent pas"<<std::endl;
 }
