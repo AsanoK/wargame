@@ -7,7 +7,7 @@
 
 #include "Fenetre.hpp"
 
-Fenetre::Fenetre() : p_plateau(0){
+Fenetre::Fenetre() : p_plateau(NULL){
 	// TODO Auto-generated constructor stub
 
 }
