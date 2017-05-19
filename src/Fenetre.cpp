@@ -108,6 +108,7 @@ void Fenetre::afficherGrille(){
 		couleurBack = "\e[49m";
 		std::cout << couleurFront << couleurBack << std::endl;
 	}
+	std::cout << std::endl;
 #endif
 }
 /**
