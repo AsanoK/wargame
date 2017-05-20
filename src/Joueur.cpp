@@ -87,18 +87,21 @@ void Joueur::attaquer(){
 			}
 			else{
 				//erreur
-				std::cout << "Pas d'unité à attaquer" << std::endl;
+				//std::cout << "Pas d'unité à attaquer" << std::endl;
+				Fenetre::affichagePasDeCible();
 			}
 		}
 		else
 		{
 			//erreur
-			std::cout << "Cette unité ne vous appartient pas" << std::endl;
+			//std::cout << "Cette unité ne vous appartient pas" << std::endl;
+			Fenetre::affichageUniteAdverse();
 		}
 	}
 	else{
 		//erreur
-		std::cout << "Pas d'unité pour attaquer" << std::endl;
+		//std::cout << "Pas d'unité pour attaquer" << std::endl;
+		Fenetre::affichagePasDUnite();
 	}
 }
 /**

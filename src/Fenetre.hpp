@@ -47,6 +47,10 @@ public:
 	void static affichageDegats( );
 	void static affichageAttaqueInutile();
 	void static affichageAttaqueInterdite();
+	void static affichageDeplacementInterdit();
+	void static affichageUniteAdverse();
+	void static affichagePasDeCible();
+	void static affichagePasDUnite();
 	void setPlateau(Plateau &unPlateau);
 };
 
