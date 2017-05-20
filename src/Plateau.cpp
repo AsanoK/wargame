@@ -4,7 +4,7 @@
  *  Created on: 28 avr. 2017
  *      Author: cdecultot
  */
-
+#include <iostream>
 #include "Partie.hpp"
 #include "Plateau.hpp"
 
@@ -14,17 +14,19 @@ Plateau::Plateau():partie(0){
 
 void Plateau::setPartie(Partie &p) {
 	partie=&p;
-	Plateau::genererGrilleAleatoire();
-	Plateau::deployerUnitesInitiales();
+	genererGrilleAleatoire();
+	deployerUnitesInitiales();
 }
 /**
  * méthode permettant d'obtenir une grille aléatoire
  */
 void Plateau::genererGrilleAleatoire()
 {
-	for (int i;i<NBCASES;i++)
-		for (int j;j<NBCASES;j++)
+	for (int i=0;i<NBCASES;i++){
+		for (int j=0;j<NBCASES;j++){
 			cases[i][j]=CaseJ(i,j);
+		}
+	}
 }
 /**
  * méthode permettant de placer les unités de départ des joueurs.
@@ -84,7 +86,9 @@ CaseJ *Plateau::getCase(int i, int j){
 
 
 Plateau::~Plateau() {
+	std::cout << 1 << std::endl;
 	for (int i=0;i<Plateau::NBCASES;i++)
+	{
 		for (int j=0;j<Plateau::NBCASES;j++)
 		{
 			Unite* u=cases[i][j].getUnite();
@@ -92,6 +96,6 @@ Plateau::~Plateau() {
 				u->getJoueur()->supprimerUnite(*u);
 			delete(&cases[i][j]);
 		}
+	}
 }
-
 

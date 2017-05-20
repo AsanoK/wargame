@@ -14,17 +14,17 @@
  */
 Partie::Partie():m_tourDeJeu(0), m_plateau(), m_fenetre(){
 	// création du premier joueur
-	this->m_joueurs.reserve(2);
+	m_joueurs.reserve(2);
 	std::string pseudo1 = m_fenetre.demanderPseudo(1);
 	unsigned char couleur1[3] = {COULEUR_J1,COULEUR_J1, COULEUR_J1};
 	Joueur *joueur1 = new Joueur(*this, pseudo1, 1, couleur1);
-	this->m_joueurs.push_back(*joueur1);
+	m_joueurs.push_back(*joueur1);
 
 	// création du deuxième joueur
 	std::string pseudo2 = m_fenetre.demanderPseudo(2);
 	unsigned char couleur2[3] = {COULEUR_J2, COULEUR_J2, COULEUR_J2};
 	Joueur *joueur2 = new Joueur(*this, pseudo2, 2, couleur2);
-	this->m_joueurs.push_back(*joueur2);
+	m_joueurs.push_back(*joueur2);
 
 	// Initialisation de Plateau
 	m_plateau.setPartie(*this);
@@ -84,7 +84,7 @@ int Partie::getTourDeJeu(){
 }
 
 Partie::~Partie(){
-	for(int i = 0; i<this->m_joueurs.size(); i++)
-		delete(&this->m_joueurs.at(i));
+	for(int i = 0; i<m_joueurs.size(); i++)
+		delete(&m_joueurs.at(i));
 }
 

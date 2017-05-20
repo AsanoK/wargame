@@ -19,12 +19,12 @@
  */
 Unite::Unite(CaseJ& c, Joueur& prop) {
 	position = &c;
-		joueur = &prop;
-		vie = 1;
-		attaque = 1;
-		defense = 1;
-		DeplacementExecute = false;
-		AttaqueExecutee = false;
+	joueur = &prop;
+	vie = 1;
+	attaque = 1;
+	defense = 1;
+	DeplacementExecute = false;
+	AttaqueExecutee = false;
 }
 /**
  * méthode effectuant le déplacement de l'unité, y compris les changements de contenu des cases

@@ -55,14 +55,14 @@ bool Cavalier::isCaseAtteignable( const CaseJ& cible){
 	//xox <----le 'o' est la position d'origine du cavalier
 	//xxx
 	//xxx
-		int xf = this->getposition()->getPositionX();
-		int yf = this->getposition()->getPositionY();
-		int xc = cible.getPositionX();
-		int yc = cible.getPositionY();
-		if((xc<xf-1)or(xc>xf+1)or(yc>yf+2)or(yc<yf-2)){
-			return false;
-		}else{
-			return true;
+	int xf = this->getposition()->getPositionX();
+	int yf = this->getposition()->getPositionY();
+	int xc = cible.getPositionX();
+	int yc = cible.getPositionY();
+	if((xc<xf-1)or(xc>xf+1)or(yc>yf+2)or(yc<yf-2)){
+		return false;
+	}else{
+		return true;
 	}
 }
 /**
