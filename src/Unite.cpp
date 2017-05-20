@@ -38,11 +38,12 @@ bool Unite::deplacer(CaseJ& cible){
 		 this->setPosition(cible);
 		 Fenetre::affichageDeplacementRealise();
 		 ret = true;
+		 DeplacementExecute = true;
 	 }else{
 		 Fenetre::affichageDeplacementInterdit();
 	 }
 
- DeplacementExecute = true;
+
  return ret;
 }
 /**
@@ -61,11 +62,12 @@ bool Unite::attaquer(CaseJ& cible){
 		attaquer(cible.getUnite());
 		Fenetre::affichageAttaqueRealisee();
 		ret = true;
+		AttaqueExecutee = true;
 	}else{
 		Fenetre::affichageAttaqueInterdite();
 	}
 
-	AttaqueExecutee = true;
+
 	return ret;
 }
 
