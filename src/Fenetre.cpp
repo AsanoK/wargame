@@ -285,3 +285,15 @@ void Fenetre::affichageAttaqueInutile(){
 void Fenetre::affichageAttaqueInterdite(){
 	std::cout<<MSSG_ATTAQUE_INTERDITE<<std::endl;
 }
+void Fenetre::affichageDeplacementInterdit(){
+	std::cout<<MSSG_DEPLAC_INTERDIT<<std::endl;
+}
+void Fenetre::affichageUniteAdverse(){
+	std::cout<<MSSG_TROUPES_ENNEMIES<<std::endl;
+}
+void Fenetre::affichagePasDeCible(){
+	std::cout<<MSSG_PAS_DE_CIBLE<<std::endl;
+}
+void Fenetre::affichagePasDUnite(){
+	std::cout<<MSSG_PAS_DUNITE<<std::endl;
+}

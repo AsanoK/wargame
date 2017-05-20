@@ -33,14 +33,15 @@ Cavalier::Cavalier(CaseJ& c, Joueur& prop) : Unite(c,prop) {
  */
 bool Cavalier::isCaseAttaquable(const CaseJ& cible){
 	//le cavalier peut attaquer devant lui et derrière lui
-	bool res = false;
-	if((cible.getPositionY()==position->getPositionY()+1 or cible.getPositionY()==position->getPositionY()-1)and (cible.getPositionY()==position->getPositionY())){
-		res = true;
-	}
-	if(this->AttaqueExecutee){
-		res = false;
-	}
-	return res;
+	int xf = this->getposition()->getPositionX();
+			int yf = this->getposition()->getPositionY();
+			int xc = cible.getPositionX();
+			int yc = cible.getPositionY();
+			if((xc<xf-1)or(xc>xf+1)or(yc>yf+1)or(yc<yf-1)){
+				return false;
+						}else{
+							return true;
+					}
 }
 /**
  * méthode déterminant si il est possible de se déplacer sur une case. Ne prend en compte que les positions des cases

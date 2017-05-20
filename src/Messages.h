@@ -29,4 +29,8 @@
 #define MSSG_DEGATS "les troupes ennemies ont subi des pertes"
 #define MSSG_ATTAQUE_INUTILE "l'attaque se sera révélée infructueuse"
 #define MSSG_ATTAQUE_INTERDITE "Vos troupes sont confuses devant cet ordre improbable et n'y obéissent pas"
+#define MSSG_PAS_DE_CIBLE "L'endroit est vide d'ennemis"
+#define MSSG_DEPLAC_INTERDIT "vos hommes ne peuvent interpréter cet ordre de marche et s'arrêtent"
+#define MSSG_TROUPES_ENNEMIES "cette estafette meur après que vous l'ayez envoyée vers une unité adverse"
+#define MSSG_PAS_DUNITE "vous n'avez aucune troupe ici"
 #endif /* SRC_MESSAGES_H_ */

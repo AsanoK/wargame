@@ -38,6 +38,8 @@ bool Unite::deplacer(CaseJ& cible){
 		 this->setPosition(cible);
 		 Fenetre::affichageDeplacementRealise();
 		 ret = true;
+	 }else{
+		 Fenetre::affichageDeplacementInterdit();
 	 }
 
  DeplacementExecute = true;
