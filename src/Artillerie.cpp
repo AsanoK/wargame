@@ -8,7 +8,7 @@
 
 #include "CaseJ.hpp"
 #include "Artillerie.hpp"
-
+#include<stdio.h>
 /**
  * constructeur de l'artillerie (ingénieur de siège)
  * @param pos : position de l'unité créée
@@ -86,6 +86,10 @@ void Artillerie::regenerer(){
 		}
 	}
 	vie=vie+bvie;
+}
+Artillerie::~Artillerie(){
+	position->setUnite(NULL);
+	joueur->supprimerUnite(*this);
 }
 char Artillerie::toChar(){
 	return CHARART;
