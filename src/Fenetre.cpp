@@ -300,3 +300,6 @@ void Fenetre::affichagePasDeCible(){
 void Fenetre::affichagePasDUnite(){
 	std::cout<<MSSG_PAS_DUNITE<<std::endl;
 }
+void Fenetre::affichageZoneOccuppe(){
+	std::cout<<MSSG_PLACE_OCCUPEE<<std::endl;
+}
