@@ -12,21 +12,21 @@
 #define NB_TROUPES_DEPART 5
 
 //Fantassins
-#define VIEFANT 20
-#define ATTFANT 20
-#define DEFFANT 10
+#define VIEFANT 10
+#define ATTFANT 10
+#define DEFFANT 5
 #define CHARFANT 'F'
 
 //Cavaliers
-#define VIECAV 15
-#define ATTCAV 25
+#define VIECAV 10
+#define ATTCAV 15
 #define DEFCAV 5
 #define CHARCAV 'C'
 
 //Artilerie
-#define VIEART 5
-#define ATTART 35
-#define DEFART 5
+#define VIEART 10
+#define ATTART 15
+#define DEFART 0
 #define CHARART 'A'
 
 #define COULEUR true
