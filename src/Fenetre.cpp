@@ -25,7 +25,10 @@ Fenetre::~Fenetre() {
  */
 void Fenetre::afficherGrille(){
 #if !COULEUR
-	std::cout << "   A B C D E F G H I J K L M N O P Q R S T " << std::endl;
+	std::cout << "  ";
+	for(char lettre = 'A'; lettre < 'A' + Plateau::NBCASES; lettre++)
+        std::cout << " " << lettre;
+    std::cout << std::endl;
 	CaseJ *caseAffichee = NULL;
 	for (int i=0; i<Plateau::NBCASES; ++i){
 		if (i < 9){
@@ -296,10 +299,4 @@ void Fenetre::affichagePasDeCible(){
 }
 void Fenetre::affichagePasDUnite(){
 	std::cout<<MSSG_PAS_DUNITE<<std::endl;
-}
-void Fenetre::erreur_Unite(){
-	std::cout<<ERR_SUPPR<<std::endl;
-}
-void Fenetre::affichageZoneOccuppe(){
-	std::cout<<MSSG_PLACE_OCCUPEE<<std::endl;
 }
