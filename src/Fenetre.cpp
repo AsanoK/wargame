@@ -303,3 +303,6 @@ void Fenetre::affichagePasDUnite(){
 void Fenetre::affichageZoneOccuppe(){
 	std::cout<<MSSG_PLACE_OCCUPEE<<std::endl;
 }
+void Fenetre::erreur_Unite(){
+	std::cout<<ERR_SUPPR<<std::endl;
+}
