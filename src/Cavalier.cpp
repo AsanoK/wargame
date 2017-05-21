@@ -60,7 +60,7 @@ bool Cavalier::isCaseAtteignable( const CaseJ& cible){
 	int yf = this->getposition()->getPositionY();
 	int xc = cible.getPositionX();
 	int yc = cible.getPositionY();
-	if((xc<xf-1)or(xc>xf+1)or(yc>yf+2)or(yc<yf-2)){
+	if((xc<xf-2)or(xc>xf+2)or(yc>yf+1)or(yc<yf-1)){
 		return false;
 	}else{
 		return true;
