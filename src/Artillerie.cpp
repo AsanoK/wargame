@@ -8,6 +8,7 @@
 
 #include "CaseJ.hpp"
 #include "Artillerie.hpp"
+#include "Joueur.hpp"
 #include<stdio.h>
 /**
  * constructeur de l'artillerie (ingénieur de siège)
@@ -26,7 +27,8 @@ Artillerie::Artillerie(CaseJ& pos, Joueur& prop): Unite(pos,prop) {
 }
 
 Artillerie::~Artillerie() {
-	// TODO Auto-generated destructor stub
+	position->setUnite(NULL);
+	joueur->supprimerUnite(*this);
 }
 /**
  * méthode déterminant si une case est attaquable ou non. Dans le cas de l'artillerie, toute cible à deux cases de distance dans toute les direction (donc un carré)
@@ -86,10 +88,6 @@ void Artillerie::regenerer(){
 		}
 	}
 	vie=vie+bvie;
-}
-Artillerie::~Artillerie(){
-	position->setUnite(NULL);
-	joueur->supprimerUnite(*this);
 }
 char Artillerie::toChar(){
 	return CHARART;

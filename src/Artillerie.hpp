@@ -28,7 +28,7 @@ public:
 	bool isCaseAttaquable(const CaseJ&);
 	void regenerer();
 	char toChar();
-	~Artillerie();
+
 
 };
 
