@@ -135,6 +135,4 @@ if(modvie>0){
 	}
 }
 Unite::~Unite(){
-	position->setUnite(NULL);
-	joueur->supprimerUnite(*this);
 }

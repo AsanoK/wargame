@@ -21,7 +21,7 @@ private:
 public:
 	CaseJ();
 	CaseJ(int posX, int posY);
-	virtual ~CaseJ();
+	~CaseJ();
 	int getPositionX()const;
 	int getPositionY()const;
 	Unite *getUnite();

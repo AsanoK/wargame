@@ -83,5 +83,5 @@ char Fantassin::toChar(){
 Fantassin::~Fantassin()
 {
 	position->setUnite(NULL);
-		joueur->supprimerUnite(*this);
+	joueur->supprimerUnite(*this);
 }
