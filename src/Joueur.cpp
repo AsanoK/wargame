@@ -164,7 +164,7 @@ Unite *Joueur::getUnite(int unePosition) const{
 
 void Joueur::supprimerUnite(Unite &uneUnite){
 	int i=0;
-	while(m_unites.at(i) != &uneUnite){
+	while( m_unites.at(i) != &uneUnite  ){
 		i=i+1;
 	}
 	m_unites.erase(m_unites.begin()+i);

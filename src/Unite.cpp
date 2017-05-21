@@ -128,8 +128,8 @@ if(modvie>0){
 		Fenetre::affichageDegats();
 		Fenetre::affichageCibleEnVie();
 	}else {
-		delete cible;
 		Fenetre::affichageDegats();
+		delete cible;
 		Fenetre::affichageCibleDetruite();
 		}
 	}
