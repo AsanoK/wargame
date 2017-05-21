@@ -51,6 +51,8 @@ public:
 	void static affichageUniteAdverse();
 	void static affichagePasDeCible();
 	void static affichagePasDUnite();
+	void static affichageZoneOccuppe();
+	static void erreur_Unite();
 	void setPlateau(Plateau &unPlateau);
 };
 

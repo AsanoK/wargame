@@ -118,17 +118,18 @@ void Joueur::deplacer(){
 			}
 			else{
 				//erreur
-				std::cout << "La case visée est déjà occupée" << std::endl;
+				//std::cout << "La case visée est déjà occupée" << std::endl;
+				Fenetre::affichageZoneOccuppe();
 			}
 		}
 		else
 		{
-			std::cout << "Cette unité ne vous appartient pas" << std::endl;
+			Fenetre::affichageUniteAdverse();
 		}
 	}
 	else{
 		//erreur
-		std::cout << "Pas d'unité à déplacer" << std::endl;
+		Fenetre::affichagePasDUnite();
 	}
 }
 
@@ -164,10 +165,15 @@ Unite *Joueur::getUnite(int unePosition) const{
 
 void Joueur::supprimerUnite(Unite &uneUnite){
 	int i=0;
-	while( m_unites.at(i) != &uneUnite  ){
+	while(i<m_unites.size() and m_unites.at(i) != &uneUnite  ){
 		i=i+1;
 	}
-	m_unites.erase(m_unites.begin()+i);
+	if(i<m_unites.size()){
+		m_unites.erase(m_unites.begin()+i);
+	}else{
+		Fenetre::erreur_Unite();
+	}
+	//m_unites.erase(m_unites.begin()+i);
 }
 
 void Joueur::ajouterUnite(Unite &uneUnite){
