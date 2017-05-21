@@ -37,7 +37,7 @@ void Plateau::deployerUnitesInitiales()
 	Joueur* p2 = partie->getJoueur2();
 
 	// Creation et déploiement des unités initiales du premier joueur
-	for (int i=NBCASES/2-NB_TROUPES_DEPART/2;i<NBCASES/2+NB_TROUPES_DEPART/2;i++)
+	for(int i = NBCASES/2-NB_TROUPES_DEPART/2;i<NBCASES/2-NB_TROUPES_DEPART/2+NBCASES;i++)
 	{
 		Fantassin *f=new Fantassin(cases[1][i],*p1);
 		p1->ajouterUnite(*f);
